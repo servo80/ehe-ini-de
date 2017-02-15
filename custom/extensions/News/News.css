@@ -1,0 +1,126 @@
+ol.news {
+	padding-left:0;
+}
+ol.news li,
+div.newsDetail {
+	clear:both;
+	overflow:hidden;
+	border-bottom:1px solid black;
+	padding-top:20px;
+}
+ol.news li p {
+	overflow:visible;
+	white-space:pre-wrap;
+}
+div.newsDetail {
+  border-bottom:0;
+}
+ol.news li img,
+div.newsDetail img.newsImage {
+	float:left;
+	border-radius:25px;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+ol.news li div,
+div.newsDetail div {
+	float:left;
+	width:385px;
+}
+ol.news li h2 {
+	clear:left;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: lighter;
+}
+div.newsDetail h2 {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: lighter;
+}
+ol.news li span.date,
+div.newsDetail span.date {
+	font-size:16px;
+	color:#ed6130;
+	margin-bottom:10px;
+  margin-top:5px;
+	display:block;
+  font-weight:bold;
+}
+ol.news li a,
+div.newsDetail a {
+	color:#fbb03b;
+	font-size:12px;
+	font-weight:bold;
+}
+ol.news li a.proceed {
+	color:#4d4d4d;
+	float:right;
+}
+div.newsDetail a {
+  clear:both;
+  font-weight:normal;
+  height:20px;
+}
+div.newsDetail a img {
+  height:20px;
+  margin-right:5px;
+}
+div.newsNavigation {
+	text-align:right;
+	margin-top:40px;
+}
+div.newsNavigation span {
+	margin-right:10px;
+	margin-left:10px;
+}
+div.newsNavigation span strong {
+	font-weight:bold;
+}
+div.newsNavigation a {
+	float:none;
+}
+div.newsDetail a.previous,
+div.newsNavigation a.previous {
+	margin-right:10px;
+	color:#4d4d4d;
+}
+div.newsDetail a.next,
+div.newsNavigation a.next {
+	margin-left:10px;
+	color:#4d4d4d;
+}
+/* newsTeaser */
+div.newsTeaser {
+	padding:15px;
+	text-align:center;
+}
+div.newsTeaser img {
+	border-radius:25px;
+}
+div.newsTeaser h2 {
+	color:#4d4d4d;
+	font-weight:lighter;
+	font-size:14px;
+	margin-top:10px;
+	text-align:left;
+}
+div.newsTeaser p {
+	color:#4d4d4d;
+	line-height:20px;
+	margin-top:5px;
+	text-align:left;
+}
+div.newsTeaser a {
+	font-size:13px;
+	text-decoration: none;
+	color:#4d4d4d;
+	font-weight: bold;
+	float:right;
+	margin-right:10px;
+	margin-bottom:15px;
+}
+div.width34 div.newsTeaser h2,
+div.width34 div.newsTeaser p {
+	margin-left:11px !important;
+}

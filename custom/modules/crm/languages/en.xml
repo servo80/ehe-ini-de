@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Export: XLSX</text>
+  <text id="2">The XLSX-Exporter generates reference lists for production series, which include all relevant data regarding technical data, packages and equipment per model.</text>
+  <text id="3">Filter</text>
+  <text id="4">Countries</text>
+  <text id="5">Model year</text>
+  <text id="6">Status</text>
+  <text id="7">Model data</text>
+  <text id="8">Outline</text>
+  <text id="9">Production Series</text>
+  <text id="10">Presentation</text>
+  <text id="11">Columns</text>
+  <text id="12">EK</text>
+  <text id="13">VK</text>
+  <text id="14">Weight</text>
+  <text id="15">Code</text>
+  <text id="16">Techn. Data</text>
+  <text id="17">Packages</text>
+  <text id="18">Equipments</text>
+  <text id="19">Export</text>
+  <text id="20">Caravan</text>
+  <text id="21">Motorcaravan</text>
+  <text id="22" js="true">Please select at least one line.</text>
+  <text id="23" js="true">Please select at least one column.</text>
+  <text id="24" js="true">Please select at least one production series.</text>
+  <text id="25" js="true">Please select at least one country.</text>
+  <text id="26">Lines</text>
+  <text id="27">Profile</text>
+  <text id="28">Name Of Profile</text>
+  <text id="29">Overwrite Profile</text>
+  <text id="30">Ignore Profile</text>
+  <text id="31">Create New Profile</text>
+
+</body>

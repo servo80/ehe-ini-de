@@ -1,0 +1,111 @@
+# PHP5 KM01
+# AddType application/x-httpd-php5 .php
+
+# PHP5 auf 1&1
+# AddType x-mapp-php5 .php
+# AddHandler x-mapp-php5 .php
+
+# Einstellungen für KM01, KM05
+# php_value register_globals off
+# php_value upload_max_filesize 200M
+# php_value post_max_size 200M
+
+ExpiresActive On
+ExpiresDefault "access plus 1 days"
+ExpiresByType image/gif "access plus 7 days"
+ExpiresByType image/jpeg "access plus 7 days"
+ExpiresByType image/png "access plus 7 days"
+ExpiresByType text/javascript "access plus 2 hours"
+ExpiresByType application/pdf "access plus 1 seconds"
+
+<FilesMatch "\.(ico|flv|eot|woff|svg|ttf|htc)$">
+	Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+<FilesMatch "\.(jpg|jpeg|png|gif|swf|css|js)$">
+	Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+<FilesMatch "\.(xml|txt)$">
+	Header set Cache-Control "max-age=172800, proxy-revalidate"
+</FilesMatch>
+<FilesMatch "\.(html|htm|pdf)$">
+	Header set Cache-Control "max-age=60, private, proxy-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.(.*)$">
+	Deny from all
+</FilesMatch>
+<FilesMatch "\.(?i:php|html|xml)$">
+	Allow from all
+</FilesMatch>
+<FilesMatch "robots.txt|favicon.ico$">
+	Allow from all
+</FilesMatch>
+<Files "admin.php">
+  Satisfy Any
+</Files>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml
+  AddOutputFilterByType DEFLATE text/css text/javascript
+  AddOutputFilterByType DEFLATE application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+RewriteEngine on
+Options +FollowSymLinks
+Options +SymlinksIfOwnerMatch
+
+RewriteBase /ehe-ini.de/
+
+RewriteCond %{HTTP_HOST}   !^www\..* [NC]
+RewriteCond %{HTTP_HOST}   !^webdev3* [NC]
+RewriteCond %{HTTP_HOST}   !^localhost* [NC]
+RewriteCond %{HTTP_HOST}   !^.*\..*\..* [NC]
+RewriteRule ^(.*)          http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# Admin auf SSL
+#RewriteCond %{SERVER_PORT}  !^443$ [NC]
+#RewriteRule ^admin.php$ https://%{HTTP_HOST}/admin.php [R=301,L]
+
+# Erster Aufruf der Seite
+RewriteRule ^$ de/index.html
+
+# Nicht weiterleiten
+RewriteRule ^robots.txt$ - [L]
+RewriteRule ^google.+\.html$ - [L]
+RewriteRule ^(.*?)wymiframe\.html$ - [L]
+RewriteRule ^(.*?)wymiframe_disabled\.html$ - [L]
+RewriteRule ^(.*?)\.htm$ - [L]
+RewriteRule ^application/api/(.*?)$ - [L]
+RewriteRule ^application/app/(.*?)$ - [L]
+RewriteRule ^a\/$ de/index.html [R=301]
+
+# Downloads/Backend
+RewriteRule ^file/session/([a-zA-Z0-9_-]*)/([0-9]*)/(.*?)$ admin.php?PHPSESSID=$1&route=direct,Index,Show&src=$3 [L]
+RewriteRule ^video/session/([a-zA-Z0-9_-]*)/(.*?)$ admin.php?PHPSESSID=$1&route=direct,Index,Video&src=$2 [L]
+RewriteRule ^download/session/([a-zA-Z0-9_-]*)/(.*?)$ admin.php?PHPSESSID=$1&route=direct,Index,Download&src=$2 [L]
+RewriteRule ^download/protected/(.*?)$ admin.php?route=direct,Index,Download&src=$1&protected=1 [L,R=301]
+RewriteRule ^download/job/(.*?)$ admin.php?route=job,Index,Download&file=$1 [L,R=301]
+RewriteRule ^download/id/(.*?)$ admin.php?route=direct,Index,Download&id=$1 [L]
+
+# Downloads/Web
+RewriteRule ^file/public/(.*?)$ direct.php?route=direct,Index,Show&src=$1 [L]
+RewriteRule ^file/shop/(.*?)$ direct.php?route=direct,Index,ShowShop&src=$1 [L]
+RewriteRule ^video/(.*?)$ direct.php?route=direct,Index,Video&src=$1 [L]
+RewriteRule ^download/public/(.*?)$ direct.php?route=direct,Index,Download&src=$1 [L]
+RewriteRule ^image/([0-9]*)/(.*?)$ direct.php?route=direct,Index,Image&src=$2 [QSA,L]
+
+# HTML-Seite
+RewriteRule ^(([a-zA-Z0-9_-]*)/)?(.*?)\.html(.*?)$ stage.php?file=$3&lang=$2&%{QUERY_STRING}
+
+# XML-Seite
+RewriteRule ^(([a-zA-Z0-9_-]*)/)?(.*?)\.xml(.*?)$ stage.php?file=$3&lang=$2&xml=1&%{QUERY_STRING}
+
+# Artikel-Seite
+RewriteRule ^([a-zA-Z0-9_-]*)/(.*?)\.html\?file=([a-zA-Z0-9_-]*)&id=([0-9]*)(.*?)$ stage.php?file=$3&lang=$1&id=$4&%{QUERY_STRING}
+
+# Ordner
+RewriteRule ^(([a-zA-Z0-9_-]*)/)?([a-zA-Z0-9_-]*)/?$ stage.php?file=$2 [L]
+RewriteRule ^([a-zA-Z0-9_-]*)/?$ stage.php?file=$1 [L]

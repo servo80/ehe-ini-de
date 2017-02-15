@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <table key="Testimonials" label="Testimonials">
+    <attr name="tblgrId">2</attr>
+    <attr name="name">Testimonials</attr>
+    <attr name="identifier">Testimonials</attr>
+    <attr name="type">content</attr>
+    <attr name="instance">0</attr>
+    <attr name="administrator">0</attr>
+    <attr name="backendUser">0</attr>
+    <attr name="frontendUser">0</attr>
+    <attr name="clearingUser">0</attr>
+    <attr name="delivererUser">0</attr>
+    <attr name="jobsUser">0</attr>
+    <attr name="rightsConcept">0</attr>
+    <attr name="sort">12</attr>
+    <field key="Testimonial" label="Testimonial" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Zitat]]></attr>
+      <attr name="identifier"><![CDATA[Testimonial]]></attr>
+      <attr name="form"><![CDATA[text]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">5</attr>
+      <attr name="search">1</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">1</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Testimonial]]></attr>
+    </field>
+    <field key="Zitierer" label="Zitierer" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">100</attr>
+      <attr name="name"><![CDATA[Zitat von]]></attr>
+      <attr name="identifier"><![CDATA[Zitierer]]></attr>
+      <attr name="form"><![CDATA[input]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">1</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">1</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Zitierer]]></attr>
+    </field>
+    </table>
+</root>

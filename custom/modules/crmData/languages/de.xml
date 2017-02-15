@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Sammlung</text>
+  <text id="2">Daten</text>
+  <text id="3">Felder</text>
+  <text id="4">Tabellen</text>
+  <text id="5">Hilfe</text>
+  <text id="6">Speichern</text>
+  <text id="7">Sprache</text>
+  <text id="8">Tabelle</text>
+  <text id="9">Listenansicht</text>
+  <text id="10">Ordneransicht</text>
+  <text id="11">Datensatz anlegen</text>
+  <text id="12">Sammelkorb</text>
+  <text id="13">Suche</text>
+  <text id="14">Navigieren</text>
+  <text id="15">Besitzer</text>
+  <text id="16">Datensatz/Datensätze bearbeiten</text>
+  <text id="17">Datensatz ohne Links kopieren</text>
+  <text id="18">Datensatz mit Links kopieren</text>
+  <text id="19">Datensatz/Datensätze löschen</text>
+  <text id="20">markierte Datensätze löschen</text>
+  <text id="21">Verknüpfung entfernen</text>
+  <text id="22">Feld entfernen</text>
+  <text id="23" js="true">Möchten Sie das Feld wirklich entfernen?</text>
+  <text id="24" js="true">Wollen Sie den Datensatz/die Datensätze wirklich löschen?</text>
+  <text id="25" js="true">Wollen Sie die Datensätze wirklich löschen?</text>
+  <text id="26" js="true">Wollen Sie den Datensatz/die Datensätze wirklich entfernen?</text>
+  <text id="27">Es ist keine Datei vorhanden.</text>
+  <text id="28">E-Mail-Benachrichtigungen</text>
+  <text id="29">Eltern zeigen</text>
+  <text id="30">Kinder zeigen</text>
+  <text id="31">2. Datenblatt zeigen/verstecken</text>
+  <text id="32">Ansicht verbreitern</text>
+  <text id="33">Ansicht kopieren</text>
+  <text id="34">Shortcuts</text>
+  <text id="35">Ansicht schließen</text>
+  <text id="36">Bitte speichern Sie den Datensatz zuerst.</text>
+  <text id="37">Speichern &amp; Schließen</text>
+  <text id="38">Feld-Ansicht</text>
+  <text id="39">Sortierte Liste</text>
+  <text id="40">Unsortierte Liste</text>
+  <text id="41">linksbündig</text>
+  <text id="42">zentriert</text>
+  <text id="43">Blocksatz</text>
+  <text id="44">rechtsbündig</text>
+  <text id="45">hochstellen</text>
+  <text id="46">Interner Link</text>
+  <text id="47">Externer Link</text>
+  <text id="48">Download</text>
+  <text id="49">Link öffnen in</text>
+  <text id="50">Link setzen</text>
+  <text id="51">Der Datensatz wird von einer anderen Personen bearbeitet:</text>
+  <text id="52">Eltern</text>
+  <text id="53">Kinder</text>
+  <text id="54">Änderungsprotokoll</text>
+  <text id="55">Änderung vom</text>
+  <text id="56">durch</text>
+  <text id="57">Anzahl Veröffentlichungen</text>
+  <text id="58">in den Sammelkorb</text>
+  <text id="59">Kindertabellen</text>
+  <text id="60">Elterntabellen</text>
+  <text id="61">Felder einfügen</text>
+  <text id="62" js="true">Wollen Sie die markierten Datensätze wirklich einfügen?</text>
+  <text id="63" js="true">Wollen Sie den Datensatz/die Datensätze wirklich einfügen?</text>
+  <text id="64">Datensatz verknüpfen</text>
+  <text id="65">Vorname</text>
+  <text id="66">Nachname</text>
+  <text id="67">Firma</text>
+  <text id="68">Artikel bestellt</text>
+  <text id="69">Artikel freigegeben</text>
+  <text id="70">Artikel storniert</text>
+  <text id="71">Artikel abgeschlossen</text>
+  <text id="72">von</text>
+  <text id="73">Dateiname</text>
+  <text id="74">Text einfügen</text>
+  <text id="75">Seite</text>
+  <text id="76">bitte wählen</text>
+  <text id="77">Datum</text>
+  <text id="78">E-Mail</text>
+  <text id="79">alle Felder</text>
+  <text id="80">alle</text>
+  <text id="81">Text aus Word einfügen</text>
+  <text id="82">Datensatz verschieben</text>
+  <text id="83">Aktuelle Seite</text>
+  <text id="84">neues Fenster</text>
+  <text id="85">Allgemeines</text>
+  <text id="86">Aktueller Stand</text>
+  <text id="errorChanges" js="true">Sie haben Änderungen vorgenommen, die noch nicht gespeichert wurden. Wollen Sie die Ansicht wirklich verlassen?</text>
+  <text id="88">Verknüpfung bearbeiten</text>
+  <text id="89">Datensatz</text>
+  <text id="90" js="true">Der Benutzername existiert bereits. Bitte verwenden Sie einen anderen Benutzernamen.</text>
+  <text id="91">Template</text>
+  <text id="92">Vakat-Seiten</text>
+  <text id="93">PDF-Seiten</text>
+  <text id="94">gerade Seitenzahl erzeugen</text>
+  <text id="95">Ordner gruppieren</text>
+  <text id="96">Markierung auflösen</text>
+  <text id="97" js="true">Der Dateiname existiert bereits. Bitte verwenden Sie einen anderen Dateinamen.</text>
+  <text id="98">Feld bearbeiten</text>
+  <text id="99">In neuer Kategorie ergänzen</text>
+  <text id="100">Spalten sortieren</text>
+  <text id="101">Daten aus dieser Sprache übertragen</text>
+  <text id="102">Mandant</text>
+  <text id="103">Sprache hervorheben</text>
+  <text id="104">Jobs</text>
+  <text id="105">PDF-Einstellungen</text>
+  <text id="106">Seitenzahl</text>
+  <text id="107">Entwurf</text>
+  <text id="108">Markierte Zeilen entfernen</text>
+  <text id="109">Alle sichtbaren Datensätze markieren</text>
+  <text id="110">Markierte Datensätze</text>
+  <text id="111">Feldgruppen</text>
+</body>

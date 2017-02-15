@@ -1,0 +1,35 @@
+#content .moduleExportIndex .main .input-group .input-group-addon {
+  right: -15px !important;
+}
+
+@media all and (max-width: 990px), all and (max-device-width: 1024px) {
+
+  #content .moduleExportIndex .main {
+    margin-left: 0;
+  }
+
+  #content .moduleExportIndex .main ol input[type=checkbox] {
+    margin-top: 8px !important;
+  }
+
+}
+
+@media all and (max-width: 768px), all and (max-device-width: 768px) {
+
+  #content .moduleExportIndex .main .input-group .input-group-addon {
+    right: 0 !important;
+  }
+
+  #content .moduleExportIndex .main .input-group .select2-container {
+    width: 95% !important;
+  }
+
+}
+
+@media all and (max-width: 435px), all and (max-device-width: 435px) {
+
+  #content .moduleExportIndex .main .input-group .select2-container {
+    width: 90% !important;
+  }
+
+}

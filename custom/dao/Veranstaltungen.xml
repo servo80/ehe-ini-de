@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <table key="Veranstaltungen" label="Veranstaltungen">
+    <attr name="tblgrId">2</attr>
+    <attr name="name">Veranstaltungen</attr>
+    <attr name="identifier">Veranstaltungen</attr>
+    <attr name="type">content</attr>
+    <attr name="instance">0</attr>
+    <attr name="administrator">0</attr>
+    <attr name="backendUser">0</attr>
+    <attr name="frontendUser">0</attr>
+    <attr name="clearingUser">0</attr>
+    <attr name="delivererUser">0</attr>
+    <attr name="jobsUser">0</attr>
+    <attr name="rightsConcept">0</attr>
+    <attr name="sort">11</attr>
+    <field key="Veranstaltungsart" label="Veranstaltungsart" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">20</attr>
+      <attr name="name"><![CDATA[Art]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsart]]></attr>
+      <attr name="form"><![CDATA[select]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="entries"><![CDATA[Ehe-Start
+Ehe-Aktiv
+Ehe-Intensiv]]></attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">1</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">1</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsart]]></attr>
+    </field>
+    <field key="Veranstaltungstitel" label="Veranstaltungstitel" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">100</attr>
+      <attr name="name"><![CDATA[Titel]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungstitel]]></attr>
+      <attr name="form"><![CDATA[input]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">1</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">1</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungstitel]]></attr>
+    </field>
+    <field key="Veranstaltungsreferenten" label="Veranstaltungsreferenten" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Referenten]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsreferenten]]></attr>
+      <attr name="form"><![CDATA[iframe]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">10</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsreferenten]]></attr>
+    </field>
+    <field key="Veranstaltungsstartdatum" label="Veranstaltungsstartdatum" type="integer">
+      <attr name="type"><![CDATA[int]]></attr>
+      <attr name="length">20</attr>
+      <attr name="name"><![CDATA[Datum von]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsstartdatum]]></attr>
+      <attr name="form"><![CDATA[datetime]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">0</attr>
+      <attr name="height">0</attr>
+      <attr name="search">1</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">1</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[integer]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsstartdatum]]></attr>
+    </field>
+    <field key="Veranstaltungsenddatum" label="Veranstaltungsenddatum" type="integer">
+      <attr name="type"><![CDATA[int]]></attr>
+      <attr name="length">20</attr>
+      <attr name="name"><![CDATA[Datum bis]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsenddatum]]></attr>
+      <attr name="form"><![CDATA[datetime]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">0</attr>
+      <attr name="height">0</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[integer]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsenddatum]]></attr>
+    </field>
+    <field key="Veranstaltungsanmeldefrist" label="Veranstaltungsanmeldefrist" type="integer">
+      <attr name="type"><![CDATA[int]]></attr>
+      <attr name="length">20</attr>
+      <attr name="name"><![CDATA[Anmeldung bis]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsanmeldefrist]]></attr>
+      <attr name="form"><![CDATA[datetime]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">0</attr>
+      <attr name="height">0</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[integer]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsanmeldefrist]]></attr>
+    </field>
+    <field key="Veranstaltungsbeschreibung" label="Veranstaltungsbeschreibung" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Beschreibung]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsbeschreibung]]></attr>
+      <attr name="form"><![CDATA[iframe]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">0</attr>
+      <attr name="height">0</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsbeschreibung]]></attr>
+    </field>
+    <field key="Veranstaltungshinweise" label="Veranstaltungshinweise" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Allgemeine Hinweise]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungshinweise]]></attr>
+      <attr name="form"><![CDATA[iframe]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">10</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungshinweise]]></attr>
+    </field>
+    <field key="Veranstaltungsort" label="Veranstaltungsort" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Ort]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsort]]></attr>
+      <attr name="form"><![CDATA[iframe]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">5</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsort]]></attr>
+    </field>
+    <field key="Veranstaltungspreis" label="Veranstaltungspreis" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">255</attr>
+      <attr name="name"><![CDATA[Preis]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungspreis]]></attr>
+      <attr name="form"><![CDATA[input]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungspreis]]></attr>
+    </field>
+    <field key="Veranstaltungsflyer" label="Veranstaltungsflyer" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">256</attr>
+      <attr name="name"><![CDATA[Bild]]></attr>
+      <attr name="identifier"><![CDATA[Newsbild]]></attr>
+      <attr name="form"><![CDATA[file]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-file-o]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Newsbild]]></attr>
+    </field>
+    <field key="Veranstaltungsflyerbild" label="Veranstaltungsflyerbild" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">256</attr>
+      <attr name="name"><![CDATA[Bild]]></attr>
+      <attr name="identifier"><![CDATA[Newsbild]]></attr>
+      <attr name="form"><![CDATA[file]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-file-o]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsflyerbild]]></attr>
+    </field>
+    </table>
+</root>

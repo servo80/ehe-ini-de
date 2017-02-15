@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Collection</text>
+  <text id="2">Data</text>
+  <text id="3">Fields</text>
+  <text id="4">Tables</text>
+  <text id="5">Help</text>
+  <text id="6">Save</text>
+  <text id="7">Language</text>
+  <text id="8">Table</text>
+  <text id="9">List View</text>
+  <text id="10">Folder view</text>
+  <text id="11">Create record</text>
+  <text id="12">Basket</text>
+  <text id="13">Search</text>
+  <text id="14">Navigate</text>
+  <text id="15">Owner </text>
+  <text id="16">Edit record(s)</text>
+  <text id="17">Copy record without links</text>
+  <text id="18">Copy record with links</text>
+  <text id="19">Delete record(s)</text>
+  <text id="20">Delete selected records</text>
+  <text id="21">Remove relation</text>
+  <text id="22">Remove field</text>
+  <text id="23" js="true">Are you sure you want to remove the field?</text>
+  <text id="24" js="true">Are you sure you want to delete the record(s)?</text>
+  <text id="25" js="true">Are you sure you want to delete the records?</text>
+  <text id="26" js="true">Are you sure you want to remove the record?</text>
+  <text id="27">There is no file available.</text>
+  <text id="28">Email notifications</text>
+  <text id="29">Show parents</text>
+  <text id="30">Show children</text>
+  <text id="31">2. Show/Hide data sheet </text>
+  <text id="32">Expand view</text>
+  <text id="33">Copy view</text>
+  <text id="34">Shortcuts</text>
+  <text id="35">Close view</text>
+  <text id="36">Please save the record first.</text>
+  <text id="37">Save &amp; Close</text>
+  <text id="38">Field view</text>
+  <text id="39">Sorted list</text>
+  <text id="40">Unsorted list</text>
+  <text id="41">Align left</text>
+  <text id="42">Centre</text>
+  <text id="43">Justify</text>
+  <text id="44">Align right</text>
+  <text id="45">Superscript</text>
+  <text id="46">Internal link</text>
+  <text id="47">External link</text>
+  <text id="48">Download</text>
+  <text id="49">Open link in</text>
+  <text id="50">Set link</text>
+  <text id="51">The record is currently being edited by different users:</text>
+  <text id="52">Parents</text>
+  <text id="53">Children</text>
+  <text id="54">Change history</text>
+  <text id="55">Change of</text>
+  <text id="56">By</text>
+  <text id="57">Number of publications</text>
+  <text id="58">in the basket</text>
+  <text id="59">Children tables</text>
+  <text id="60">Parent tables</text>
+  <text id="61">Insert fields</text>
+  <text id="62" js="true">Are you sure you want to insert the selected records?</text>
+  <text id="63" js="true">Are you sure you want to insert the record?</text>
+  <text id="64">Link record</text>
+  <text id="65">First name</text>
+  <text id="66">Last name</text>
+  <text id="67">Company</text>
+  <text id="68">Article ordered</text>
+  <text id="69">Article released</text>
+  <text id="70">Article cancelled</text>
+  <text id="71">Article completed</text>
+  <text id="72">By</text>
+  <text id="73">File name</text>
+  <text id="74">Insert text</text>
+  <text id="75">Page</text>
+  <text id="76">Please select</text>
+  <text id="77">Date</text>
+  <text id="78">Email</text>
+  <text id="79">All fields</text>
+  <text id="80">All</text>
+  <text id="81">Paste text from Word</text>
+  <text id="82">Move record</text>
+  <text id="83">Current page</text>
+  <text id="84">New window</text>
+  <text id="85">General</text>
+  <text id="86">Current version</text>
+  <text id="errorChanges" js="true">You have unsaved changes. Any unsaved data in the current page will be lost. Are you sure you want to leave this view?</text>
+  <text id="88">Edit relation</text>
+  <text id="89">Record</text>
+  <text id="90" js="true">The Filename already exists. Please choose a different username.</text>
+  <text id="91">Template</text>
+  <text id="92">Blank pages</text>
+  <text id="93">PDF pages </text>
+  <text id="94">Create even number page</text>
+  <text id="95">Group folder</text>
+  <text id="96">Unselect files</text>
+  <text id="97" js="true">The Filename already exists. Please choose a different filename.</text>
+  <text id="98">Edit field</text>
+  <text id="99">Add to new Category</text>
+  <text id="100">Sort columns</text>
+  <text id="101">Transfer data from this language</text>
+  <text id="102">Client</text>
+  <text id="103">Highlight color</text>
+  <text id="104">Jobs</text>
+  <text id="105">PDF settings</text>
+  <text id="106">Page number</text>
+  <text id="107">Draft</text>
+  <text id="108">Remove selected rows</text>
+  <text id="109">Select all visible</text>
+  <text id="110">Selected datasets</text>
+  <text id="111">Field groups</text>
+</body>

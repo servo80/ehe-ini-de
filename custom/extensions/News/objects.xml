@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+
+  <object name="News-Teaser" id="teaser" view="teaser" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/News/News.css" type="text/css" />
+    <field name="Detail-Seite" key="detail" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+  <object name="News-Liste" id="news" view="list" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/News/News.css" type="text/css" />
+    <field name="Detail-Seite" key="detail" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+  <object name="News-Detail" id="detail" view="detail" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/News/News.css" type="text/css" />
+    <field name="Listen-Seite" key="list" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+</objects>

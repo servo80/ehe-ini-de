@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Tabelle</text>
+  <text id="2">Cache leeren</text>
+  <text id="3">Wählen Sie eine Tabelle und klicken Sie auf den Button, um den Select-Feld-Cache für diese Tabelle zu leeren.</text>
+  <text id="4">Der Cache wurde für die gewählte Tabelle geleert.</text>
+</body>

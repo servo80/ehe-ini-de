@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+
+  <object name="Teilnehmerberichte" id="reports" view="reports" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/Teilnehmerberichte/Teilnehmerberichte.css" type="text/css" />
+  </object>
+
+</objects>

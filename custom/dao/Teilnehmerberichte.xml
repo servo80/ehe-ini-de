@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <table key="Teilnehmerberichte" label="Teilnehmerberichte">
+    <attr name="tblgrId">2</attr>
+    <attr name="name">Teilnehmerberichte</attr>
+    <attr name="identifier">Teilnehmerberichte</attr>
+    <attr name="type">content</attr>
+    <attr name="instance">0</attr>
+    <attr name="administrator">0</attr>
+    <attr name="backendUser">0</attr>
+    <attr name="frontendUser">0</attr>
+    <attr name="clearingUser">0</attr>
+    <attr name="delivererUser">0</attr>
+    <attr name="jobsUser">0</attr>
+    <attr name="rightsConcept">0</attr>
+    <attr name="sort">14</attr>
+    <field key="Berichtautor" label="Berichtautor" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">20</attr>
+      <attr name="name"><![CDATA[Autor]]></attr>
+      <attr name="identifier"><![CDATA[Berichtautor]]></attr>
+      <attr name="form"><![CDATA[input]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Berichtautor]]></attr>
+    </field>
+    <field key="Berichtüberschrift" label="Berichtueberschrift" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">50</attr>
+      <attr name="name"><![CDATA[Überschrift]]></attr>
+      <attr name="identifier"><![CDATA[Berichtüberschrift]]></attr>
+      <attr name="form"><![CDATA[input]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">1</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">1</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Berichtueberschrift]]></attr>
+    </field>
+    <field key="Bericht" label="Bericht" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Bericht]]></attr>
+      <attr name="identifier"><![CDATA[Bericht]]></attr>
+      <attr name="form"><![CDATA[iframe]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">20</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Bericht]]></attr>
+    </field>
+    </table>
+</root>

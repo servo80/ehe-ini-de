@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Help</text>
+  <text id="2">Language</text>
+  <text id="3">Table</text>
+  <text id="4">Profile name</text>
+  <text id="5">Overwrite profile</text>
+  <text id="6">Parent table</text>
+  <text id="7">CSV fields</text>
+  <text id="8">Table fields</text>
+  <text id="9" js="true">Are you sure you want to delete the profile? Import must be restarted after the deletion.</text>
+  <text id="10">Start import</text>
+  <text id="11">Identify record</text>
+  <text id="12">Identify parents</text>
+  <text id="13">CSV file</text>
+  <text id="14">Delimiter</text>
+  <text id="15">Tab</text>
+  <text id="16">Upload file</text>
+  <text id="17" js="true">Please select a file to upload.</text>
+  <text id="18">Dataset</text>
+  <text id="19">Create new profile</text>
+  <text id="20">Ignore profile</text>
+  <text id="21">Disable relation to parents</text>
+  <text id="22">Ignore</text>
+  <text id="23">Always relate to parents</text>
+  <text id="24">Child table</text>
+  <text id="25">Disable relation to children</text>
+  <text id="26">Identify children</text>
+  <text id="27">Records should be versioned</text>
+  <text id="28">Strip tags when comparing</text>
+</body>

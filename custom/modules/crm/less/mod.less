@@ -1,0 +1,71 @@
+@import '../../../resources/modules.less';
+
+div#deleteCache {
+
+  @colorPackage: #3EBFE7;
+  @colorOptions: #E43E5A;
+
+  @whiteHoverColor: #eaeaea;
+  @darkHoverColor: black;
+
+  .main {
+    background-color: inherit !important;
+    width:730px;
+  }
+
+  .columns {
+    background-color:#ccc;
+    overflow:hidden;
+    .column1 {
+      width:380px !important;
+    }
+    .column2 {
+      width:100px;
+    }
+    .column {
+      padding-top:20px;
+      float:left;
+      h2 {
+        margin-top:10px;
+        margin-bottom:10px;
+        background-color:#efefef;
+        color:#666;
+      }
+      fieldset {
+        margin-bottom:10px;
+        padding:0 5px 0 5px ;
+        p {
+          float:left;
+          width:100px;
+        }
+        label {
+          margin-left:5px;
+          margin-bottom:0;
+          vertical-align:middle;
+        }
+        input[type="checkbox"] {
+          vertical-align:middle;
+        }
+        input[type="button"] {
+          background-color:@colorPackage !important;
+          border-color:@colorPackage !important;
+          float:right;
+          margin-top:20px;
+        }
+      }
+      .inputGroup {
+        float:left;
+      }
+      .select2-container, input[type="text"] {
+        float:left;
+        width:250px !important;
+        margin-top:0 !important;
+        margin-left:10px !important;
+      }
+    }
+    input[type="button"] {
+      background-color:@colorPackage !important;
+      border-color:@colorPackage !important;
+    }
+  }
+}

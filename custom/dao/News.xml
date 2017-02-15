@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <table key="News" label="News">
+    <attr name="tblgrId">2</attr>
+    <attr name="name">News</attr>
+    <attr name="identifier">News</attr>
+    <attr name="type">content</attr>
+    <attr name="instance">0</attr>
+    <attr name="administrator">0</attr>
+    <attr name="backendUser">0</attr>
+    <attr name="frontendUser">0</attr>
+    <attr name="clearingUser">0</attr>
+    <attr name="delivererUser">0</attr>
+    <attr name="jobsUser">0</attr>
+    <attr name="rightsConcept">0</attr>
+    <attr name="sort">13</attr>
+    <field key="Newsdatum" label="Newsdatum" type="integer">
+      <attr name="type"><![CDATA[int]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Datum]]></attr>
+      <attr name="identifier"><![CDATA[Newsdatum]]></attr>
+      <attr name="form"><![CDATA[date]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">0</attr>
+      <attr name="height">0</attr>
+      <attr name="search">0</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[integer]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Newsdatum]]></attr>
+    </field>
+    <field key="Newsbild" label="Newsbild" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">255</attr>
+      <attr name="name"><![CDATA[Bild]]></attr>
+      <attr name="identifier"><![CDATA[Newsbild]]></attr>
+      <attr name="form"><![CDATA[file]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">0</attr>
+      <attr name="height">0</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-file-o]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Newsbild]]></attr>
+    </field>
+    <field key="Newsheadline" label="Newsheadline" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">100</attr>
+      <attr name="name"><![CDATA[Überschrift]]></attr>
+      <attr name="identifier"><![CDATA[Newsheadline]]></attr>
+      <attr name="form"><![CDATA[input]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">1</attr>
+      <attr name="find">1</attr>
+      <attr name="identify">1</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Newsheadline]]></attr>
+    </field>
+    <field key="Newsteaser" label="Newsteaser" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Teaser]]></attr>
+      <attr name="identifier"><![CDATA[Newsteaser]]></attr>
+      <attr name="form"><![CDATA[iframe]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">3</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Newsteaser]]></attr>
+    </field>
+    <field key="Newstext" label="Newstext" type="string">
+      <attr name="type"><![CDATA[blob]]></attr>
+      <attr name="length">0</attr>
+      <attr name="name"><![CDATA[Text]]></attr>
+      <attr name="identifier"><![CDATA[Newstext]]></attr>
+      <attr name="form"><![CDATA[iframe]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">10</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-font]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Newstext]]></attr>
+    </field>
+    </table>
+</root>

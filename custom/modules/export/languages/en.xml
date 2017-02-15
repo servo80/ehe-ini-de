@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Help</text>
+  <text id="2">Language</text>
+  <text id="3">Table</text>
+  <text id="4">Children tables</text>
+  <text id="5">Profile</text>
+  <text id="6">Profile name</text>
+  <text id="7">Overwrite profile</text>
+  <text id="8" js="true">Are you sure you want to delete the profile?</text>
+  <text id="9">Export data</text>
+  <text id="10">Create new profile</text>
+  <text id="11">Ignore profile</text>
+  <text id="12">Export HTML as Cleartext</text>
+  <text id="13">Export IDs as Cleartext</text>
+  <text id="14">Select all fields</text>
+</body>

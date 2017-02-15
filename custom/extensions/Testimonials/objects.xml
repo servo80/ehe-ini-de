@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+
+  <object name="Testimonials" id="testimonials" view="testimonials" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/Testimonials/Testimonials.css" type="text/css" />
+  </object>
+
+</objects>

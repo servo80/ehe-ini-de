@@ -1,0 +1,254 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  color:#4d4d4d;
+}
+div.wrapAll {
+  position:relative;
+  width:980px;
+  margin:0px auto;
+  background-image:url('../images/shadow.png');
+}
+div.branding {
+  float:left;
+}
+div.branding img {
+  margin-left:130px;
+  margin-top:10px;
+}
+img.decker {
+  position:absolute;
+  z-index:100;
+}
+img.left {
+  position:absolute;
+  z-index:101;
+  top:97px;
+  left:20px;
+}
+img.right {
+  position:absolute;
+  z-index:102;
+  top:97px;
+  right:20px;
+}
+
+/* Suche */
+div.search {
+  width:300px;
+  position:absolute;
+  right:110px;
+}
+td.gsc-input {
+  padding-right:0 !important;
+}
+div.gsc-input-box {
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+  border-right:0;
+}
+input.gsc-search-button {
+  background-color:#ffc66c !important;
+  border-radius:0 !important;
+  border-left:0 !important;
+  border-color:#000;
+  margin-left:0 !important;
+  margin-top:3px !important;
+}
+/* Inhalt */
+div.main {
+  margin-left:109px;
+  width:762px;
+  overflow:hidden;
+}
+body.standard div.main {
+  padding:60px;
+  width:640px;
+}
+p, li, em {
+  line-height:25px;
+  font-size:13px;
+}
+ul {
+  list-style-type:disc;
+  list-style-position:outside;
+  padding-left:20px;
+}
+p strong {
+  font-weight:bold;
+}
+a {
+  float:left;
+  clear:both;
+  display:inline-block;
+  height:22px;
+  color:#f15a24;
+  text-decoration:none;
+  font-size:13px;
+}
+p a {
+  float:none;
+}
+a.link {
+  background-image:url('../images/link.png');
+  background-repeat:no-repeat;
+  background-position:left;
+  padding-left:30px;
+  padding-top:4px;
+  margin-bottom:10px;
+}
+h1 {
+  text-transform:uppercase;
+  font-size:20px;
+  font-weight:lighter;
+  margin-bottom:30px;
+}
+div.main div.p p {
+  padding-top:20px;
+}
+div.main div.p p:first-child {
+  padding-top:0;
+}
+div.brandbox-frame {
+  overflow:hidden;
+}
+div.main li p {
+  text-overflow:ellipsis;
+  overflow: visible;
+  white-space:pre-wrap;
+}
+/* Menü */
+ol.main {
+  float:left;
+  margin-top:120px;
+  margin-left:60px;
+  margin-bottom:5px;
+}
+ol.main li {
+  float:left;
+  position:relative;
+  margin-right:20px;
+  padding-right:20px;
+  background-image:url('../images/menuSeparator.png');
+  background-repeat:no-repeat;
+  background-position: right center;
+}
+ol.main li:last-child {
+  background:none;
+}
+ol.main li a {
+  font-size:13px;
+  line-height:22px;
+  text-decoration:none;
+  color:#4d4d4d;
+  text-transform:uppercase;
+}
+ol.main li.active a {
+  font-weight:bold;
+}
+ol.main li:hover ol.sub {
+  display:block;
+}
+ol.sub {
+  position:absolute;
+  left:-20px;
+  top:20px;
+  width:150px;
+  padding-left:20px;
+  padding-top:20px;
+  background-color:white;
+  z-index:1000;
+  display:none;
+}
+ol.sub li {
+  background-image:none;
+  min-height:30px;
+}
+ol.sub li a {
+  font-weight:normal !important;
+}
+ol.sub li a:hover {
+  text-decoration:underline;
+}
+ol.sub li.active a {
+  font-weight:bold !important;
+}
+ol.footer {
+  position:absolute;
+  top:28px;
+  right:120px;
+}
+ol.footer li {
+  float:left;
+  margin-right:10px;
+}
+ol.footer li a {
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+ol.socialMedia {
+  position:absolute;
+  left:150px;
+  top:20px;
+}
+ol.socialMedia li {
+  float:left;
+  margin-right:10px;
+}
+/* Inhalt */
+div.content {
+  clear:both;
+  margin-top:20px;
+}
+
+/* Formular */
+input, input[type="text"] {
+  width:246px;
+}
+textarea {
+  width:244px;
+  font-family: 'Raleway', sans-serif;
+}
+input[type="submit"] {
+  width:250px;
+  margin-top:10px;
+}
+
+/* Footer */
+div.footer {
+  position:relative;
+  background-image:url('../images/backgroundFooter.png');
+  background-repeat:no-repeat;
+  color:white;
+  text-align:center;
+  height:80px;
+  line-height:80px;
+}
+div.footer p {
+  font-size:14px;
+  height:80px;
+  line-height:80px;
+}
+
+/* Sitemap */
+ol.sitemap {
+  overflow:hidden;
+}
+ol.sitemap li {
+  list-style:none !important;
+}
+
+.jcarousel-pagination a {
+  float:none;
+  height:auto;
+}
+
+.h2_Headline_Start h2,
+.h2_Welcome h2 {
+  font-size: 24px;
+  color: #4d4d4d;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: lighter;
+}

@@ -1,0 +1,13 @@
+div.wrapAll {
+	background-image:none !important;
+}
+ol.main,
+div.footer,
+div.jcarousel-wrapper,
+div.search,
+a.previous {
+	display:none;
+}
+div.newsDetail {
+	margin-top:70px;
+}

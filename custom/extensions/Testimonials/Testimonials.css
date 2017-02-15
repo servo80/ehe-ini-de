@@ -1,0 +1,14 @@
+div.testimonial {
+	background-color:#ffc66c;
+	border:0;
+	width:722px;
+	padding:20px 30px 20px 30px;
+}
+div.testimonial p {
+	color:white;
+	font-size:16px;
+}
+div.testimonial p span {
+	color:white;
+	font-size:12px;
+}

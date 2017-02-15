@@ -1,0 +1,193 @@
+@import '../field/mod.css';
+
+#content .moduleContent .sidebarDesktop .search button,
+#content .moduleContent .sidebarMobile .margin .search button {
+  margin-top: 5px;
+}
+
+#content .moduleContentIndex .sidebarDesktop ol li,
+#content .moduleContentIndex .sidebarMobile .margin ol li {
+  height: 20px;
+  width: auto;
+  margin: 0;
+}
+#content .moduleContentIndex .sidebarDesktop ol li p,
+#content .moduleContentIndex .sidebarMobile .margin ol li p {
+  color: inherit;
+  margin: 0;
+}
+
+#content .moduleContent .sidebarDesktop ol li i,
+#content .moduleContent .sidebarMobile .margin ol li i {
+  color: inherit;
+}
+
+#content .moduleContentIndex .sidebarDesktop ol li.arrow p,
+#content .moduleContentIndex .sidebarMobile .margin ol li.arrow p {
+  line-height: 20px;
+}
+
+#content .moduleContent .sidebarDesktop .previewInformation,
+#content .moduleContent .sidebarMobile .margin .previewInformation {
+  color: #ffffff;
+}
+#content .moduleContent .sidebarDesktop .previewInformation h4,
+#content .moduleContent .sidebarMobile .margin .previewInformation h4 {
+  margin: 0;
+}
+
+#content .moduleContentIndex .main thead .fa,
+#content .moduleContentCollectionAdd .main thead .fa {
+  font-size: 14px;
+}
+
+#content .moduleContentMails .main {
+  overflow-x: auto;
+}
+
+#content .moduleContentRelations .main ol {
+  padding-left: 0;
+}
+
+#content .moduleContentCollectionAdd .sidebarDesktop > ol > li.arrow i.fa,
+#content .moduleContentCollectionAdd .sidebarMobile .margin > ol > li.arrow i.fa {
+  margin-left: 0;
+}
+
+#content .moduleContentIndex .main table tbody tr td.select {
+  padding-right: 5px;
+}
+#content .moduleContentIndex .main table tbody tr.active {
+  color: inherit !important;
+}
+
+.moduleContent .editable .navigate {
+  border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.moduleContent .searchTile {
+  min-height: 114px;
+}
+
+.moduleContentRelations .main ol li {
+  min-height: 0 !important;
+}
+.moduleContentRelations .main ol .thumb p {
+  margin-left: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.moduleContentRelations .main img {
+  position: absolute;
+  width: 24px;
+  margin: 5px 0;
+}
+.moduleContentRelations .main img:hover {
+  width: 180px;
+  z-index: 5;
+}
+
+.moduleContentSortColumns .main ol li {
+  min-height: 0 !important;
+}
+
+.moduleContentIndex .tableGroup {
+  margin-top: 5px !important;
+}
+.moduleContentIndex .tableGroup:first-child {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 991px) and (min-device-width: 1025px) {
+
+  #content .moduleContentCollectionAdd .sidebarDesktop .search,
+  #content .moduleContentCollectionAdd .sidebarMobile .margin .search {
+    min-height: 122px;
+  }
+
+  .moduleContentRelations .main img {
+    transition: all 200ms ease;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+  }
+
+}
+
+@media all and (max-width: 990px), all and (max-device-width: 1024px) {
+
+  #content .moduleContentRelationsAdd .sidebarDesktop div.search .select2-container,
+  #content .moduleContentRelationsAdd .sidebarMobile .margin div.search .select2-container {
+    display: block;
+  }
+
+  .moduleContentRelations .main input[type="checkbox"] {
+    margin-top: 8px !important;
+  }
+
+  #content .moduleContentIndex .main,
+  #content .moduleContentFields .main,
+  #content .moduleContentCollectionAdd .main,
+  #content .moduleContentRelationsAdd .main,
+  #content .moduleContentRelations .main {
+    margin-left: 0;
+  }
+  #content .moduleContentCollectionAdd .main.fixed,
+  #content .moduleContentRelationsAdd .main.fixed,
+  #content .moduleContentIndex .main.fixed {
+    position: static;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+  }
+
+  #content .moduleContentEdit .main,
+  #content .moduleContentVersions .main {
+    margin-left: 0;
+    left: 0;
+  }
+
+  #content .moduleContentIndex .sidebarDesktop .checkAll.fa,
+  #content .moduleContentIndex .sidebarMobile .margin .checkAll.fa {
+    position: relative;
+    top: 3px;
+    font-size: 22px;
+  }
+
+  .moduleContentRelations .main ol .thumb img {
+    margin-top: 8px;
+  }
+  .moduleContentRelations .main ol li p {
+    position: absolute;
+    right: 5px;
+    left: 45px;
+  }
+
+}
+
+@media all and (max-width: 800px), all and (max-device-width: 800px) {
+
+  #content .moduleContentEdit .main {
+    position: static;
+  }
+
+}
+
+@media all and (max-width: 680px), all and (max-device-width: 680px) {
+
+  #content .moduleContentEdit .main {
+    position: static;
+  }
+
+  #content .moduleContentVersions .main {
+    position: static;
+  }
+
+  #content .moduleContentMove .main,
+  #content .moduleContentSortColumns .main,
+  #content .moduleContentRelations .main {
+    margin-left: 0;
+  }
+
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Hilfe</text>
+  <text id="2">Sprache</text>
+  <text id="3">Tabelle</text>
+  <text id="4">Names des Profils</text>
+  <text id="5">Profil überschreiben</text>
+  <text id="6">Tabelle der Eltern</text>
+  <text id="7">CSV-Felder</text>
+  <text id="8">Tabellen-Felder</text>
+  <text id="9" js="true">Wollen Sie das Profil wirklich löschen? Der Import muss dann neu gestartet werden.</text>
+  <text id="10">Import starten</text>
+  <text id="11">Datensatz identifizieren</text>
+  <text id="12">Eltern identifizieren</text>
+  <text id="13">CSV-Datei</text>
+  <text id="14">Trennzeichen</text>
+  <text id="15">Tab</text>
+  <text id="16">Datei hochladen</text>
+  <text id="17" js="true">Bitte wählen Sie eine Datei zum Upload aus.</text>
+  <text id="18">Datensatz</text>
+  <text id="19">neues Profil anlegen</text>
+  <text id="20">Profile ignorieren</text>
+  <text id="21">Eltern nicht verknüpfen</text>
+  <text id="22">ignorieren</text>
+  <text id="23">Eltern immer verknüpfen</text>
+  <text id="24">Tabelle der Kinder</text>
+  <text id="25">Kinder nicht verknüpfen</text>
+  <text id="26">Kinder identifizieren</text>
+  <text id="27">Datensätze versionieren</text>
+  <text id="28">HTML bei Vergleichen filtern</text>
+</body>

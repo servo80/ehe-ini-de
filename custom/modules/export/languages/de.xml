@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  <text id="1">Hilfe</text>
+  <text id="2">Sprache</text>
+  <text id="3">Tabelle</text>
+  <text id="4">Kindertabellen</text>
+  <text id="5">Profil</text>
+  <text id="6">Names des Profils</text>
+  <text id="7">Profil überschreiben</text>
+  <text id="8" js="true">Wollen Sie das Profil wirklich löschen?</text>
+  <text id="9">Daten exportieren</text>
+  <text id="10">neues Profil anlegen</text>
+  <text id="11">Profile ignorieren</text>
+  <text id="12">HTML als Klartext exportieren</text>
+  <text id="13">IDs als Klartext exportieren</text>
+  <text id="14">Alle Felder wählen</text>
+</body>

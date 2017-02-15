@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+
+  <object name="Teaser (Startseite)" id="startTeaser" view="startTeaser" engine="object" stage="1" locations="0">
+    <file href="custom/extensions/simpleObjects/simpleObjects.css" type="text/css" />
+    <field name="Nummer" key="number" type="input" length="varchar" width="100" height="1" />
+    <field name="Überschrift" key="headline" type="input" length="varchar" width="300" height="1" />
+    <field name="Text" key="text" type="text" length="varchar" width="300" height="10">
+      <wrap><![CDATA[<p{justify}>|</p>]]></wrap>
+    </field>
+    <field name="Link" key="link" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+    <field name="Blocksatz" key="justify" type="checkbox" length="int">
+      <wrap><![CDATA[ style="text-align:justify;"]]></wrap>
+    </field>
+  </object>
+
+  <object name="News (Teaser)" id="newsTeaser" view="newsTeaser" engine="object" stage="1" locations="0">
+    <file href="custom/extensions/simpleObjects/simpleObjects.css" type="text/css" />
+    <field name="Bild" key="image" type="file" length="varchar"  width="300" height="1">
+      <wrap><![CDATA[<img src="image/1/|&amp;w=220&amp;h=165" />]]></wrap>
+    </field>
+    <field name="Überschrift" key="headline" type="input" length="varchar" width="300" height="1" />
+    <field name="Text" key="text" type="text" length="varchar" width="300" height="10" />
+    <field name="Link" key="link" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+  <object name="Kontakt" id="contact" view="contact" engine="object" stage="1" locations="0">
+    <file href="custom/extensions/simpleObjects/simpleObjects.css" type="text/css" />
+    <field name="Bild" key="image" type="file" length="varchar"  width="300" height="1">
+      <wrap><![CDATA[<img src="image/1/|&amp;w=220&amp;h=165" />]]></wrap>
+    </field>
+    <field name="Überschrift" key="headline" type="input" length="varchar" width="300" height="1" />
+    <field name="Name" key="name" type="input" length="varchar" width="300" height="1" />
+    <field name="Straße" key="street" type="text" length="varchar" width="300" height="1" />
+    <field name="PLZ / Ort" key="city" type="text" length="varchar" width="300" height="1" />
+    <field name="Telefon" key="fon" type="input" length="varchar" width="300" height="1" />
+    <field name="E-Mail" key="mail" type="input" length="varchar" width="300" height="1" />
+
+  </object>
+
+  <object name="Gelber Farbblock" id="yellowBlock" view="yellowBlock" engine="object" stage="1" locations="0">
+    <file href="custom/extensions/simpleObjects/simpleObjects.css" type="text/css" />
+  </object>
+
+</objects>

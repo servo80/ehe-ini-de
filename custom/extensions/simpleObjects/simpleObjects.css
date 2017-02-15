@@ -1,0 +1,101 @@
+/* startTeaser */
+div.startTeaser {
+	padding:15px;
+}
+div.startTeaser h2 {
+	font-size:24px;
+	color:#4d4d4d;
+	text-transform:uppercase;
+	margin-bottom:6px;
+	font-weight:lighter;
+}
+div.startTeaser span {
+	display: block;
+	background-image: url('images/circle.png');
+	width: 28px;
+	height: 28px;
+	color: white;
+	text-align: center;
+	line-height:24px;
+	font-size: 16px;
+	font-weight:bold;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-top: 6px;
+}
+div.startTeaser p {
+	line-height:20px;
+}
+div.startTeaser a {
+	font-size:13px;
+	text-decoration:none;
+	color:#4d4d4d;
+	font-weight: bold;
+	float:right;
+	margin-right:10px;
+	margin-bottom:15px;
+}
+
+/* yellowBlock */
+hr.yellowBlock {
+	background-color:#ffc66c;
+	border:0;
+	height:100px;
+	width:762px;
+	margin-left:-1px;
+}
+
+/* contact */
+div.contact {
+	clear:both;
+	margin-bottom:60px;
+	overflow:hidden;
+}
+div.contact img {
+	border-radius:25px;
+	float:left;
+}
+div.contact div {
+	float:left;
+	margin-left:40px;
+}
+div.contact h2 {
+	color:#4d4d4d;
+	font-weight:lighter;
+	font-size:20px;
+	text-transform:uppercase;
+	margin-bottom:10px;
+}
+div.contact p {
+	color:#4d4d4d;
+	line-height:20px;
+	margin-top:5px;
+}
+div.contact p.name {
+	margin-bottom:20px;
+}
+div.contact p.adress {
+	background-image:url('./images/adress.png');
+	background-repeat:no-repeat;
+	background-position:left top;
+	padding-left:30px;
+}
+div.contact p.fon {
+	background-image:url('./images/fon.png');
+	background-repeat:no-repeat;
+	background-position:left top;
+	padding-left:30px;
+	height:22px;
+}
+div.contact p.mail {
+	background-image:url('./images/mail.png');
+	background-repeat:no-repeat;
+	background-position:left top;
+	padding-left:30px;
+	height:22px;
+}
+div.contact a {
+	color:#F15A24;
+	text-decoration:none;
+}

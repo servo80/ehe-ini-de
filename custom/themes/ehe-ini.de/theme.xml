@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<theme name="ehe-ini.de" ns="eheini">
+  <templates>
+    <template name="Startseite" file="home.tpl">
+      <file href="application/css/normalize.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/standard.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/content.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/container.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/objects.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/carousel.css" type="text/css" />
+      <file type="text/javascript" href="application/javascript/jquery.js" />
+      <file type="text/javascript" href="custom/themes/ehe-ini.de/javascript/modernizr.js" />
+      <file type="text/javascript" href="custom/themes/ehe-ini.de/javascript/carousel.js" />
+      <file type="text/javascript" href="custom/themes/ehe-ini.de/javascript/target.js" />
+      <location key="main" width="100%" />
+    </template>
+    <template name="Standard" file="standard.tpl">
+      <file href="application/css/normalize.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/standard.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/content.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/container.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/objects.css" type="text/css" />
+      <file href="custom/themes/ehe-ini.de/css/carousel.css" type="text/css" />
+      <file type="text/javascript" href="application/javascript/jquery.js" />
+      <file type="text/javascript" href="custom/themes/ehe-ini.de/javascript/modernizr.js" />
+      <file type="text/javascript" href="custom/themes/ehe-ini.de/javascript/carousel.js" />
+      <file type="text/javascript" href="custom/themes/ehe-ini.de/javascript/target.js" />
+      <location key="main" width="100%" />
+    </template>
+    <template name="Newsletter" file="newsletter.tpl">
+      <location key="main" width="100%" />
+    </template>
+  </templates>
+  <menus>
+    <menu name="Hauptmenü" key="main" template="*" />
+    <menu name="Submenü" key="sub" template="*" />
+    <menu name="Footermenü" key="footer" template="*" />
+    <menu name="nicht im Menü" key="none" template="*" />
+  </menus>
+</theme>

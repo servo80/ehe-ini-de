@@ -1,0 +1,25 @@
+#content .moduleImportSetup .main {
+  overflow-x: auto;
+}
+#content .moduleImportSetup .main .input-group {
+  width: 100%;
+}
+#content .moduleImportSetup .main .input-group-addon {
+  position: static;
+}
+#content .moduleImportSetup .main .select2-container {
+  width: 100% !important;
+}
+#content .moduleImportIndex .main input[type=file] {
+  border: 0;
+}
+@media all and (max-width: 990px), all and (max-device-width: 1024px) {
+  #content .moduleImport .main {
+    margin-left: 0;
+  }
+}
+@media all and (max-width: 768px), all and (max-device-width: 768px) {
+  #content .moduleImportIndex .main input[type=file] {
+    padding-left: 10px;
+  }
+}

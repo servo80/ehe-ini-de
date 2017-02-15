@@ -1,0 +1,83 @@
+/* =sitemap */
+div ol.sitemap li {
+	margin-bottom:5px;
+}
+div ol.sitemap li.level2 {
+	list-style:circle;
+	margin-left:14px;
+	padding-left:0;
+}
+div ol.sitemap li.level3 {
+	padding-left:20px;
+}
+div ol.sitemap li.level4 {
+	padding-left:20px;
+}
+
+/* =galleria */
+/* =innerfade */
+div ul.galleria,
+div ol.innerfade {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+/* =download */
+div a.download {
+	display:block;
+	margin-top:2px;
+	margin-bottom:14px;
+}
+div a.download img {
+	margin-top:-4px;
+	vertical-align:middle;
+}
+
+/* =skype */
+div a.skype {
+	display:block;
+	margin-top:4px;
+	margin-bottom:12px;
+}
+div a.skype img {
+	margin-top:-4px;
+	vertical-align:middle;
+}
+
+/* =login */
+div form.login fieldset p {
+	width:60px;
+}
+div form.login fieldset input {
+	width:145px;
+	margin:0;
+}
+div form.login input[type="submit"] {
+	margin-left:60px;
+	width:150px;
+}
+
+/* =gsearch */
+div div.gsearch {
+	width:100%;
+}
+div div.gsearch div {
+	width:100%;
+}
+div div.gsearch table,
+div div.gsearch table td {
+	width:auto;
+}
+div div.gsearch input {
+	overflow:hidden;
+}
+div div.gsearch input.gsc-search-button {
+	width:100px;
+}
+div div.gsearch .gs-webResult .gs-visibleUrl-short { 
+	display:none;
+} 
+div div.gsearch .gs-webResult .gs-visibleUrl-long {
+	display:block;
+}

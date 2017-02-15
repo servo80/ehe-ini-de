@@ -1,0 +1,17 @@
+.Teaser_Startseite {
+}
+.h2_Headline_Start {
+  text-transform:uppercase;
+  font-size:20px;
+  font-weight:lighter;
+  margin-top:20px;
+  margin-left:40px;
+  margin-bottom:10px;
+}
+.h2_Welcome {
+  margin:35px;
+}
+.Container_Start_Padding {
+  padding-left:20px;
+  padding-right:20px;
+}

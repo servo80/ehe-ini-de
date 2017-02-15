@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+
+  <object name="Kalender" id="calendar" view="calendar" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/Veranstaltungen/Veranstaltungen.css" type="text/css" />
+    <file type="text/javascript" href="application/javascript/jquery.js" />
+    <file type="text/javascript" href="custom/extensions/Veranstaltungen/js/jquery-ui.min.js" />
+    <field name="Detail-Seite" key="detail" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+    <field name="Anmeldungs-Seite" key="register" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+  <object name="Event" id="event" view="event" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/Veranstaltungen/Veranstaltungen.css" type="text/css" />
+    <field name="Kalender-Seite" key="calendar" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+    <field name="Anmeldungs-Seite" key="register" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+  <object name="Liste" id="list" view="list" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/Veranstaltungen/Veranstaltungen.css" type="text/css" />
+    <field name="Typ" key="type" type="select" length="varchar" width="300" height="1">
+      <value><![CDATA[|Ehe-Start|Ehe-Aktiv|Ehe-Intensiv]]></value>
+      <text><![CDATA[|Ehe-Start|Ehe-Aktiv|Ehe-Intensiv]]></text>
+    </field>
+    <field name="Detail-Seite" key="detail" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+  <object name="Anmeldung" id="register" view="register" engine="extension" stage="0" locations="0">
+    <file href="custom/extensions/Veranstaltungen/Veranstaltungen.css" type="text/css" />
+    <file href="application/javascript/css/jquery.ui.datepicker.css" type="text/css" />
+    <file href="application/javascript/jquery.ui.datepicker.min.js" type="text/javascript" />
+    <file href="custom/extensions/Veranstaltungen/js/datepicker-de.js" type="text/javascript" />
+    <field name="Detail-Seite" key="detail" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+    <field name="Kalender-Seite" key="calendar" type="page_id" length="int" width="300" height="1">
+      <wrap><![CDATA[{page_link[|]}]]></wrap>
+    </field>
+  </object>
+
+</objects>

@@ -1,0 +1,347 @@
+.resultsTable {
+  background-color: #d2d2d3;
+}
+.busyWrapper .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0.8;
+  background-color: #d2d2d2;
+}
+.busyWrapper .spinner {
+  position: absolute;
+  z-index: 1001;
+  color: #5e5e5e;
+  font-size: 3.5em;
+  top: 50%;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  left: 50%;
+}
+.navigationTabs {
+  background-color: #efefef;
+  border-top: 1px solid #efefef;
+  height: 24px;
+  margin-bottom: 0;
+}
+.navigationTabs a {
+  padding: 3px 10px;
+  display: block;
+}
+.navigationTabs .tabButton {
+  cursor: pointer;
+  background-color: #b8b8ba;
+  float: left;
+  border-top: 2px solid #efefef;
+  border-bottom: 0 !important;
+  height: 23px;
+}
+.navigationTabs .tabButton:hover {
+  background-color: #9e9ea1;
+}
+.navigationTabs .tabButton.active {
+  background-color: #d2d2d3 !important;
+  border: 0  !important;
+  z-index: 99999;
+  border-radius: 2px 2px 0 0;
+}
+.resizeHelperHorizontal {
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.7) inset;
+}
+.sidebarDesktop.light {
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 210px;
+  background-color: #d2d2d3;
+}
+.sidebarDesktop.light .ui-resizable-e {
+  right: 0;
+  width: 5px;
+  opacity: 0;
+  transition: opacity 0.1s;
+  box-shadow: 0 0 10px 5px white;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.sidebarDesktop.light .ui-resizable-e:hover {
+  opacity: 0.4;
+}
+.sidebarDesktop.light .btnWrapper {
+  padding: 0 10px;
+  width: 100%;
+}
+.sidebarDesktop.light .btn {
+  width: 100%;
+}
+.sidebarDesktop.light .separator {
+  background-color: #bcbcbc;
+  height: 1px;
+  line-height: 1px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.sidebarDesktop.light .separator-top {
+  border-top: 1px solid #bcbcbc;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.sidebarDesktop.light .separator-bottom:after {
+  background-color: #bcbcbc;
+  height: 1px;
+  line-height: 1px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.sidebarDesktop.light .sidebarTile {
+  margin-bottom: 0;
+  width: 100%;
+  background: none;
+  padding: 0;
+  position: relative;
+}
+.sidebarDesktop.light .sidebarTile .notice {
+  opacity: 0;
+  display: none;
+  border-radius: 3px;
+  padding: 2px 5px;
+  margin-top: 5px;
+}
+.sidebarDesktop.light .sidebarTile .notice .message {
+  color: #333;
+}
+.sidebarDesktop.light .sidebarTile .notice .fa {
+  float: left;
+  display: block;
+  font-size: 18px;
+  height: 19px;
+  margin-left: 3px;
+  margin-right: 10px;
+}
+.sidebarDesktop.light .sidebarTile .notice.visible {
+  display: block;
+  transition: opacity 0.2s;
+  opacity: 1;
+}
+.sidebarDesktop.light .sidebarTile .notice.success {
+  background-color: #94ed93;
+  border: 1px solid #4dc567;
+}
+.sidebarDesktop.light .sidebarTile .notice.error {
+  background-color: #f89684;
+  border: 1px solid #c2483a;
+  color: #363636;
+}
+.sidebarDesktop.light .sidebarTile .content {
+  padding: 10px 15px 15px 15px;
+}
+.sidebarDesktop.light .sidebarTile .content .btn {
+  margin: 0;
+  width: 100%;
+}
+.sidebarDesktop.light h3.title {
+  cursor: default;
+  background-color: #efefef;
+  color: #666666 !important;
+  font-weight: bold;
+  margin: 0 !important;
+  padding: 4px 10px;
+  border-top: 1px solid #b7b7b7;
+  border-bottom: 1px solid #b7b7b7;
+}
+.sidebarDesktop.light h3.title.collapsible {
+  cursor: pointer !important;
+}
+.sidebarDesktop.light h3.title.collapsible.collapsed {
+  margin-bottom: -1px !important;
+}
+.sidebarDesktop.light h3.title.collapsible:before {
+  font-family: FontAwesome;
+  content: "\f0d7";
+  float: right;
+  opacity: 0.5;
+}
+.sidebarDesktop.light h3.title.collapsible.collapsed:before {
+  content: "\f0d8";
+  float: right;
+}
+.sidebarDesktop.light h3.title.collapsible:hover {
+  background-color: #fcfcfc;
+}
+.sidebarDesktop.light h3.title.collapsible:hover:before {
+  opacity: 1;
+}
+.sidebarDesktop.light h4 {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.main.solid {
+  position: relative !important;
+  left: 215px;
+  margin-left: 0 !important;
+  background-color: #d2d2d3;
+}
+.main .infoBox {
+  max-width: 730px;
+  margin-bottom: 20px;
+  padding: 20px 40px;
+  background-color: #d2d2d3;
+  border: 2px solid #efefef;
+}
+.main .infoBox h1 {
+  margin-top: -22px;
+  margin-left: -40px;
+  margin-right: -40px;
+  margin-bottom: 20px;
+  color: #666666;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #efefef;
+  padding: 6px;
+}
+.main .infoBox h1 .buttonOpenRecord {
+  cursor: pointer;
+}
+.main .infoBox h1 .buttonOpenRecord:hover {
+  color: #eaeaea;
+}
+.main .infoBox ol,
+.main .infoBox ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.main .infoBox .infoWrapper {
+  margin-left: 20px;
+}
+.main .infoBox .infoWrapper h2 {
+  margin-left: 0;
+}
+.main .infoBox .infoWrapper .errorTitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #c40101;
+  margin-bottom: 10px;
+}
+.main .infoBox .infoWrapper .errorMessage {
+  font-weight: bold;
+}
+.main .infoBox .infoWrapper #buttonSkipFile,
+.main .infoBox .infoWrapper #buttonCancelImport {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  background-color: #B36767;
+  border-color: #a34949;
+}
+.main .infoBox .infoWrapper #buttonSkipFile:hover,
+.main .infoBox .infoWrapper #buttonCancelImport:hover {
+  background-color: #9C5353;
+}
+.main .infoBox .infoWrapper #buttonSkipFile span,
+.main .infoBox .infoWrapper #buttonCancelImport span {
+  margin-right: 4px;
+}
+.main .infoBox h2 {
+  background-color: initial !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.main .infoBox h2.iconTitle {
+  margin: 10px 0 0 20px !important;
+}
+.main .infoBox h2.iconTitle span {
+  font-size: 18px;
+  margin-left: -41px;
+  margin-right: 22px;
+  width: 18px;
+  text-align: center;
+}
+.main .infoBox h2.iconTitle span.icon-caravan {
+  font-size: 24px;
+  vertical-align: bottom;
+}
+.main .infoBox h2.iconTitle span.fa-file-text-o {
+  padding-left: 5px;
+}
+.main .infoBox h2.iconTitle span.buttonOpenRecord {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+.main .infoBox h2.iconTitle span.buttonOpenRecord :hover {
+  color: black !important;
+  margin-left: 3px;
+}
+.main .infoBox .icon {
+  margin-left: -20px;
+  display: block;
+  font-size: 24px;
+  width: 40px;
+  height: 30px;
+  float: left;
+}
+div#deleteCache .main {
+  background-color: inherit !important;
+  width: 730px;
+}
+div#deleteCache .columns {
+  background-color: #ccc;
+  overflow: hidden;
+}
+div#deleteCache .columns .column1 {
+  width: 380px !important;
+}
+div#deleteCache .columns .column2 {
+  width: 100px;
+}
+div#deleteCache .columns .column {
+  padding-top: 20px;
+  float: left;
+}
+div#deleteCache .columns .column h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #efefef;
+  color: #666;
+}
+div#deleteCache .columns .column fieldset {
+  margin-bottom: 10px;
+  padding: 0 5px 0 5px ;
+}
+div#deleteCache .columns .column fieldset p {
+  float: left;
+  width: 100px;
+}
+div#deleteCache .columns .column fieldset label {
+  margin-left: 5px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+div#deleteCache .columns .column fieldset input[type="checkbox"] {
+  vertical-align: middle;
+}
+div#deleteCache .columns .column fieldset input[type="button"] {
+  background-color: #3ebfe7 !important;
+  border-color: #3ebfe7 !important;
+  float: right;
+  margin-top: 20px;
+}
+div#deleteCache .columns .column .inputGroup {
+  float: left;
+}
+div#deleteCache .columns .column .select2-container,
+div#deleteCache .columns .column input[type="text"] {
+  float: left;
+  width: 250px !important;
+  margin-top: 0 !important;
+  margin-left: 10px !important;
+}
+div#deleteCache .columns input[type="button"] {
+  background-color: #3ebfe7 !important;
+  border-color: #3ebfe7 !important;
+}

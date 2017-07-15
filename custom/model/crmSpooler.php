@@ -259,7 +259,7 @@
       $coreMail->SMTPAuth = true;
       $coreMail->Port = 587;
       $coreMail->Username = "info@ehe-initiative.de";
-      $coreMail->Password = "u0&6tUCBkslO";
+      $coreMail->Password = "HrU{bUZ3";
 
       foreach($this->getMailImages as $c => $imageSource):
         $imageSource = $this->replaceRewriteRule($imageSource);

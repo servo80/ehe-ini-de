@@ -253,13 +253,15 @@
       $coreMail->IsHTML(true);
       $coreMail->Body = $mailHtml;
 
-      $coreMail->IsSMTP(true);
-      $coreMail->Host = "ehe-initiative.de";
-      //$coreMail->SMTPDebug  = 2;
-      $coreMail->SMTPAuth = true;
-      $coreMail->Port = 587;
-      $coreMail->Username = "info@ehe-initiative.de";
-      $coreMail->Password = "HrU{bUZ3";
+      if(\BB\config::get('mail:smtp:host') != ''):
+        $coreMail->IsSMTP(true);
+        $coreMail->Host = \BB\config::get('mail:smtp:host');
+        //$coreMail->SMTPDebug  = 2;
+        $coreMail->SMTPAuth = \BB\config::get('mail:smtp:smtpauth');;
+        $coreMail->Port = \BB\config::get('mail:smtp:port');
+        $coreMail->Username = \BB\config::get('mail:smtp:username');
+        $coreMail->Password = \BB\config::get('mail:smtp:password');
+      endif;
 
       foreach($this->getMailImages as $c => $imageSource):
         $imageSource = $this->replaceRewriteRule($imageSource);

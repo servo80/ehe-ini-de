@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+  <group id="1" name="{__(obj103)}">
+
+    <!-- Container -->
+    <object name="{__(obj1)}" id="1" engine="object" stage="1" locations="5">
+      <locationwrap>
+        <![CDATA[
+  <div class="column {style_{location}}">|
+  </div>]]>
+      </locationwrap>
+      <field name="{__(obj2)} 1" key="style_1" type="css" length="varchar" width="300" height="1" />
+      <field name="{__(obj2)} 2" key="style_2" type="css" length="varchar" width="300" height="1" />
+      <field name="{__(obj2)} 3" key="style_3" type="css" length="varchar" width="300" height="1" />
+      <field name="{__(obj2)} 4" key="style_4" type="css" length="varchar" width="300" height="1" />
+      <field name="{__(obj2)} 5" key="style_5" type="css" length="varchar" width="300" height="1" />
+    </object>
+
+    <!-- Inhalt -->
+    <object name="{__(obj111)} ({__(obj4)} &amp; {__(obj8)})" id="34" engine="image" stage="1" locations="0">
+      <field name="{__(obj108)}" key="view" type="select" length="varchar" width="300" height="1">
+        <value><![CDATA[{style_text}{style_img}|{style_img}{style_text}]]></value>
+        <text><![CDATA[{__(23)}|{__(21)}]]></text>
+      </field>
+      <field name="{__(obj109)}" key="style_img" type="css" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<div class="column |">{img}</div>]]></wrap>
+      </field>
+      <field name="{__(obj110)}" key="style_text" type="css" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<div class="column |">{p}{linkname}</div>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 1" key="h1" type="text" length="blob" width="300" height="2" break="true">
+        <wrap><![CDATA[<h1>|</h1>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 2" key="h2" type="text" length="blob" width="300" height="2" break="true" customizable="true">
+        <wrap><![CDATA[<h2+>|</h2>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 3" key="h3" type="text" length="blob" width="300" height="2" break="true" customizable="true">
+        <wrap><![CDATA[<h3+>|</h3>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 4" key="h4" type="input" length="blob" width="300" height="1">
+        <wrap><![CDATA[<h4>|</h4>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 5" key="h5" type="input" length="blob" width="300" height="1">
+        <wrap><![CDATA[<h5>|</h5>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 6" key="h6" type="input" length="blob" width="300" height="1">
+        <wrap><![CDATA[<h6>|</h6>]]></wrap>
+      </field>
+      <field name="{__(obj4)}" key="p" type="iframe" length="blob" width="300" height="21">
+        <wrap><![CDATA[<div class="p"+>|</div>]]></wrap>
+      </field>
+      <field name="{__(obj8)}" key="img" type="file" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<a{shortcuts_ext}{shortcuts_int}{download_file}{detail}><img src="|"+{alt}{title} /></a>]]></wrap>
+      </field>
+      <field name="{__(obj9)}" key="alt" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj118)}" key="title" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ title="|"]]></wrap>
+      </field>
+      <field name="{__(obj10)} ({__(obj8)})" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)} ({__(obj8)})" key="height" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj107)}" key="linkname" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<a{shortcuts_ext}{shortcuts_int}{download_file}{detail}>{linkicon}|</a>]]></wrap>
+      </field>
+      <field name="{__(obj12)}" key="shortcuts_ext" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ href="|"]]></wrap>
+      </field>
+      <field name="{__(obj13)}" key="shortcuts_int" type="page_id" length="int" width="300" height="1">
+        <wrap><![CDATA[ href="{page_link[|]}"]]></wrap>
+      </field>
+      <field name="{__(obj19)}" key="download_file" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ href="download/public/|"]]></wrap>
+      </field>
+      <field name="{__(obj20)}" key="linkicon" type="select" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<img src="{app:path:icons}filetypes/|.gif" />]]></wrap>
+        <value><![CDATA[|pdf|doc|xls|ppt|zip]]></value>
+        <text><![CDATA[- {__(obj21)} -|Pdf|Word|Excel|PowerPoint|Zip]]></text>
+      </field>
+      <field name="{__(obj128)}" key="detail" type="checkbox" length="int" width="15" height="15">
+        <wrap><![CDATA[ href="image/1/{img:value}&amp;w={detailWidth}&amp;h={detailHeight}" class="detail"]]></wrap>
+      </field>
+      <field name="{__(obj128)}: {__(obj10)}" key="detailWidth" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj128)}: {__(obj11)}" key="detailHeight" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Text -->
+    <object name="{__(obj4)}" id="2" engine="object" stage="1" locations="0">
+      <field name="{__(obj5)} 1" key="h1" type="text" length="blob" width="300" height="2" break="true">
+        <wrap><![CDATA[<h1>|</h1>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 2" key="h2" type="text" length="blob" width="300" height="2" break="true" customizable="true">
+        <wrap><![CDATA[<h2+>|</h2>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 3" key="h3" type="text" length="blob" width="300" height="2" break="true" customizable="true">
+        <wrap><![CDATA[<h3+>|</h3>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 4" key="h4" type="input" length="blob" width="300" height="1">
+        <wrap><![CDATA[<h4>|</h4>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 5" key="h5" type="input" length="blob" width="300" height="1">
+        <wrap><![CDATA[<h5>|</h5>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 6" key="h6" type="input" length="blob" width="300" height="1">
+        <wrap><![CDATA[<h6>|</h6>]]></wrap>
+      </field>
+      <field name="{__(obj4)}" key="p" type="iframe" length="blob" width="300" height="21">
+        <wrap><![CDATA[<div class="p">|</div>]]></wrap>
+      </field>
+      <field name="{__(obj6)}" key="anchor" type="input" length="varchar" width="70" height="1">
+        <wrap><![CDATA[<a name="|" class="anchor">&amp;nbsp;</a>]]></wrap>
+      </field>
+    </object>
+
+    <!-- Bild -->
+    <object name="{__(obj8)}" id="3" engine="image" stage="1" locations="0">
+      <field name="{__(obj8)}" key="img" type="file" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<a{shortcuts_ext}{shortcuts_int}{download_file}{detail}{title}{rel}><img src="|"+{alt}{title}#img-width##img-height# /></a>]]></wrap>
+      </field>
+      <field name="{__(obj9)}" key="alt" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj118)}" key="title" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ title="|"]]></wrap>
+      </field>
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px (default 100px)" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px (default 500px)" />
+      <field name="{__(obj12)}" key="shortcuts_ext" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ href="|"]]></wrap>
+      </field>
+      <field name="{__(obj13)}" key="shortcuts_int" type="page_id" length="int" width="300" height="1">
+        <wrap><![CDATA[ href="{page_link[|]}"]]></wrap>
+      </field>
+      <field name="{__(obj19)}" key="download_file" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ href="download/public/|"]]></wrap>
+      </field>
+      <field name="{__(obj128)}" key="detail" type="checkbox" length="int" width="15" height="15">
+        <wrap><![CDATA[ href="image/1/{img:value}&amp;w={detailWidth}&amp;h={detailHeight}&amp;file.jpg" class="detail"]]></wrap>
+      </field>
+      <field name="{__(obj128)}: {__(obj10)}" key="detailWidth" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj128)}: {__(obj11)}" key="detailHeight" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj134)}" key="rel" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ rel="|"]]></wrap>
+      </field>
+    </object>
+
+    <!-- Link -->
+    <object name="{__(obj16)}" id="4" engine="object" stage="1" locations="0">
+      <field name="{__(obj17)}" key="name" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj12)}" key="shortcuts_ext" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<a href="|" class="link"+>{name}</a>]]></wrap>
+      </field>
+      <field name="{__(obj13)}" key="shortcuts_int" type="page_id" length="int" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<a href="{page_link[|]}" class="link"+>{name}</a>]]></wrap>
+      </field>
+      <field name="{__(obj18)}" key="mailto" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<a href="mailto:|" class="link"+>|</a>]]></wrap>
+      </field>
+    </object>
+
+    <!-- Download -->
+    <object name="{__(obj19)}" id="5" engine="download" stage="1" locations="0">
+      <field name="{__(obj17)}" key="download_name" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<span class="name">|</span>]]></wrap>
+        <value><![CDATA[Bezeichnung]]></value>
+      </field>
+      <field name="{__(obj7)}" key="download_file" type="file" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<a href="download/public/|" class="download"+>{download_icon}{download_name}<span class="size">{app:size}</span></a>]]></wrap>
+      </field>
+      <field name="{__(obj20)}" key="download_icon" type="select" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<img src="{app:path:icons}filetypes/|.gif" alt="" />]]></wrap>
+        <value><![CDATA[|pdf|doc|xls|ppt|zip]]></value>
+        <text><![CDATA[- {__(obj21)} -|Pdf|Word|Excel|PowerPoint|Zip]]></text>
+      </field>
+    </object>
+
+    <!-- Video -->
+    <object name="{__(obj112)} /  jPlayer 2.5" id="40" engine="object" stage="1" locations="0">
+      <file href="application/javascript/jquery.js" type="text/javascript" />
+      <file href="application/javascript/jplayer/js/jquery.jplayer.min.js" type="text/javascript" />
+      <file href="application/javascript/jplayer/skin/brandbox/premium-pixels.css" type="text/css" />
+      <field name="{__(obj8)}" key="preview" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[, poster: "{app:path:{app:path:protocol}}image/1/|"]]></wrap>
+      </field>
+      <field name="{__(obj112)}: m4v" key="m4v" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj112)}: ogv" key="ogv" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj112)}: webm" key="webm" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj26)}" key="backcolor" type="input" length="varchar" width="50" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Audio -->
+    <object name="{__(obj140)} /  jPlayer 2.5" id="41" engine="object" stage="1" locations="0">
+      <file href="application/javascript/jquery.js" type="text/javascript" />
+      <file href="application/javascript/jplayer/js/jquery.jplayer.min.js" type="text/javascript" />
+      <file href="application/javascript/jplayer/skin/brandbox/premium-pixels.css" type="text/css" />
+      <field name="{__(obj140)}: m4a" key="m4a" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj140)}: oga" key="oga" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Youtube -->
+    <object name="YouTube" id="37" engine="swf" stage="1" locations="0" bar="1">
+      <field name="Video-ID" key="key" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Tabelle -->
+    <object name="{__(obj50)}" id="33" engine="object" stage="1" locations="0">
+      <field name="{__(obj5)} 2" key="h2" type="text" length="blob" width="300" height="2" break="true" customizable="true">
+        <wrap><![CDATA[<h2+>|</h2>]]></wrap>
+      </field>
+      <field name="{__(obj5)} 3" key="h3" type="text" length="blob" width="300" height="2" break="true" customizable="true">
+        <wrap><![CDATA[<h3+>|</h3>]]></wrap>
+      </field>
+      <field name="{__(obj4)}" key="table" type="iframe" length="blob" width="550" height="21" />
+    </object>
+
+    <!-- Sitemap -->
+    <object name="{__(obj22)}" id="7" engine="sitemap" stage="1" locations="0" />
+
+    <!-- Google +1 -->
+    <object name="Google: +1" id="35" engine="object" stage="1" locations="0">
+      <file href="https://apis.google.com/js/plusone.js" type="http-text/javascript">
+        <value><![CDATA[{lang:'{app:lang}'}]]></value>
+      </file>
+      <field name="{__(obj119)}" key="size" type="select" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ size="|"]]></wrap>
+        <value><![CDATA[small|medium|tall]]></value>
+        <text><![CDATA[15px|20px|60px]]></text>
+      </field>
+      <field name="{__(obj120)}" key="callback" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ callback="|"]]></wrap>
+      </field>
+      <field name="{__(obj121)}" key="href" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ href="|"]]></wrap>
+      </field>
+      <field name="{__(obj122)}" key="count" type="select" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ count="|"]]></wrap>
+        <value><![CDATA[true|false]]></value>
+        <text><![CDATA[{__(obj123)}|{__(obj124)}]]></text>
+      </field>
+    </object>
+
+    <!-- Facebook - I like -->
+    <object name="Facebook: i like" id="36" engine="object" stage="1" locations="0">
+      <file href="http://connect.facebook.net/{app:locale}/all.js#xfbml=1" type="http-text/javascript" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px">
+        <wrap><![CDATA[ width="|"]]></wrap>
+      </field>
+      <field name="{__(obj121)}" key="href" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ href="|"]]></wrap>
+      </field>
+      <field name="{__(obj42)}" key="font" type="select" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ font="|"]]></wrap>
+        <value><![CDATA[|arial|lucida grande|segoe ui|tahoma|trebuchet ms|verdana]]></value>
+        <text><![CDATA[ - |Arial|Lucida Grande|Segoe ui|Tahoma|Trebuchet MS|Verdana]]></text>
+      </field>
+      <field name="{__(obj125)}" key="layout" type="select" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ layout="|"]]></wrap>
+        <value><![CDATA[standard|button_count|box_count]]></value>
+        <text><![CDATA[standard|button_count|box_count]]></text>
+      </field>
+    </object>
+
+    <!-- Web-Snapshot -->
+    <object name="Snapshot" id="38" engine="snapshot" stage="1" locations="0">
+      <field name="URL" key="url" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Swf -->
+    <object name="Swf" id="9" engine="swf" stage="0" locations="0">
+      <field name="{__(obj7)}" key="swffile" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Bildergalerie -->
+    <object name="{__(obj32)}" id="10" engine="images" stage="0" locations="0">
+      <file href="application/javascript/jquery.js" type="text/javascript" />
+      <file href="application/javascript/galleria-1.2.4.min.js" type="text/javascript" />
+      <field name="{__(obj116)}" key="width_stage" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj117)}" key="height_stage" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj8)}" key="image" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Skype -->
+    <object name="{__(obj35)}" id="12" engine="object" stage="1" locations="0">
+      <field name="{__(obj17)}" key="name" type="input" length="varchar" width="300" height="1" />
+    </object>
+
+    <!-- iFrame -->
+    <object name="{__(obj36)}" id="13" engine="object" stage="1" locations="0" bar="1">
+      <field name="{__(obj127)}" key="src" type="input" length="blob" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- HTML-Code -->
+    <object name="{__(obj37)}" id="14" engine="object" stage="1" locations="0">
+      <field name="{__(obj37)}" key="code" type="text" length="blob" width="488" height="33" />
+    </object>
+
+    <!-- Bild-Animation -->
+    <object name="{__(obj38)}" id="15" engine="image" stage="1" locations="0">
+      <file href="application/javascript/jquery.js" type="text/javascript" />
+      <file href="application/javascript/jquery.innerfade.js" type="text/javascript" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px">
+        <value>400</value>
+      </field>
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px">
+        <value>300</value>
+      </field>
+      <field name="{__(obj114)}" key="textheight" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj40)}" key="pause" type="input" length="int" width="50" height="1" unit="ms">
+        <value>4000</value>
+      </field>
+      <field name="{__(obj41)}" key="speed" type="select" length="varchar" width="150" height="1">
+        <value><![CDATA[slow|fast]]></value>
+        <text><![CDATA[slow|fast]]></text>
+      </field>
+      <field name="{__(obj41)}" key="speedms" type="input" length="int" width="150" height="1" unit="ms">
+        <wrap><![CDATA[speed: |,]]></wrap>
+      </field>
+      <field name="{__(obj113)}" key="type" type="select" length="varchar" width="150" height="1">
+        <value><![CDATA[sequence|random]]></value>
+        <text><![CDATA[sequence|random]]></text>
+      </field>
+      <field name="{__(obj8)} 1" key="imgsrc_00" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_00}" />{text_00}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 1" key="text_00" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 1" key="alt_00" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 2" key="imgsrc_01" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_01}" />{text_01}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 2" key="text_01" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 2" key="alt_01" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 3" key="imgsrc_02" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_02}" />{text_02}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 3" key="text_02" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 3" key="alt_02" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 4" key="imgsrc_03" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_03}" />{text_03}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 4" key="text_03" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 4" key="alt_03" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 5" key="imgsrc_04" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_04}" />{text_04}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 5" key="text_04" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 5" key="alt_04" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 6" key="imgsrc_05" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_05}" />{text_05}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 6" key="text_05" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 6" key="alt_05" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 7" key="imgsrc_06" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_06}" />{text_06}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 7" key="text_06" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 7" key="alt_06" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 8" key="imgsrc_07" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_07}" />{text_07}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 8" key="text_07" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 8" key="alt_07" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 9" key="imgsrc_08" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_08}" />{text_08}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 9" key="text_08" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 9" key="alt_08" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+      <field name="{__(obj8)} 10" key="imgsrc_09" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<li><img src="|" alt="{alt_09}" />{text_09}</li>]]></wrap>
+      </field>
+      <field name="{__(obj4)} 10" key="text_09" type="text" length="blob" width="300" height="3">
+        <wrap><![CDATA[<p>|</p>]]></wrap>
+      </field>
+      <field name="{__(obj9)} 10" key="alt_09" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ alt="|"]]></wrap>
+      </field>
+    </object>
+
+    <!-- Google AJAX Search -->
+    <object name="{__(obj53)}" id="29" engine="object" stage="1" locations="0">
+      <file href="http://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22search%22%2C%22version%22%3A%221.0%22%2C%22language%22%3A%22{app:lang}%22%7D%2C%7B%22name%22%3A%22maps%22%2C%22version%22%3A%222.X%22%7D%2C%7B%22name%22%3A%22elements%22%2C%22version%22%3A%221.0%22%2C%22packages%22%3A%5B%22localsearch%22%5D%7D%5D%7D" type="http-text/javascript" />
+      <field name="{__(obj139)}" key="key" type="input" length="varchar" width="300" height="1"/>
+      <field name="{__(obj54)}" key="domain" type="input" length="varchar" width="300" height="1">
+        <value>www.yourdomain.com</value>
+      </field>
+      <field name="" key="target" type="select" length="varchar" width="150" height="1">
+        <value><![CDATA[LINK_TARGET_SELF|LINK_TARGET_BLANK]]></value>
+        <text><![CDATA[{__(obj14)}|{__(obj15)}]]></text>
+      </field>
+    </object>
+
+    <!-- Apache Solr Search -->
+    <object name="{__(obj141)}" id="42" engine="solr" stage="0" locations="0">
+      <field name="{__(obj88)}" key="labelSubmit" type="input" length="varchar" width="300" height="1">
+        <value>Suchen</value>
+      </field>
+    </object>
+
+  </group>
+  <group id="2" name="{__(obj55)}">
+
+    <!-- Formular -->
+    <object name="{__(obj55)}" id="21" engine="formular" stage="0" locations="1">
+      <field name="{__(obj56)}" key="email_subject" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj57)}" key="email_recipient" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj58)}" key="email_sender" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj58)} ({__(obj59)})" key="email_sender_field" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj60)}" key="thanks_text" type="text" length="blob" break="true" width="300" height="4">
+        <text><![CDATA[Vielen Dank für Ihr Interesse.
+Wir werden Ihre E-Mail schnellstmöglich bearbeiten.]]></text>
+      </field>
+      <field name="{__(obj136)}" key="page_id_tgt" type="page_id" length="varchar" width="300" height="1">
+        <wrap><![CDATA[{page_link[|]}]]></wrap>
+      </field>
+      <field name="{__(obj142)}" key="param" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj61)}" key="table" type="tbl_id" length="int" width="300" height="1" />
+      <field name="{__(obj126)}" key="conversion" type="text" length="blob" width="300" height="5" />
+    </object>
+
+    <!-- Input -->
+    <object name="{__(obj96)}" id="22" engine="formular" stage="0" locations="0">
+      <field name="{__(obj63)}" key="name" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj64)}" key="description" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj62)}" key="field" type="f_id" length="int" width="300" height="1" />
+    </object>
+
+    <!-- Textarea -->
+    <object name="{__(obj97)}" id="23" engine="formular" stage="0" locations="0">
+      <field name="{__(obj63)}" key="name" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj64)}" key="description" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj62)}" key="field" type="f_id" length="int" width="300" height="1" />
+    </object>
+
+    <!-- Checkbox -->
+    <object name="{__(obj98)}" id="24" engine="formular" stage="0" locations="0">
+      <field name="{__(obj63)}" key="name" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj64)}" key="description" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj62)}" key="field" type="f_id" length="int" width="300" height="1" />
+    </object>
+
+    <!-- Select -->
+    <object name="{__(obj99)}" id="25" engine="formular" stage="0" locations="0">
+      <field name="{__(obj63)}" key="name" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj64)}" key="description" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj62)}" key="field" type="f_id" length="int" width="300" height="1" />
+      <field name="{__(obj65)} 01" key="option_01" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_01}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 02" key="option_02" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_02}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 03" key="option_03" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_03}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 04" key="option_04" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_04}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 05" key="option_05" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_05}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 06" key="option_06" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_06}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 07" key="option_07" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_07}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 08" key="option_08" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_08}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 09" key="option_09" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_09}>|</option>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 10" key="option_10" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<option value="|"{selected_10}>|</option>]]></wrap>
+      </field>
+    </object>
+
+    <!-- Radio -->
+    <object name="{__(obj100)}" id="26" engine="formular" stage="0" locations="0">
+      <field name="{__(obj63)}" key="name" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj64)}" key="description" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj62)}" key="field" type="f_id" length="int" width="300" height="1" />
+      <field name="{__(obj65)} 01" key="option_01" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_01} /><br>]]></wrap>
+      </field>
+      <field name="{__(obj65)} 02" key="option_02" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_02} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 03" key="option_03" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_03} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 04" key="option_04" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_04} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 05" key="option_05" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_05} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 06" key="option_06" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_06} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 07" key="option_07" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_07} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 08" key="option_08" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_08} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 09" key="option_09" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_09} /><br />]]></wrap>
+      </field>
+      <field name="{__(obj65)} 10" key="option_10" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<p>|</p> <input type="radio" name="{name}" value="|"{checked_10} /><br />]]></wrap>
+      </field>
+    </object>
+
+    <!-- Submit -->
+    <object name="{__(obj101)}" id="27" engine="formular" stage="0" locations="0">
+      <field name="{__(obj63)}" key="name" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj66)}" key="mandatory" type="text" length="blob" width="300" height="15" />
+    </object>
+
+    <!-- Captcha -->
+    <object name="{__(obj102)}" id="32" engine="formular" stage="0" locations="0">
+      <field name="{__(obj64)}" key="description" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj39)}" key="background" type="file" length="varchar" width="300" height="1" unit=".jpg" />
+      <field name="{__(obj42)}" key="font" type="file" length="varchar" width="300" height="1" unit=".ttf" />
+      <field name="{__(obj44)}" key="fontSize" type="input" length="int" width="50" height="1" />
+    </object>
+
+  </group>
+  <group id="3" name="{__(obj67)}">
+
+    <!-- Login -->
+    <object name="{__(obj68)}" id="19" engine="login" stage="0" locations="0">
+      <field name="{__(obj69)}" key="page_id_tgt" type="page_id_child" length="varchar" width="300" height="1">
+        <wrap><![CDATA[{page_link[|]}]]></wrap>
+      </field>
+      <field name="{__(obj70)}" key="ug_ids" type="tbl_ids" length="blob" width="300" height="10" />
+      <field name="{__(obj104)}" key="label_user" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj105)}" key="label_password" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj106)}" key="label_login" type="input" length="varchar" width="300" height="1" />
+    </object>
+
+    <!-- Newsletter-Ansprache -->
+    <object name="{__(obj72)}: {__(obj74)}" id="18" engine="object" stage="1" locations="0">
+      <field name="{__(obj73)}" key="greeting" type="input" length="varchar" width="300" height="1">
+        <value><![CDATA[Sehr geehrte]]></value>
+      </field>
+      <field name="{__(obj74)}" key="address" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[#$mail.address#]]></wrap>
+      </field>
+      <field name="{__(obj74)}: Sehr geehrte(r)" key="r" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[#$mail.r#]]></wrap>
+      </field>
+      <field name="{__(obj75)}" key="firstname" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[#$mail.firstname#]]></wrap>
+      </field>
+      <field name="{__(obj76)}" key="lastname" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[#$mail.lastname#]]></wrap>
+      </field>
+      <field name="{__(obj77)}" key="delimiter" type="select" length="varchar" width="150" height="1">
+        <value><![CDATA[|,|!]]></value>
+        <text><![CDATA[- {__(obj21)} -|,|!]]></text>
+      </field>
+    </object>
+
+    <!-- Newsletter-Baustein -->
+    <object name="{__(obj72)}: {__(obj91)}" id="28" engine="image" stage="1" locations="0">
+      <field name="{__(obj78)}" key="view" type="select" length="varchar" width="300" height="1">
+        <value><![CDATA[{img}{p}|{p}{img}]]></value>
+        <text><![CDATA[{__(obj8)}-{__(obj4)}|{__(obj4)}-{__(obj8)}]]></text>
+      </field>
+      <field name="{__(obj79)}" key="valign" type="select" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ valign="|"]]></wrap>
+        <value><![CDATA[top|middle|bottom]]></value>
+        <text><![CDATA[{__(obj80)}|{__(obj81)}|{__(obj82)}]]></text>
+      </field>
+      <field name="{__(obj5)}" key="h2" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<h2>|</h2>]]></wrap>
+      </field>
+      <field name="{__(obj4)}" key="p" type="text" length="blob" width="300" height="21" break="true">
+        <wrap><![CDATA[<td{valign}>{h2}<p>|</p>{label}</td>]]></wrap>
+      </field>
+      <field name="{__(obj8)}" key="img" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<td{valign} class="Image"><a{shortcuts_ext}{download}{mailto}><img src="|" /></a></td>]]></wrap>
+      </field>
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj16)}" key="shortcuts_ext" type="input" length="varchar" width="300" height="1" blowfish="1">
+        <wrap><![CDATA[ href="{app:path:http}redirect.php?u=|&amp;m=#mail_id#&amp;o=#id#"]]></wrap>
+      </field>
+      <field name="{__(obj19)}" key="download" type="file" length="varchar" width="300" height="1" blowfish="1">
+        <wrap><![CDATA[ href="{app:path:http}redirect.php?d=|&amp;m=#mail_id#&amp;o=#id#"]]></wrap>
+      </field>
+      <field name="{__(obj135)}" key="label" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[<a{shortcuts_ext}{download}{mailto}>|</a>]]></wrap>
+      </field>
+      <field name="{__(obj84)}" key="mailto" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[ href="mailto:|"]]></wrap>
+      </field>
+    </object>
+
+    <!-- Newsletter abonnieren -->
+    <object name="{__(obj72)}: {__(obj85)}" id="30" engine="newsletter" stage="0" locations="0">
+      <field name="{__(obj86)}" key="u_tbl_id" type="tbl_id" length="int" width="300" height="1" />
+      <field name="{__(obj5)} 2" key="h2" type="text" length="blob" width="300" height="2" break="true">
+        <wrap><![CDATA[<h2>|</h2>]]></wrap>
+        <value>Newsletter abonnieren</value>
+      </field>
+      <field name="{__(obj4)}" key="p" type="iframe" length="blob" width="300" height="10">
+        <wrap><![CDATA[<div class="p"+>|</div>]]></wrap>
+        <value><![CDATA[Geben Sie hier Ihre Daten ein, und klicken Sie auf "Abonnieren", um den Newsletter zu erhalten.]]></value>
+      </field>
+      <field name="{__(obj87)}" key="labelMail" type="input" length="varchar" width="300" height="1">
+        <value>E-Mail</value>
+      </field>
+      <field name="{__(obj88)}" key="labelSend" type="input" length="varchar" width="300" height="1">
+        <value>Abonnieren</value>
+      </field>
+      <field name="{__(obj131)}" key="labelSalutation" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[
+          <fieldset>
+            <p>|</p>
+            <input type="text" name="salutation" value="#post:salutation#" class="salutation#mandatory:salutation#" />
+          </fieldset>
+          ]]>
+        </wrap>
+      </field>
+      <field name="{__(obj132)}" key="labelFirstname" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[
+          <fieldset>
+            <p>|</p>
+            <input type="text" name="firstname" value="#post:firstname#" class="firstname#mandatory:firstname#" />
+          </fieldset>
+          ]]>
+        </wrap>
+      </field>
+      <field name="{__(obj133)}" key="labelLastname" type="input" length="varchar" width="300" height="1">
+        <wrap><![CDATA[
+          <fieldset>
+            <p>|</p>
+            <input type="text" name="lastname" value="#post:lastname#" class="lastname#mandatory:lastname#" />
+          </fieldset>
+          ]]>
+        </wrap>
+      </field>
+      <field name="{__(obj89)}" key="sender" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj89)}-Name" key="senderName" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj92)}" key="subject" type="input" length="varchar" width="300" height="1">
+        <value><![CDATA[Vielen Dank für Ihr Interesse.]]></value>
+      </field>
+      <field name="{__(obj93)}" key="body" type="text" length="blob" width="300" height="10">
+        <value><![CDATA[Sehr geehrter Newsletterabonnent,
+
+bitte klicken Sie folgenden Link um sich in unserem Newsletterverteiler zu registrieren:
+{link}
+
+Mit freundlichen Grüßen
+...]]></value>
+      </field>
+      <field name="{__(obj90)}" key="confirmation" type="iframe" length="blob" width="300" height="5" />
+      <field name="{__(obj94)}" key="confirmation2" type="iframe" length="blob" width="300" height="5" />
+    </object>
+
+    <!-- Newsletter abbestellen -->
+    <object name="{__(obj72)}: {__(obj95)}" id="31" engine="newsletter" stage="0" locations="0">
+      <field name="{__(obj86)}" key="u_tbl_id" type="tbl_id" length="int" width="300" height="1" />
+      <field name="{__(obj5)} 2" key="h2" type="text" length="blob" width="300" height="2" break="true">
+        <wrap><![CDATA[<h2>|</h2>]]></wrap>
+        <value>Newsletter abbstellen</value>
+      </field>
+      <field name="{__(obj4)}" key="p" type="iframe" length="blob" width="300" height="10">
+        <wrap><![CDATA[<div class="p"+>|</div>]]></wrap>
+        <value><![CDATA[Geben Sie hier Ihre Daten ein, und klicken Sie auf "Abbstellen", um den Newsletter nicht mehr zu erhalten.]]></value>
+      </field>
+      <field name="{__(obj87)}" key="labelMail" type="input" length="varchar" width="300" height="1">
+        <value>E-Mail</value>
+      </field>
+      <field name="{__(obj88)}" key="labelSend" type="input" length="varchar" width="300" height="1">
+        <value>Abbestellen</value>
+      </field>
+      <field name="{__(obj89)}" key="sender" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj89)}-Name" key="senderName" type="input" length="varchar" width="300" height="1" />
+      <field name="{__(obj92)}" key="subject" type="input" length="varchar" width="300" height="1">
+        <value><![CDATA[Vielen Dank für Ihr Interesse.]]></value>
+      </field>
+      <field name="{__(obj93)}" key="body" type="text" length="blob" width="300" height="10">
+        <value><![CDATA[Sehr geehrter Newsletterabonnent,
+
+bitte klicken Sie folgenden Link um sich aus unserem Newsletterverteiler auszutragen:
+{link}
+
+Mit freundlichen Grüßen
+...]]></value>
+      </field>
+      <field name="{__(obj90)}" key="confirmation" type="iframe" length="blob" width="300" height="5" />
+      <field name="{__(obj94)}" key="confirmation2" type="iframe" length="blob" width="300" height="5" />
+    </object>
+
+  </group>
+
+  <group id="4" name="[deprecated]">
+
+    <!-- Zoomify -->
+    <object name="{__(obj33)}" id="11" engine="swf" stage="0" locations="0">
+      <field name="{__(obj34)}" key="folder" type="input" length="varchar" width="300" height="1">
+        <value><![CDATA[share/public/]]></value>
+      </field>
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+    </object>
+
+    <!-- Tabelle -->
+    <object name="{__(obj50)}" id="16" engine="object" stage="1" locations="10" rows="1">
+      <locationwrap>
+        <![CDATA[
+  <tr id="Row{location}">{cell_{location}_1}{cell_{location}_2}{cell_{location}_3}{cell_{location}_4}{cell_{location}_5}
+  </tr>]]>
+      </locationwrap>
+      <field name="{__(obj51)} 01 / {__(obj2)} 01" key="cell_1_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 01 / {__(obj2)} 02" key="cell_1_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 01 / {__(obj2)} 03" key="cell_1_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 01 / {__(obj2)} 04" key="cell_1_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 01 / {__(obj2)} 05" key="cell_1_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 02 / {__(obj2)} 01" key="cell_2_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 02 / {__(obj2)} 02" key="cell_2_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 02 / {__(obj2)} 03" key="cell_2_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 02 / {__(obj2)} 04" key="cell_2_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 02 / {__(obj2)} 05" key="cell_2_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 03 / {__(obj2)} 01" key="cell_3_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 03 / {__(obj2)} 02" key="cell_3_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 03 / {__(obj2)} 03" key="cell_3_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 03 / {__(obj2)} 04" key="cell_3_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 03 / {__(obj2)} 05" key="cell_3_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 04 / {__(obj2)} 01" key="cell_4_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 04 / {__(obj2)} 02" key="cell_4_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 04 / {__(obj2)} 03" key="cell_4_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 04 / {__(obj2)} 04" key="cell_4_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 04 / {__(obj2)} 05" key="cell_4_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 05 / {__(obj2)} 01" key="cell_5_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 05 / {__(obj2)} 02" key="cell_5_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 05 / {__(obj2)} 03" key="cell_5_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 05 / {__(obj2)} 04" key="cell_5_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 05 / {__(obj2)} 05" key="cell_5_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 06 / {__(obj2)} 01" key="cell_6_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 06 / {__(obj2)} 02" key="cell_6_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 06 / {__(obj2)} 03" key="cell_6_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 06 / {__(obj2)} 04" key="cell_6_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 06 / {__(obj2)} 05" key="cell_6_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 07 / {__(obj2)} 01" key="cell_7_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 07 / {__(obj2)} 02" key="cell_7_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 07 / {__(obj2)} 03" key="cell_7_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 07 / {__(obj2)} 04" key="cell_7_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 07 / {__(obj2)} 05" key="cell_7_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 08 / {__(obj2)} 01" key="cell_8_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 08 / {__(obj2)} 02" key="cell_8_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 08 / {__(obj2)} 03" key="cell_8_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 08 / {__(obj2)} 04" key="cell_8_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 08 / {__(obj2)} 05" key="cell_8_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 09 / {__(obj2)} 01" key="cell_9_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 09 / {__(obj2)} 02" key="cell_9_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 09 / {__(obj2)} 03" key="cell_9_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 09 / {__(obj2)} 04" key="cell_9_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 09 / {__(obj2)} 05" key="cell_9_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 10 / {__(obj2)} 01" key="cell_10_1" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 10 / {__(obj2)} 02" key="cell_10_2" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 10 / {__(obj2)} 03" key="cell_10_3" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 10 / {__(obj2)} 04" key="cell_10_4" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+      <field name="{__(obj51)} 10 / {__(obj2)} 05" key="cell_10_5" type="input" length="varchar" width="300" height="1" customizable="true">
+        <wrap><![CDATA[<td+>|</td>]]></wrap>
+      </field>
+    </object>
+
+    <!-- Social-Bookmarks -->
+    <object name="{__(obj52)}" id="17" engine="object" stage="0" locations="0">
+      <field name="{__(obj54)}" key="domain" type="input" length="varchar" width="300" height="1">
+        <value>www.yourdomain.com</value>
+      </field>
+    </object>
+
+    <!-- Suche -->
+    <object name="{__(obj71)}" id="20" engine="Search" stage="0" locations="0" />
+
+    <!-- Video -->
+    <object name="{__(obj112)} /  JW Player 5" id="8" engine="swf" stage="0" locations="0">
+      <file href="application/javascript/jwplayer/version5/swfobject.js" type="text/javascript" />
+      <file href="application/javascript/jwplayer/version5/jwplayer.js" type="text/javascript" />
+      <field name="{__(obj24)}" key="notice" type="notice" length="int" width="300" height="1">
+        <value><![CDATA[{__(obj25)} http://www.longtailvideo.com/players/jw-flv-player/]]></value>
+      </field>
+      <field name="{__(obj8)}" key="preview" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[image: "{app:path:{app:path:protocol}}|",]]></wrap>
+      </field>
+      <field name="{__(obj7)}" key="flashvideo" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj26)}" key="backcolor" type="input" length="varchar" width="50" height="1">
+        <wrap><![CDATA[backcolor: "|",]]></wrap>
+      </field>
+      <field name="{__(obj27)}" key="frontcolor" type="input" length="varchar" width="50" height="1">
+        <wrap><![CDATA[frontcolor: "|",]]></wrap>
+      </field>
+      <field name="{__(obj28)}" key="lightcolor" type="input" length="varchar" width="50" height="1">
+        <wrap><![CDATA[lightcolor: "|",]]></wrap>
+      </field>
+      <field name="{__(obj29)}" key="autostart" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[autostart: true,]]></wrap>
+      </field>
+      <field name="{__(obj30)}" key="repeat" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[repeat: "always",]]></wrap>
+      </field>
+      <field name="{__(obj130)}" key="stretching" type="select" length="varchar" width="150" height="1">
+        <value><![CDATA[none|exactfit|uniform|fill]]></value>
+        <text><![CDATA[none|exactfit|uniform|fill]]></text>
+        <wrap><![CDATA[stretching: "|",]]></wrap>
+      </field>
+      <field name="{__(obj31)}" key="controlbar" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[controlbar: "none",]]></wrap>
+      </field>
+    </object>
+
+    <!-- Video -->
+    <object name="{__(obj112)} /  JW Player 6" id="39" engine="swf" stage="0" locations="0">
+      <file href="application/javascript/jwplayer/version6/jwplayer.js" type="text/javascript" />
+      <field name="{__(obj24)}" key="notice" type="notice" length="int" width="300" height="1">
+        <value><![CDATA[{__(obj25)} http://www.longtailvideo.com/players/jw-flv-player/]]></value>
+      </field>
+      <field name="{__(obj8)}" key="preview" type="file" length="varchar" width="300" height="1">
+        <wrap><![CDATA[image: "{app:path:{app:path:protocol}}|",]]></wrap>
+      </field>
+      <field name="{__(obj7)}" key="flashvideo" type="file" length="varchar" width="300" height="1" />
+      <field name="{__(obj10)}" key="width" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj11)}" key="height" type="input" length="int" width="50" height="1" unit="px" />
+      <field name="{__(obj26)}" key="backcolor" type="input" length="varchar" width="50" height="1">
+        <wrap><![CDATA[backcolor: "|",]]></wrap>
+      </field>
+      <field name="{__(obj27)}" key="frontcolor" type="input" length="varchar" width="50" height="1">
+        <wrap><![CDATA[frontcolor: "|",]]></wrap>
+      </field>
+      <field name="{__(obj28)}" key="lightcolor" type="input" length="varchar" width="50" height="1">
+        <wrap><![CDATA[lightcolor: "|",]]></wrap>
+      </field>
+      <field name="{__(obj29)}" key="autostart" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[autostart: true,]]></wrap>
+      </field>
+      <field name="{__(obj30)}" key="repeat" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[repeat: "always",]]></wrap>
+      </field>
+      <field name="{__(obj130)}" key="stretching" type="select" length="varchar" width="150" height="1">
+        <value><![CDATA[none|exactfit|uniform|fill]]></value>
+        <text><![CDATA[none|exactfit|uniform|fill]]></text>
+        <wrap><![CDATA[stretching: "|",]]></wrap>
+      </field>
+      <field name="{__(obj31)}" key="controlbar" type="checkbox" length="int" width="15" height="15">
+        <value>1</value>
+        <wrap><![CDATA[controlbar: "none",]]></wrap>
+      </field>
+    </object>
+  </group>
+</objects>

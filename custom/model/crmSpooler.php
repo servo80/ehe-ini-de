@@ -75,6 +75,7 @@
       $tableID = 0,
       $userIDs = array(),
       $mailText = '',
+      $newsletterID,
       $mailFieldID = \BB\model\field::email,
       $mailFieldID2 = 122,
       $mailFieldID3 = 123
@@ -155,6 +156,12 @@
 
             $arrSearch[] = '#mailText#';
             $arrReplace[] = $mailText;
+
+            $arrSearch[] = '#mailID#';
+            $arrReplace[] = $mailID;
+
+            $arrSearch[] = '#newsletterID#';
+            $arrReplace[] = $newsletterID;
 
             $phpMailerOfThisUser->Body = str_replace(
               $arrSearch,

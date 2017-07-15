@@ -72,6 +72,9 @@
       <tr>
         <td class="body" colspan="2">
           #mailText#
+          <br /><br />
+          <a href="http://http://www.ehe-initiative.de/de/Newsletter-abmelden.html">Falls Sie unseren Newsletter nicht mehr erhalten möchten, klicken Sie bitte hier.</a>
+          <img src="http://www.ehe-initiative.de/redirect.php?m=#mailID#&o=#newsletterID#" />
         </td>
       </tr>
       <tr>

@@ -1007,13 +1007,29 @@
 
       $rows = $this->getSearchResults();
       $contentIDs = $this->getIDs($rows);
-      $pageID = 24;
+      $pageID = \BB\config::get('mail:newsletter:pageID');
       $sender = $coreHttp->getString('sender');
       $senderName = $coreHttp->getString('senderName');
       $mailText = $coreHttp->getString('mailText');
       $attachment = $coreHttp->getString('attachment');
       $attachment2 = $coreHttp->getString('attachment2');
       $attachment3 = $coreHttp->getString('attachment3');
+      $subject = $coreHttp->getString('subject');
+
+      $modelContent = \BB\model\content::get();
+      $newsletterID = $modelContent->execCreate();
+      $modelContent->execUpdate(array(
+        'tableID' => 'Newsletter',
+        'fieldID' => 'Newsletter-Betreff',
+        'contentID' => $newsletterID,
+        'value' => $subject
+      ));
+      $modelContent->execUpdate(array(
+        'tableID' => 'Newsletter',
+        'fieldID' => 'Newsletter-Text',
+        'contentID' => $newsletterID,
+        'value' => $mailText
+      ));
 
       $attachments = array();
       if(!empty($attachment) && file_exists($attachment)):
@@ -1035,7 +1051,8 @@
         $senderName,
         $tableID,
         $contentIDs,
-        $mailText
+        $mailText,
+        $newsletterID
       );
 
     }

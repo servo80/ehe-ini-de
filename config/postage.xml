@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+  
+  <settings>
+    <postcode>PLZ</postcode>
+    <country>Land</country>
+  </settings>
+  
+  <!--
+    Einstellungen für Inland
+  -->
+  <domestic>
+    <entry>DEUTSCHLAND</entry>
+    <entry>deutschland</entry>
+    <entry>de</entry>
+    <entry>d</entry>
+    <entry>germany</entry>
+    <entry>german</entry>
+    <entry>D</entry>
+    <entry></entry>
+  </domestic>
+  
+  <!--
+    Formate
+  -->
+  <formats>
+    <format ns="standard" name="Standard" />
+    <format ns="compact" name="Kompakt" />
+    <format ns="large" name="Großbrief" />
+    <format ns="maxi" name="Maxibrief" />
+  </formats>
+  
+  <products>
+  
+    <!--
+      Standard: -
+    -->
+    <product ns="standard" name="Standard">
+      <preset region="false" abroad="false" minlimit="0" maxlimit="0" />
+      <default>
+        <price limit="20">0.55</price>
+        <price limit="50">0.90</price>
+        <price limit="500">1.45</price>
+        <price limit="1000">2.20</price>
+      </default>
+    </product>
+    
+    <!--
+      Infobrief: ab 50 Sendungen
+    -->
+    <product ns="infobrief" name="Infobrief">
+      <preset region="false" abroad="false" minlimit="50" maxlimit="2500" />
+      <preset region="true" abroad="false" minlimit="50" maxlimit="250" />
+      <standard>
+        <price limit="20">0.35</price>
+      </standard>
+      <compact>
+        <price limit="50">0.75</price>
+      </compact>
+      <large>
+        <price limit="1000">1.35</price>
+      </large>
+      <maxi>
+        <price limit="1000">1.80</price>
+      </maxi>
+    </product>
+    
+    <!--
+      Infopost: 
+        - ab 4.000 Sendungen
+        - ab 250 Sendungen in einer Leitregion
+    -->
+    <product ns="infopost" name="Infopost">
+      <preset region="false" abroad="false" minlimit="4000" maxlimit="20000" />
+      <preset region="true" abroad="false" minlimit="250" maxlimit="3999" delimitRegion="true" />
+      <standard>
+        <price limit="20">0.25</price>
+      </standard>
+      <compact>
+        <price limit="20">0.28</price>
+        <price limit="50">(%weight - 20) * 0.00352 + 0.28</price>
+      </compact>
+      <large>
+        <price limit="20">0.36</price>
+        <price limit="100">(%weight - 20) * 0.00352 + 0.36</price>
+        <price limit="1000">(%weight - 100) * 0.00046 + 0.64</price>
+      </large>
+      <maxi>
+        <price limit="20">0.73</price>
+        <price limit="100">(%weight - 20) * 0.00352 + 0.73</price>
+        <price limit="1000">(%weight - 100) * 0.00046 + 1.01</price>
+      </maxi>
+    </product>
+    
+    <!--
+      Standard (International): -
+    -->
+    <product ns="standard_abroad" name="Standard (International)">
+      <preset region="false" abroad="true" minlimit="0" maxlimit="0" />
+      <standard>
+        <price limit="20">0.75</price>
+        <price limit="50">1.00</price>
+        <price limit="500">2.50</price>
+        <price limit="1000">4.50</price>
+      </standard>
+      <compact>
+        <price limit="20">1.00</price>
+        <price limit="50">1.00</price>
+        <price limit="500">4.50</price>
+        <price limit="1000">6.00</price>
+      </compact>
+      <large>
+        <price limit="20">1.90</price>
+        <price limit="50">1.90</price>
+        <price limit="500">4.50</price>
+        <price limit="1000">6.00</price>
+      </large>
+      <maxi>
+        <price limit="20">1.90</price>
+        <price limit="50">1.90</price>
+        <price limit="500">4.50</price>
+        <price limit="1000">6.00</price>
+      </maxi>
+    </product>
+    
+    <!--
+      Infobrief (International): 50 Sendungen pro Bestimmungsland
+      http://www.deutschepost.de/mlm.nf/dpag/briefe_ins_ausland/infobrief/index.html
+    -->
+    <product ns="infobrief_abroad" name="Infobrief (International)">
+      <preset region="false" abroad="true" minlimit="50" maxlimit="20000" />
+      <default>
+        <price limit="2000">(%weight * 8/1000) + 0.45</price>
+      </default>
+    </product>
+    
+    <!--
+      Infopost (International): 500 Sendungen pro Bestimmungsland
+      http://www.deutschepost.de/mlm.nf/dpag/briefe_ins_ausland/infopost/index.html
+    -->
+    <product ns="infopost_abroad" name="Infopost (International)">
+      <preset region="false" abroad="true" minlimit="500" maxlimit="20000" />
+      <default>
+        <price limit="2000">(%weight * 7.5/1000) + 0.43</price>
+      </default>
+    </product>
+  </products>
+</body>

@@ -1,0 +1,7 @@
+<phpunit bootstrap="../phpunit.php">
+  <testsuites>
+    <testsuite name="suiteCustom">
+      <directory suffix=".php">../custom/extensions/...</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

@@ -224,7 +224,6 @@ class newsletter extends \BB\engine\common {
     $mail->Subject = $subject;
     $mail->AddAddress($recipient);
     $mail->Body = str_replace('{link}', implode('', $link), $this->values['body']['cnv_value']);
-    $mail->Send();
 
     $modelSpooler = \BB\model\spooler::get();
     $mailID = $modelSpooler->execCreate();

@@ -13,7 +13,11 @@
   class crmData extends \BB\controller {
     
     const crmTable = 'Kontakte';
-    
+
+    protected $callableWithoutLogin = array(
+      'execSetRead'
+    );
+
     protected
       $submenu = array(
         'Index' => array(
@@ -140,6 +144,21 @@
       $modelContent = \BB\model\content::get();
       foreach($contentIDs as $contentID):
         $modelContent->execDelete($_SESSION[$this->module][$this->template]['tbl_id'], $contentID);
+      endforeach;
+
+    }
+
+    /**
+     * @return void
+     */
+    public function execRemoveFromSelection() {
+
+      $coreHttp = \BB\http\request::get();
+      $contentIDs = $coreHttp->getString('cn_ids');
+      $contentIDs = (array)explode(',', $contentIDs);
+
+      foreach($contentIDs as $contentID):
+        unset($_SESSION[$this->module][$this->template]['selection'][$contentID]);
       endforeach;
 
     }
@@ -274,6 +293,7 @@
           floor($max / $_SESSION[$this->module][$this->template]['limit'])*$_SESSION[$this->module][$this->template]['limit']
         )
       );
+
     }
 
     /**
@@ -502,6 +522,7 @@
 
       $tableID = @(int)$_SESSION[$this->module][$this->template]['tbl_id'];
       $_SESSION[$this->module][$this->template][$tableID]['q'] = $coreHttp->getArray('searchFields');
+      $_SESSION[$this->module][$this->template][$tableID]['searchTypes'] = $coreHttp->getArray('searchTypes');
       $_SESSION[$this->module][$this->template]['offset'] = 0;
 
     }
@@ -965,21 +986,115 @@
      */
     public function viewMailing() {
 
-      $coreHttp = \BB\http\request::get();
-
       $this->template = 'Index';
-      $tableID = (int)$_SESSION[$this->module][$this->template]['tbl_id'];
-      $_SESSION[$this->module][$this->template]['limit'] = 1000000;
-      $_SESSION[$this->module][$this->template]['offset'] = 0;
-      $_SESSION[$this->module][$this->template][$tableID]['q'] = $coreHttp->getArray('searchFields');
 
-      $rows = $this->getSearchResults();
-      $contentIDs = $this->getIDs($rows);
+      $contentIDs = $_SESSION[$this->module][$this->template]['selection'];
 
       $this->view
         ->assign('number', count($contentIDs))
-        ->add('searchFields', $_SESSION[$this->module][$this->template][$tableID]['q'])
       ;
+
+    }
+
+    /**
+     *
+     */
+    public function viewStatistic() {
+
+      $this->template = 'Index';
+
+      $modelContent = \BB\model\content::get();
+      $newsletters = $modelContent->execSearch(
+        array(
+          'tableID' => 'Newsletter',
+          'languageID' => 1
+        )
+        );
+
+      $newsletterData = array();
+      foreach($newsletters->contentIDs as $newsletterID):
+
+        $timestamps = $modelContent->getTimestamps('Newsletter', $newsletterID);
+
+        $reads = \BB\db::query(
+          ' SELECT COUNT(msr_mail_id) as amountreads FROM '.\BB\config::get('db:prefix').'web_mailspooler_reads'.
+          ' WHERE msr_cn_id = '.$newsletterID.
+          ' AND msr_read = 1',
+          true
+        );
+
+        $newsletterData[$newsletterID] = array(
+          'timestamp' => $timestamps['create'],
+          'subject' => $modelContent->getValue('Newsletter', 'Newsletter-Betreff', $newsletterID, 1),
+          'text' => $modelContent->getValue('Newsletter', 'Newsletter-Text', $newsletterID, 1),
+          'reads' => $reads['amountreads']
+        );
+      endforeach;
+
+
+      $this->view
+        ->add('newsletters', $newsletterData)
+      ;
+
+    }
+
+    /*
+     *
+     */
+    public function execSwitchMode() {
+
+      $coreHttp = \BB\http\request::get();
+      $modeType = $coreHttp->getString('modeType');
+
+      $_SESSION[$this->module][$this->template]['mode'] = $modeType;
+
+    }
+
+    /*
+     *
+     */
+    public function execSetRead() {
+
+      $coreHttp = \BB\http\request::get();
+      $mailID = $coreHttp->getInteger('m');
+      $newsletterID = $coreHttp->getInteger('o');
+
+      \BB\db::query(
+        ' REPLACE INTO '.\BB\config::get('db:prefix').'web_mailspooler_reads'.
+        ' SET msr_mail_id = '.$mailID.','.
+        ' msr_cn_id = '.$newsletterID.','.
+        ' msr_read = 1'
+      );
+
+      header('Content-type:image/gif');
+      readfile('skins/responsive/icons/others/spacer.gif');
+      exit;
+
+    }
+
+    /*
+     *
+     */
+    public function execTruncateSelection() {
+
+      $_SESSION[$this->module][$this->template]['selection'] = array();
+
+    }
+
+    /*
+     *
+     */
+    public function execAddToSelection() {
+
+      $tableID = @(int)$_SESSION[$this->module][$this->template]['tbl_id'];
+
+      $fieldIDsAsNames = $this->getSortedFields($tableID);
+
+      $resultIDs = $this->getResults($fieldIDsAsNames, 'pool', true);
+
+      foreach($resultIDs as $resultID):
+        $_SESSION[$this->module][$this->template]['selection'][$resultID] = $resultID;
+      endforeach;
 
     }
 
@@ -1001,12 +1116,8 @@
 
       $this->template = 'Index';
       $tableID = (int)$_SESSION[$this->module][$this->template]['tbl_id'];
-      $_SESSION[$this->module][$this->template]['limit'] = 1000000;
-      $_SESSION[$this->module][$this->template]['offset'] = 0;
-      $_SESSION[$this->module][$this->template][$tableID]['q'] = $coreHttp->getArray('searchFields');
 
-      $rows = $this->getSearchResults();
-      $contentIDs = $this->getIDs($rows);
+      $contentIDs = $_SESSION[$this->module][$this->template]['selection'];
       $pageID = \BB\config::get('mail:newsletter:pageID');
       $sender = $coreHttp->getString('sender');
       $senderName = $coreHttp->getString('senderName');
@@ -1017,18 +1128,31 @@
       $subject = $coreHttp->getString('subject');
 
       $modelContent = \BB\model\content::get();
-      $newsletterID = $modelContent->execCreate();
+      $newsletterID = $modelContent->execCreate(
+        array(
+          'tableID' => 'Newsletter'
+        )
+      );
       $modelContent->execUpdate(array(
         'tableID' => 'Newsletter',
         'fieldID' => 'Newsletter-Betreff',
         'contentID' => $newsletterID,
+        'languageID' => 1,
         'value' => $subject
       ));
       $modelContent->execUpdate(array(
         'tableID' => 'Newsletter',
         'fieldID' => 'Newsletter-Text',
         'contentID' => $newsletterID,
+        'languageID' => 1,
         'value' => $mailText
+      ));
+      $modelContent->execUpdate(array(
+        'tableID' => 'Newsletter',
+        'fieldID' => 'Newsletter-Menge',
+        'contentID' => $newsletterID,
+        'languageID' => 1,
+        'value' => count($contentIDs)
       ));
 
       $attachments = array();
@@ -1046,6 +1170,7 @@
       $spooler = \BB\custom\model\crmSpooler::get();
       $this->success = $spooler->execSpoolCrm(
         $pageID,
+        $subject,
         $attachments,
         $sender,
         $senderName,
@@ -1053,6 +1178,55 @@
         $contentIDs,
         $mailText,
         $newsletterID
+      );
+
+      $_SESSION[$this->module][$this->template]['selection'] = array();
+
+    }
+
+    /**
+     * @return void
+     */
+    public function execSpoolTest() {
+
+      $coreHttp = \BB\http\request::get(new \BB\http\nofilter());
+
+      $this->template = 'Index';
+      $tableID = (int)$_SESSION[$this->module][$this->template]['tbl_id'];
+
+      $pageID = \BB\config::get('mail:newsletter:pageID');
+      $sender = $coreHttp->getString('sender');
+      $senderName = $coreHttp->getString('senderName');
+      $mailText = $coreHttp->getString('mailText');
+      $attachment = $coreHttp->getString('attachment');
+      $attachment2 = $coreHttp->getString('attachment2');
+      $attachment3 = $coreHttp->getString('attachment3');
+      $subject = $coreHttp->getString('subject');
+      $email = \BB\config::get('mail:newsletter:testAddress');
+
+      $attachments = array();
+      if(!empty($attachment) && file_exists($attachment)):
+        $attachments[] = $attachment;
+      endif;
+      if(!empty($attachment2) && file_exists($attachment2)):
+        $attachments[] = $attachment2;
+      endif;
+      if(!empty($attachment3) && file_exists($attachment3)):
+        $attachments[] = $attachment3;
+      endif;
+
+      // mail test
+      $spooler = \BB\custom\model\crmSpooler::get();
+      $this->success = $spooler->execTestSpoolCrm(
+        $pageID,
+        $subject,
+        $attachments,
+        $sender,
+        $senderName,
+        $tableID,
+        $email,
+        $mailText,
+        0
       );
 
     }
@@ -1071,7 +1245,6 @@
       $this->execAssignTables();
 
       $_SESSION[$this->module][$this->template]['limit'] = 30;
-      $_SESSION[$this->module][$this->template]['offset'] = 0;
 
       $this->execAssignResults();
       $this->execAssignSession();
@@ -1407,6 +1580,7 @@
     protected function assignContextIndex() {
 
       $tableID = (int)$_SESSION[$this->module][$this->template]['tbl_id'];
+      $mode = (string)$_SESSION[$this->module][$this->template]['mode'];
 
       $modelTable = \BB\model\table::get();
       $type = $modelTable->getType(@$_SESSION[$this->module][$this->template]['tbl_id']);
@@ -1418,6 +1592,20 @@
             'name' => '{__(28)}',
             'click' => '$.content.list.mails()',
             'icon' => 'fa-envelope-o',
+            'context' => 'content'
+          ),
+          4
+        );
+      endif;
+
+      if($mode == 'selection'):
+        #unset($this->context['Index'][2]);
+        $this->context(
+          'Index',
+          array(
+            'name' => 'aus Auswahl entfernen',
+            'click' => '$.crmData.list.removeFromSelection()',
+            'icon' => 'fa-times',
             'context' => 'content'
           ),
           4
@@ -1704,9 +1892,10 @@
     protected function getSearchResults() {
 
       $tableID = @(int)$_SESSION[$this->module][$this->template]['tbl_id'];
+      $mode = (string)$_SESSION[$this->module][$this->template]['mode'];
 
       $fieldIDsAsNames = $this->getSortedFields($tableID);
-      $rows = $this->getResults($fieldIDsAsNames);
+      $rows = $this->getResults($fieldIDsAsNames, $mode);
 
       return $rows;
 
@@ -1722,6 +1911,7 @@
       $tableID = @(int)$_SESSION[$this->module][$this->template]['tbl_id'];
       $this->view->add('searchFields', $searchFields);
       $this->view->add('activeSearchFields', $_SESSION[$this->module][$this->template][$tableID]['q']);
+      $this->view->add('activeSearchTypes', $_SESSION[$this->module][$this->template][$tableID]['searchTypes']);
 
     }
 
@@ -1734,6 +1924,7 @@
 
       $this->view
         ->add('offset', @$_SESSION[$this->module][$this->template]['offset'])
+        ->add('mode', @$_SESSION[$this->module][$this->template]['mode'])
         ->add('limit', @$_SESSION[$this->module][$this->template]['limit'])
         ->add('tbl_id', $tableID)
         ->add('sf_id', @(int)$_SESSION[$this->module][$this->template][$tableID]['sf_id'])
@@ -1788,6 +1979,8 @@
       $tableID = $modelTable->getIDByIdentifier('Kontakte');
       $tableType = $modelTable->getType($tableID);
 
+      if(empty($_SESSION[$this->module][$this->template]['mode']))
+        $_SESSION[$this->module][$this->template]['mode'] = 'pool';
       if(empty($_SESSION[$this->module][$this->template]['offset']))
         $_SESSION[$this->module][$this->template]['offset'] = 0;
       if(empty($_SESSION[$this->module][$this->template]['limit']))
@@ -1807,6 +2000,8 @@
         $_SESSION[$this->module][$this->template][$tableID]['odirection'] = 'desc';
       if(empty($_SESSION[$this->module][$this->template][$tableID]['q']))
         $_SESSION[$this->module][$this->template][$tableID]['q'] = '';
+      if(empty($_SESSION[$this->module][$this->template][$tableID]['searchTypes']))
+        $_SESSION[$this->module][$this->template][$tableID]['searchTypes'] = '';
 
       if($tableType == '')
         $_SESSION[$this->module][$this->template]['tbl_id'] = 0;
@@ -2084,12 +2279,13 @@
      * @param $fields
      * @return array
      */
-    protected function getResults($fields) {
+    protected function getResults($fields, $mode = 'pool', $returnIDs = false) {
 
       $tableID = (int)$_SESSION[$this->module][$this->template]['tbl_id'];
       $languageID = (int)$_SESSION[$this->module][$this->template]['lan_id'];
       $limit = (int)$_SESSION[$this->module][$this->template]['limit'];
       $offset = (int)$_SESSION[$this->module][$this->template]['offset'];
+      $selection = (array)$_SESSION[$this->module][$this->template]['selection'];
 
       $languageIDs = $this->getAllowedLanguageIDsIfCurrentAreForbidden(array($languageID));
       if($languageIDs[0] != $languageID)
@@ -2122,34 +2318,77 @@
       $rowsOfLanguages = array();
       try {
 
-        $rowsOfLanguages = (array)\BB\db::rows(
-          ' SELECT german.cnv_id'.
-            (count($querySelect) > 0 ? ', '.implode(',', $querySelect) : '').
-          ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
-          ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
-            ' ON lang.cnv_id = german.cnv_id'.
-          ' WHERE german.cnv_lan_id = 1'.
-            ' AND german.cnv_version = 0'.
-            ' AND german.cnv_id IN('.
+        if($mode == 'selection'):
+
+          if(count($selection) > 0):
+
+            $rowsOfLanguages = (array)\BB\db::rows(
+              ' SELECT german.cnv_id'.
+              (count($querySelect) > 0 ? ', '.implode(',', $querySelect) : '').
+              ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
+              ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
+              ' ON lang.cnv_id = german.cnv_id'.
+              ' WHERE german.cnv_lan_id = 1'.
+              ' AND german.cnv_version = 0'.
+              ' AND german.cnv_id IN('.
               ' SELECT cn_id'.
               ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
               ' WHERE cn_tbl_id = '.$tableID.
-                ' AND cn_delete_time = 0'.
+              ' AND cn_delete_time = 0'.
+              ')'.
+              ' AND lang.cnv_lan_id = '.$languageID.
+              ' AND lang.cnv_version = 0'.
+              ' AND german.cnv_id IN ('.implode(',', $selection).')'.
+              ' ORDER BY '.
+              $this->getResultsOrderBy($fieldIDsMonolingual).
+              ' LIMIT '.$offset.', '.$limit,
+              'cnv_id'
+            );
+
+          else:
+
+            $rowsOfLanguages = array();
+
+          endif;
+
+        else:
+
+          $rowsOfLanguages = (array)\BB\db::rows(
+            ' SELECT german.cnv_id'.
+            (count($querySelect) > 0 ? ', '.implode(',', $querySelect) : '').
+            ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
+            ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
+            ' ON lang.cnv_id = german.cnv_id'.
+            ' WHERE german.cnv_lan_id = 1'.
+            ' AND german.cnv_version = 0'.
+            ' AND german.cnv_id IN('.
+            ' SELECT cn_id'.
+            ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
+            ' WHERE cn_tbl_id = '.$tableID.
+            ' AND cn_delete_time = 0'.
             ')'.
             ' AND lang.cnv_lan_id = '.$languageID.
             ' AND lang.cnv_version = 0'.
             $this->getResultsWhere().
-          ' ORDER BY '.
+            ' ORDER BY '.
             $this->getResultsOrderBy($fieldIDsMonolingual).
-          ' LIMIT '.$offset.', '.$limit,
-          'cnv_id'
-        );
+            ' LIMIT '.$offset.', '.$limit,
+            'cnv_id'
+          );
+
+        endif;
+
+
 
       } catch (\BB\exception\mysql $e) {
 
         \BB\error::$E_NO = 'An error occured. The table has a defect. Please check the field configuration.';
 
       }
+
+      if($returnIDs === true):
+        return array_keys($rowsOfLanguages);
+      endif;
 
       $rows = array();
       $c = 0;
@@ -2179,6 +2418,8 @@
 
       $tableID = (int)$_SESSION[$this->module][$this->template]['tbl_id'];
       $languageID = (int)$_SESSION[$this->module][$this->template]['lan_id'];
+      $mode = (string)$_SESSION[$this->module][$this->template]['mode'];
+      $selection = (array)$_SESSION[$this->module][$this->template]['selection'];
 
       $languageIDs = $this->getAllowedLanguageIDsIfCurrentAreForbidden(array($languageID));
       if($languageIDs[0] != $languageID)
@@ -2195,24 +2436,35 @@
       $tableNameValues = $modelTable->getRealname($tableID, 'values');
       $tableNameContent = $modelTable->getRealname($tableID, 'content');
 
-      return (int)\BB\db::query(
-        ' SELECT count(distinct german.cnv_id) as count'.
-        ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
-        ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
-          ' ON lang.cnv_id = german.cnv_id'.
-        ' WHERE german.cnv_lan_id = 1'.
-          ' AND german.cnv_version = 0'.
-          ' AND german.cnv_id IN('.
-            ' SELECT cn_id'.
-            ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
-            ' WHERE cn_tbl_id = '.$tableID.
-              ' AND cn_delete_time = 0'.
-          ')'.
-          ' AND lang.cnv_lan_id = '.$languageID.
-          ' AND lang.cnv_version = 0'.
-          $this->getResultsWhere(),
-        'count'
-      );
+      if($mode == 'selection'):
+
+        $max = count($selection);
+
+      else:
+
+        $max = (int)\BB\db::query(
+          ' SELECT count(distinct german.cnv_id) as count'.
+          ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
+          ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
+            ' ON lang.cnv_id = german.cnv_id'.
+          ' WHERE german.cnv_lan_id = 1'.
+            ' AND german.cnv_version = 0'.
+            ' AND german.cnv_id IN('.
+              ' SELECT cn_id'.
+              ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
+              ' WHERE cn_tbl_id = '.$tableID.
+                ' AND cn_delete_time = 0'.
+            ')'.
+            ' AND lang.cnv_lan_id = '.$languageID.
+            ' AND lang.cnv_version = 0'.
+            $this->getResultsWhere(),
+          'count'
+        );
+
+      endif;
+
+      return $max;
+
     }
 
     /**
@@ -2277,13 +2529,28 @@
 
             $isMonolingual = $modelField->isMonolingual($searchFieldID);
             $tableName = $isMonolingual ? 'german' : 'lang';
+            $searchType = $_SESSION[$this->module][$this->template][$tableID]['searchTypes'][$searchFieldID];
 
             if($modelField->isPipeArray($searchFieldID)):
               $cond = ' LIKE "%|'.$phrase.'|%"';
             elseif($modelField->isInteger($searchFieldID)):
               $cond = ' = '.(int)$phrase;
             else:
-              $cond = ' LIKE "%'.$phrase.'%"';
+
+              switch($searchType):
+
+                case 'is'; $cond = ' LIKE "'.$phrase.'"'; break;
+                case 'isnot': $cond = ' NOT LIKE "'.$phrase.'"'; break;
+                default:
+                case 'contains': $cond = ' LIKE "%'.$phrase.'%"'; break;
+                case 'containsnot': $cond = ' NOT LIKE "%'.$phrase.'%"'; break;
+                case 'startswith': $cond = ' LIKE "'.$phrase.'%"'; break;
+                case 'startsnotwith': $cond = ' NOT LIKE "'.$phrase.'%"'; break;
+                case 'endswith': $cond = ' LIKE "%'.$phrase.'"'; break;
+                case 'endsnotwith': $cond = ' NOT LIKE "%'.$phrase.'"'; break;
+
+              endswitch;
+
             endif;
 
             $where[] =  ' AND '.$tableName.'.cnv_'.$searchFieldID.' '.$cond;

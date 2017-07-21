@@ -41,6 +41,14 @@
     </div>
   </fieldset>
 
+  <fieldset class="form-group lang1">
+    <label class="col-sm-4 control-label listLabel">Betreff</label>
+    <div class="col-sm-8 paddingRight">
+      <input type="text" id="subject" name="subject" style="width:300px;" value="Newsletter" tabindex="2" maxlength="100">
+      <span class="help-inline"></span>
+    </div>
+  </fieldset>
+
   <fieldset class="form-group lang1  preview">
     <label class="col-sm-4 control-label listLabel">Anhang</label>
     <div class="col-sm-8 paddingRight">
@@ -83,6 +91,9 @@
 
   <fieldset class="form-group form-actions">
     <div class="col-sm-8 col-sm-offset-4">
+      <button type="button" name="button" onclick="$.crmData.search.spoolTest();" class="btn btn-primary">
+        <i class="fa fa-save"></i> Test-E-Mail erzeugen
+      </button>
       <button type="button" name="button" onclick="$.crmData.search.spoolMails();" class="btn btn-primary">
         <i class="fa fa-save"></i> E-Mails erzeugen
       </button>

@@ -20,12 +20,56 @@
 
       },
 
+      switchMode: function(modeType) {
+
+        $.brandbox.get(
+          $.brandbox.mod,
+          $.brandbox.tpl,
+          'SwitchMode',
+          '&modeType=' + modeType
+        );
+
+      },
+
+      addToSelection: function(modeType) {
+
+        $.brandbox.post(
+          $.brandbox.mod,
+          $.brandbox.tpl,
+          'AddToSelection'
+        );
+
+      },
+
+      truncateSelection: function(modeType) {
+
+        $.brandbox.post(
+          $.brandbox.mod,
+          $.brandbox.tpl,
+          'TruncateSelection'
+        );
+
+      },
+
       spoolMails: function() {
 
         $.brandbox.post(
           $.brandbox.mod,
           'Confirm',
           'Spool'
+        );
+
+      },
+
+      spoolTest: function() {
+
+        $.brandbox.post(
+          $.brandbox.mod,
+          'Confirm',
+          'SpoolTest',
+          function(data) {
+            $.alerts.alert('Der Test-Newsletter wurde erzeugt.')
+          }
         );
 
       },
@@ -227,6 +271,7 @@
           $.crmData.search.isIndex ? $.brandbox.tpl : 'Search',
           'Search',
           '&' + $('.q').serialize() +
+          '&' + $('.searchTypes').serialize() +
           '&useTpl=' + $.brandbox.tpl,
           callbackOfLiveSearch
         );
@@ -599,6 +644,30 @@
               'Index',
               'Delete',
               '&cn_ids=' + cn_ids.join(',')
+            );
+            $.crmData.list.active = [];
+          }
+        );
+      },
+
+      removeFromSelection: function(cn_id) {
+
+        var cn_ids = $.crmData.list.IDs(cn_id);
+
+        for(var c in cn_ids) {
+          var id = cn_ids[c];
+          $('#' + id + ' td').addClass('delete');
+          setTimeout("$('#" + id + " td').removeClass('delete');", 2000);
+        }
+
+        $.alerts.confirm(
+          'Möchten Sie den Datensatz wirklich aus der Auswahl entfernen?',
+          function() {
+            $.brandbox.get(
+                $.brandbox.mod,
+                'Index',
+                'RemoveFromSelection',
+                '&cn_ids=' + cn_ids.join(',')
             );
             $.crmData.list.active = [];
           }

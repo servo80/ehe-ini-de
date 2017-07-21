@@ -10,10 +10,20 @@
       <div class="collapse-header">
         <h3>{__(13)} ({$max})</h3>
       </div>
-      <div class="collapse in search">
+      <div class="collapse in search" style="overflow:hidden;">
         {foreach($searchFields as $searchFieldID => $searchFieldName):}
-        <label style="margin-bottom:0;">{$searchFieldName}</label>
-        <input class="q" style="margin-bottom:5px;" type="text" name="searchFields[{$searchFieldID}]" value="{$activeSearchFields[$searchFieldID]}" />
+        <label>{$searchFieldName}</label>
+        <select class="searchTypes noselect2" name="searchTypes[{$searchFieldID}]">
+          <option value="is"{if($activeSearchTypes[$searchFieldID] == 'is'):} selected="selected"{endif;}>ist</option>
+          <option value="isnot"{if($activeSearchTypes[$searchFieldID] == 'isnot'):} selected="selected"{endif;}>ist nicht</option>
+          <option value="contains"{if($activeSearchTypes[$searchFieldID] == 'contains'):} selected="selected"{endif;}>enthält</option>
+          <option value="containsnot"{if($activeSearchTypes[$searchFieldID] == 'containsnot'):} selected="selected"{endif;}>enthält nicht</option>
+          <option value="startswith"{if($activeSearchTypes[$searchFieldID] == 'startswith'):} selected="selected"{endif;}>beginnt mit</option>
+          <option value="startsnotwith"{if($activeSearchTypes[$searchFieldID] == 'startsnotwith'):} selected="selected"{endif;}>beginnt nicht mit</option>
+          <option value="endswith"{if($activeSearchTypes[$searchFieldID] == 'endswith'):} selected="selected"{endif;}>endet mit</option>
+          <option value="endsnotwith"{if($activeSearchTypes[$searchFieldID] == 'endsnotwith'):} selected="selected"{endif;}>endet nicht mit</option>
+        </select>
+        <input class="q" type="text" name="searchFields[{$searchFieldID}]" value="{$activeSearchFields[$searchFieldID]}" />
         {endforeach;}
         <!--
         {select:languages}
@@ -24,32 +34,32 @@
       </div>
 
     </div>
-    
-    <!-- PDF-Einstellungen
-    <div class="collapse-container contentFilter sidebarTile">
-    
-      <div class="collapse-header">
-        <h3>{__(105)}</h3>
-      </div>
-      <div class="collapse">
-        {select:pdf:languages}
-        <h3>{__(106)}</h3>
-        <input type="text" name="page_number" id="page_number" value="1" />
-        <input type="checkbox" name="low" id="low" value="1" /> {__(107)}
-      </div>
-    </div>
-     -->
-    <div class="collapse-container checkAllContainer sidebarTile">
+
+    <div class="collapse-container checkAllContainer sidebarTile" style="clear:both;">
 
       <div class="collapse-header">
+        {if($mode == '' || $mode == 'pool'):}
         <h3>{__(110)} (<span id="numberOfActivated"></span>)</h3>
+        {endif;}
       </div>
       <div class="collapse in">
+
+        {if($mode == '' || $mode == 'pool'):}
         <label class="checkbox" onclick="$.crmData.search.checkAll();">
           <input type="checkbox" name="checkAll" id="checkAll" value="0" />
           {__(109)}
         </label>
-        <input type="button" value="Mailing starten" onclick="$.crmData.search.startMailing();">
+        {endif;}
+
+        {if($mode == '' || $mode == 'pool'):}
+        <input type="button" value="zur Auswahl hinzufügen" onclick="$.crmData.search.addToSelection();"><br /><br />
+        <input type="button" value="Auswahl anzeigen" onclick="$.crmData.search.switchMode('selection');"><br /><br />
+        {else:}
+        <input type="button" value="Selektion leeren" onclick="$.crmData.search.truncateSelection();"><br /><br />
+        <input type="button" value="Stammdaten anzeigen" onclick="$.crmData.search.switchMode('pool');"><br /><br />
+        {endif;}
+        <input type="button" value="Mailing starten" onclick="$.crmData.search.startMailing();"><br /><br />
+        <input type="button" value="Statistik ansehen" onclick="$.brandbox.get($.brandbox.mod,'Statistic');"><br /><br />
       </div>
 
     </div>

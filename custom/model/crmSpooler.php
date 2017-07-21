@@ -58,6 +58,7 @@
      * Spools the mails.
      *
      * @param int $pageID The ID of the page
+     * @param string $subjecz The mail subject
      * @param array $attachments An array containing attachments
      * @param string $from The email of the sender
      * @param string $fromName The name of the sender
@@ -69,6 +70,7 @@
      */
     public function execSpoolCrm(
       $pageID,
+      $subject,
       $attachments = array(),
       $from,
       $fromName,
@@ -91,7 +93,7 @@
       $tableID = $modelTable->getIDByIdentifier($tableID);
       $languageID = 1;
 
-      $phpMailer = $this->getMailAsPHPMailer($pageID, $attachments);
+      $phpMailer = $this->getMailAsPHPMailer($pageID, $subject, $attachments);
       $blacklistedMails = $modelBlacklist->getMails();
 
       $fieldIDsOfUserGroup = $modelField->getFieldIDs($tableID);
@@ -192,6 +194,96 @@
     }
 
     /**
+     * Spools the mails.
+     *
+     * @param int $pageID The ID of the page
+     * @param string $subject The mail subject
+     * @param array $attachments An array containing attachments
+     * @param string $from The email of the sender
+     * @param string $fromName The name of the sender
+     * @param int $tableID The ID of the table
+     * @param array $userIDs The mails of the recipients
+     * @param int $mailFieldID The mail field ID
+     *
+     * @return array
+     */
+    public function execTestSpoolCrm(
+      $pageID,
+      $subject,
+      $attachments = array(),
+      $from,
+      $fromName,
+      $tableID = 0,
+      $mail,
+      $mailText = '',
+      $newsletterID,
+      $mailFieldID = \BB\model\field::email,
+      $mailFieldID2 = 122,
+      $mailFieldID3 = 123
+    ) {
+
+      $modelPage = \BB\model\page::get();
+      $modelField = \BB\model\field::get();
+      $modelTable = \BB\model\table::get();
+
+      $pageID = (int)$pageID;
+      $tableID = $modelTable->getIDByIdentifier($tableID);
+
+      $phpMailer = $this->getMailAsPHPMailer($pageID, $subject, $attachments);
+
+      $fieldIDsOfUserGroup = $modelField->getFieldIDs($tableID);
+
+      if(!in_array($mailFieldID, $fieldIDsOfUserGroup))
+        return array();
+
+      $phpMailer->From = $from;
+      $phpMailer->FromName = $fromName;
+
+      $return = array();
+      $mailsInSpooler = array();
+
+      if(!\BB\info::isMail($mail)):
+        $return[] = array(self::mailInvalid, $mail);
+        return;
+      endif;
+
+      $mailID = $this->execCreate();
+
+      $phpMailerOfThisUser = clone $phpMailer;
+      $phpMailerOfThisUser->AddAddress($mail);
+
+      $phpMailerOfThisUser->Body = str_replace(
+        '##$mail.cnv_',
+        '# #$mail.cnv_',
+        $phpMailerOfThisUser->Body
+      );
+      $arrSearch = array();
+      $arrReplace = array();
+
+      $arrSearch[] = '#mailText#';
+      $arrReplace[] = $mailText;
+
+      $arrSearch[] = '#mailID#';
+      $arrReplace[] = $mailID;
+
+      $arrSearch[] = '#newsletterID#';
+      $arrReplace[] = $newsletterID;
+
+      $phpMailerOfThisUser->Body = str_replace(
+        $arrSearch,
+        $arrReplace,
+        $phpMailerOfThisUser->Body
+      );
+
+      $this->execSave($mailID, $modelPage->getName($pageID), $mail, $from, $fromName, $phpMailerOfThisUser);
+
+      $mailsInSpooler[] = $mail;
+      $return[] = array(self::mailOk, $mail);
+
+      return $return;
+    }
+
+    /**
      * @param int|string $tableID Either the table identifier as string or the table ID as integer.
      * @param int|string $mailFieldID Either the field identifier as string or the field ID as integer.
      * @param int $contentID The ID of the dataset
@@ -237,11 +329,12 @@
      * Gets an mail and returns an PHPMailer object.
      *
      * @param int $pageID The ID of the page
+     * @param string $subject The mail subject
      * @param array $attachments An array containing attachments
      *
      * @return \BB\mail\PHPMailer
      */
-    public function getMailAsPHPMailer($pageID, $attachments = array()) {
+    public function getMailAsPHPMailer($pageID, $subject, $attachments = array()) {
 
       $modelPage = \BB\model\page::get();
 
@@ -256,7 +349,7 @@
 
       $coreMail = new \BB\mail\PHPMailer();
       $coreMail->CharSet = 'UTF-8';
-      $coreMail->Subject = $modelPage->getName($pageID);
+      $coreMail->Subject = $subject;
       $coreMail->IsHTML(true);
       $coreMail->Body = $mailHtml;
 

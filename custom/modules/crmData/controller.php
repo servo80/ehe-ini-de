@@ -1009,7 +1009,7 @@
           'tableID' => 'Newsletter',
           'languageID' => 1
         )
-        );
+      );
 
       $newsletterData = array();
       foreach($newsletters->contentIDs as $newsletterID):
@@ -1053,6 +1053,105 @@
     /*
      *
      */
+    public function execGenerateLabels() {
+
+      require('custom/model/fpdf.php');
+      require('custom/model/makefont/makefont.php');
+
+      $pdf = new \FPDF();
+      $modelContent = \BB\model\content::get();
+
+      $pdf->AddFont('Arial Narrow','','ArialNarrow.php');
+      $pdf->SetAutoPageBreak(false);
+
+      $cnIDs = $_SESSION[$this->module][$this->template]['selection'];
+
+      $contacts = $modelContent->execSearch(
+        array(
+          'tableID' => 'Kontakte',
+          'languageID' => 1,
+          'fields' => array(
+            array(
+              array('Straße', '!=""', \BB\model\content::searchIn),
+              array('PLZ', '!=""', \BB\model\content::searchIn),
+              array('Ort', '!=""', \BB\model\content::searchIn),
+              'AND'
+            ),
+            array(
+              array('Land', null, \BB\model\content::orderByAsc),
+              array('PLZ', null, \BB\model\content::orderByAsc),
+              'AND'
+            ),
+            'AND'
+          ),
+          'contentIDs' => $cnIDs,
+          'count' => true
+        )
+      );
+
+      $numberOfPages = ceil($contacts->count / 12);
+      $offsetX = 4.5;
+      $offsetY = 7;
+      $innerOffsetY = 14;
+      $lineHeight = 7;
+      $height = 48;
+      $width = 105;
+
+      $contactCounter = 0;
+      for($c = 1; $c <= $numberOfPages; $c++):
+
+        $pdf->AddPage();
+
+        for($row = 1; $row <= 6; $row++):
+
+          for($col = 1; $col <= 2; $col++):
+
+            $firstname = utf8_decode($modelContent->getValue('Kontakte', 'Vorname', $contacts->contentIDs[$contactCounter]));
+            $lastname = utf8_decode($modelContent->getValue('Kontakte', 'Nachname', $contacts->contentIDs[$contactCounter]));
+            $street = utf8_decode($modelContent->getValue('Kontakte', 'Straße', $contacts->contentIDs[$contactCounter]));
+            $plz = $modelContent->getValue('Kontakte', 'PLZ', $contacts->contentIDs[$contactCounter]);
+            $city = utf8_decode($modelContent->getValue('Kontakte', 'Ort', $contacts->contentIDs[$contactCounter]));
+            $country = utf8_decode($modelContent->getValue('Kontakte', 'Land', $contacts->contentIDs[$contactCounter]));
+
+            $xPosition = ($col-1)*$width + $offsetX;
+            $yPosition = ($row-1)*$height + $offsetY ;
+
+            $pdf->SetFont('Arial Narrow','',8);
+
+            $pdf->SetXY($xPosition, $yPosition);
+            $pdf->Cell($width,5,utf8_decode('Büro Ehe-Initiative e.V. - Fried & Heidi Erhardt - Im Gässle 5 - 79312 Emmendingen'));
+
+            $pdf->SetFont('Arial','',12);
+
+            $pdf->SetXY($xPosition, $yPosition+$innerOffsetY);
+            $pdf->Cell($width,5,$firstname.' '.$lastname);
+
+            $pdf->SetXY($xPosition, $yPosition+$innerOffsetY+$lineHeight);
+            $pdf->Cell($width,5,$street);
+
+            $pdf->SetXY($xPosition, $yPosition+$innerOffsetY+$lineHeight+$lineHeight);
+            $pdf->Cell($width,5,$plz.' '.$city);
+
+            $pdf->SetXY($xPosition, $yPosition+$innerOffsetY+$lineHeight+$lineHeight+$lineHeight);
+            $pdf->Cell($width,5,$country);
+
+            $contactCounter++;
+
+          endfor;
+
+        endfor;
+
+      endfor;
+
+      header('Content-type:application/pdf');
+      $pdf->Output();
+      exit;
+
+    }
+
+    /*
+     *
+     */
     public function execSetRead() {
 
       $coreHttp = \BB\http\request::get();
@@ -1090,7 +1189,7 @@
 
       $fieldIDsAsNames = $this->getSortedFields($tableID);
 
-      $resultIDs = $this->getResults($fieldIDsAsNames, 'pool', true);
+      $resultIDs = $this->getResults($fieldIDsAsNames, 'pool', true, 0, 10000000);
 
       foreach($resultIDs as $resultID):
         $_SESSION[$this->module][$this->template]['selection'][$resultID] = $resultID;
@@ -2279,12 +2378,16 @@
      * @param $fields
      * @return array
      */
-    protected function getResults($fields, $mode = 'pool', $returnIDs = false) {
+    protected function getResults($fields, $mode = 'pool', $returnIDs = false, $offset = null, $limit = null) {
 
       $tableID = (int)$_SESSION[$this->module][$this->template]['tbl_id'];
       $languageID = (int)$_SESSION[$this->module][$this->template]['lan_id'];
-      $limit = (int)$_SESSION[$this->module][$this->template]['limit'];
-      $offset = (int)$_SESSION[$this->module][$this->template]['offset'];
+      if($limit === null):
+        $limit = (int)$_SESSION[$this->module][$this->template]['limit'];
+      endif;
+      if($offset === null):
+        $offset = (int)$_SESSION[$this->module][$this->template]['offset'];
+      endif;
       $selection = (array)$_SESSION[$this->module][$this->template]['selection'];
 
       $languageIDs = $this->getAllowedLanguageIDsIfCurrentAreForbidden(array($languageID));

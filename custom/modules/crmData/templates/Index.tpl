@@ -55,10 +55,11 @@
         <input type="button" value="zur Auswahl hinzufügen" onclick="$.crmData.search.addToSelection();"><br /><br />
         <input type="button" value="Auswahl anzeigen" onclick="$.crmData.search.switchMode('selection');"><br /><br />
         {else:}
-        <input type="button" value="Selektion leeren" onclick="$.crmData.search.truncateSelection();"><br /><br />
+        <input type="button" value="Auswahl leeren" onclick="$.crmData.search.truncateSelection();"><br /><br />
         <input type="button" value="Stammdaten anzeigen" onclick="$.crmData.search.switchMode('pool');"><br /><br />
         {endif;}
         <input type="button" value="Mailing starten" onclick="$.crmData.search.startMailing();"><br /><br />
+        <input type="button" value="Etiketten erzeugen" onclick="window.open('admin.php?mod=crmData&tpl=Index&action=generateLabels')"><br /><br />
         <input type="button" value="Statistik ansehen" onclick="$.brandbox.get($.brandbox.mod,'Statistic');"><br /><br />
       </div>
 

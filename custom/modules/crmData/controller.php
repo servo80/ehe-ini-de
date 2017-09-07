@@ -2442,6 +2442,7 @@
               ' AND lang.cnv_lan_id = '.$languageID.
               ' AND lang.cnv_version = 0'.
               ' AND german.cnv_id IN ('.implode(',', $selection).')'.
+              $this->getResultsWhere().
               ' ORDER BY '.
               $this->getResultsOrderBy($fieldIDsMonolingual).
               ' LIMIT '.$offset.', '.$limit,
@@ -2539,32 +2540,26 @@
       $tableNameValues = $modelTable->getRealname($tableID, 'values');
       $tableNameContent = $modelTable->getRealname($tableID, 'content');
 
-      if($mode == 'selection'):
+      $max = (int)\BB\db::query(
+        ' SELECT count(distinct german.cnv_id) as count'.
+        ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
+        ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
+          ' ON lang.cnv_id = german.cnv_id'.
+        ' WHERE german.cnv_lan_id = 1'.
+          ' AND german.cnv_version = 0'.
+          ' AND german.cnv_id IN('.
+            ' SELECT cn_id'.
+            ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
+            ' WHERE cn_tbl_id = '.$tableID.
+              ' AND cn_delete_time = 0'.
+          ')'.
+          ' AND lang.cnv_lan_id = '.$languageID.
+          ' AND lang.cnv_version = 0'.
+          ($mode == 'selection' ? ' AND german.cnv_id IN ('.implode(',', $selection).')' : '').
+          $this->getResultsWhere(),
+        'count'
+      );
 
-        $max = count($selection);
-
-      else:
-
-        $max = (int)\BB\db::query(
-          ' SELECT count(distinct german.cnv_id) as count'.
-          ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
-          ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
-            ' ON lang.cnv_id = german.cnv_id'.
-          ' WHERE german.cnv_lan_id = 1'.
-            ' AND german.cnv_version = 0'.
-            ' AND german.cnv_id IN('.
-              ' SELECT cn_id'.
-              ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
-              ' WHERE cn_tbl_id = '.$tableID.
-                ' AND cn_delete_time = 0'.
-            ')'.
-            ' AND lang.cnv_lan_id = '.$languageID.
-            ' AND lang.cnv_version = 0'.
-            $this->getResultsWhere(),
-          'count'
-        );
-
-      endif;
 
       return $max;
 

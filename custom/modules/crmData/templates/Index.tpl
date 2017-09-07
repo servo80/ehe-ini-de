@@ -119,6 +119,11 @@
             <i class="fa fa-fw fa-angle-down pointer" onclick="$.crmData.search.flip_offset({echo $offset+$limit});"></i>
             <i class="fa fa-fw fa-angle-double-down pointer" onclick="$.crmData.search.flip_offset({echo $max-$limit});"></i>
           {endif;}
+          {if($mode == '' || $mode == 'pool'):}
+          <p class="border-left" style="color:#ff0000;font-weight:bold;">Sie befinden sich in den <i class="fa fa-user"></i>Stammdaten</p>
+          {else:}
+          <p class="border-left" style="color:#66ff66;font-weight:bold;">Sie befinden sich in der <i class="fa fa-star"></i>Auswahl</p>
+          {endif;}
         </th>
       </tr>
       <tr>

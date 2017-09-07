@@ -275,9 +275,8 @@
         $phpMailerOfThisUser->Body
       );
 
-      $this->execSave($mailID, $modelPage->getName($pageID), $mail, $from, $fromName, $phpMailerOfThisUser);
+      $phpMailerOfThisUser->Send();
 
-      $mailsInSpooler[] = $mail;
       $return[] = array(self::mailOk, $mail);
 
       return $return;

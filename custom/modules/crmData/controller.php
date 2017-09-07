@@ -166,6 +166,21 @@
     /**
      * @return void
      */
+    public function execAddLinesToSelection() {
+
+      $coreHttp = \BB\http\request::get();
+      $contentIDs = $coreHttp->getString('cn_ids');
+      $contentIDs = (array)explode(',', $contentIDs);
+
+      foreach($contentIDs as $contentID):
+        $_SESSION[$this->module][$this->template]['selection'][$contentID] = $contentID;
+      endforeach;
+
+    }
+
+    /**
+     * @return void
+     */
     public function execDeleteField() {
 
       $coreHttp = \BB\http\request::get();
@@ -1698,13 +1713,24 @@
       endif;
 
       if($mode == 'selection'):
-        #unset($this->context['Index'][2]);
+        unset($this->context['Index'][2]);
         $this->context(
           'Index',
           array(
             'name' => 'aus Auswahl entfernen',
             'click' => '$.crmData.list.removeFromSelection()',
             'icon' => 'fa-times',
+            'context' => 'content'
+          ),
+          4
+        );
+      else:
+        $this->context(
+          'Index',
+          array(
+            'name' => 'zur Auswahl hinzufügen',
+            'click' => '$.crmData.list.addLinesToSelection()',
+            'icon' => 'fa-plus',
             'context' => 'content'
           ),
           4
@@ -2540,25 +2566,35 @@
       $tableNameValues = $modelTable->getRealname($tableID, 'values');
       $tableNameContent = $modelTable->getRealname($tableID, 'content');
 
-      $max = (int)\BB\db::query(
-        ' SELECT count(distinct german.cnv_id) as count'.
-        ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
-        ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
+      if($mode == 'selection' && count($selection) == 0):
+
+        $max = 0;
+
+      else:
+
+        $max = (int)\BB\db::query(
+          ' SELECT count(distinct german.cnv_id) as count'.
+          ' FROM '.\BB\config::get('db:prefix').$tableNameValues.' as german'.
+          ' INNER JOIN '.\BB\config::get('db:prefix').$tableNameValues.' as lang'.
           ' ON lang.cnv_id = german.cnv_id'.
-        ' WHERE german.cnv_lan_id = 1'.
+          ' WHERE german.cnv_lan_id = 1'.
           ' AND german.cnv_version = 0'.
           ' AND german.cnv_id IN('.
-            ' SELECT cn_id'.
-            ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
-            ' WHERE cn_tbl_id = '.$tableID.
-              ' AND cn_delete_time = 0'.
+          ' SELECT cn_id'.
+          ' FROM '.\BB\config::get('db:prefix').$tableNameContent.
+          ' WHERE cn_tbl_id = '.$tableID.
+          ' AND cn_delete_time = 0'.
           ')'.
           ' AND lang.cnv_lan_id = '.$languageID.
           ' AND lang.cnv_version = 0'.
           ($mode == 'selection' ? ' AND german.cnv_id IN ('.implode(',', $selection).')' : '').
           $this->getResultsWhere(),
-        'count'
-      );
+          'count'
+        );
+
+      endif;
+
+
 
 
       return $max;

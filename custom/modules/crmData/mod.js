@@ -672,7 +672,21 @@
             $.crmData.list.active = [];
           }
         );
+      },
+
+      addLinesToSelection: function(cn_id) {
+
+          var cn_ids = $.crmData.list.IDs(cn_id);
+
+          $.brandbox.get(
+              $.brandbox.mod,
+              'Index',
+              'AddLinesToSelection',
+              '&cn_ids=' + cn_ids.join(',')
+          );
+
       }
+
     },
 
     relations: {

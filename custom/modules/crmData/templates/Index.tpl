@@ -52,15 +52,36 @@
         {endif;}
 
         {if($mode == '' || $mode == 'pool'):}
-        <input type="button" value="zur Auswahl hinzufügen" onclick="$.crmData.search.addToSelection();"><br /><br />
-        <input type="button" value="Auswahl anzeigen" onclick="$.crmData.search.switchMode('selection');"><br /><br />
+        <button id="addToSelection" type="button" name="login" class="btn btn-primary" onclick="$.crmData.search.addToSelection();">
+          <i class="fa fa-plus-circle"></i>
+          zur Auswahl hinzufügen
+        </button><br /><br />
+        <button id="switchModeSelection" type="button" name="login" class="btn btn-primary" onclick="$.crmData.search.switchMode('selection');">
+          <i class="fa fa-star"></i>
+          Auswahl anzeigen
+        </button><br /><br />
         {else:}
-        <input type="button" value="Auswahl leeren" onclick="$.crmData.search.truncateSelection();"><br /><br />
-        <input type="button" value="Stammdaten anzeigen" onclick="$.crmData.search.switchMode('pool');"><br /><br />
+        <button id="truncateSelection" type="button" name="login" class="btn btn-primary" onclick="$.crmData.search.truncateSelection();">
+          <i class="fa fa-minus-circle"></i>
+          Auswahl leeren
+        </button><br /><br />
+        <button id="switchModePool" type="button" name="login" class="btn btn-primary" onclick="$.crmData.search.switchMode('pool');">
+          <i class="fa fa-user"></i>
+          Stammdaten anzeigen
+        </button><br /><br />
         {endif;}
-        <input type="button" value="Mailing starten" onclick="$.crmData.search.startMailing();"><br /><br />
-        <input type="button" value="Etiketten erzeugen" onclick="window.open('admin.php?mod=crmData&tpl=Index&action=generateLabels')"><br /><br />
-        <input type="button" value="Statistik ansehen" onclick="$.brandbox.get($.brandbox.mod,'Statistic');"><br /><br />
+        <button id="startMailing" type="button" name="login" class="btn btn-primary" onclick="$.crmData.search.startMailing();">
+          <i class="fa fa-envelope-o"></i>
+          Mailing starten
+        </button><br /><br />
+        <button id="generateLabels" type="button" name="login" class="btn btn-primary" onclick="window.open('admin.php?mod=crmData&tpl=Index&action=generateLabels')">
+          <i class="fa fa-th"></i>
+          Etiketten erzeugen
+        </button><br /><br />
+        <button id="statistic" type="button" name="login" class="btn btn-primary" onclick="$.brandbox.get($.brandbox.mod,'Statistic');">
+          <i class="fa fa-bar-chart-o"></i>
+          Statistik ansehen
+        </button><br /><br />
       </div>
 
     </div>

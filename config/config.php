@@ -17,22 +17,22 @@
    * Config:Debug
    */
   //\BB\config::set('debug:mail', 'frick@konmedia.com');
-  \BB\config::set('debug:mysql', false);
+  \BB\config::set('debug:mysql', true);
   \BB\config::set('debug:dao', false);
-  \BB\config::set('debug:template', false);
-  \BB\config::set('debug:identifier', false);
+  \BB\config::set('debug:template', true);
+  \BB\config::set('debug:identifier', true);
   \BB\config::set('debug:pdf', false);
-  \BB\config::set('debug:file', false);
+  \BB\config::set('debug:file', true);
   \BB\config::set('debug:ftp', false);
   \BB\config::set('debug:out', 'chrome'); // chrome|firefox|plain|html|mail|none
 
   /*
    * Config:MySQL
    */
-  \BB\config::set('db:name', 'usrdb_ehepeywv');
-  \BB\config::set('db:host', 'localhost:3307');
-  \BB\config::set('db:user', 'ehepeywv');
-  \BB\config::set('db:password', 'ehepeywv');
+  \BB\config::set('db:name', 'ehe-initiative');
+  \BB\config::set('db:host', 'localhost');
+  \BB\config::set('db:user', 'root');
+  \BB\config::set('db:password', 'root');
   \BB\config::set('db:prefix', 'brandbox_');
   \BB\config::set('db:optimize:index', true);
   \BB\config::set('db:encoding', 'utf8');
@@ -41,13 +41,13 @@
    * Config:Paths
    */
   \BB\config::set('path:protocol', $_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http', 'app');
-  \BB\config::set('path:directory', '/', 'app');
-  \BB\config::set('path:http', 'http://'.$_SERVER['SERVER_NAME'].'/', 'app');
-  \BB\config::set('path:https', 'https://'.$_SERVER['SERVER_NAME'].'/', 'app');
-  \BB\config::set('path:none', '//'.$_SERVER['SERVER_NAME'].'/', 'app');
+  \BB\config::set('path:directory', '/ehe-ini-de/', 'app');
+  \BB\config::set('path:http', 'http://'.$_SERVER['SERVER_NAME'].'/ehe-ini-de/', 'app');
+  \BB\config::set('path:https', 'https://'.$_SERVER['SERVER_NAME'].'/ehe-ini-de/', 'app');
+  \BB\config::set('path:none', '//'.$_SERVER['SERVER_NAME'].'/ehe-ini-de/', 'app');
 
   \BB\config::set('path:php', '/usr/bin/');
-  \BB\config::set('path:mysql', '/usr/local/mysql5/bin/');
+  \BB\config::set('path:mysql', '/usr/bin/');
   \BB\config::set('path:magick', '/usr/bin/');
   \BB\config::set('path:gs', '/usr/bin/gs');
   \BB\config::set('path:epdf', '');
@@ -63,6 +63,14 @@
   //\BB\config::set('mail:debug:recipient', 'frick@konmedia.com');
   \BB\config::set('mail:address', 'info@konmedia.com', 'app');
   \BB\config::set('mail:name', 'Brandbox', 'app');
+  \BB\config::set('mail:smtp:host', 'ehe-initiative.de');
+  \BB\config::set('mail:smtp:port', 587);
+  \BB\config::set('mail:smtp:username', 'info@ehe-initiative.de');
+  \BB\config::set('mail:smtp:password', 'HrU{bUZ3');
+  \BB\config::set('mail:smtp:smtpauth', true);
+
+  \BB\config::set('mail:newsletter:pageID', 24);
+  \BB\config::set('mail:newsletter:testAddress', 'info@ehe-initiative.de');
 
   /*
    * Config:Solr
@@ -118,10 +126,10 @@
   setlocale(LC_TIME, 'de_DE@euro.UTF-8', 'de_DE.UTF-8', 'deu_deu.UTF-8');
   date_default_timezone_set('Europe/Berlin');
 
-  putenv("MAGICK_THREAD_LIMIT=1");
-	putenv("OMP_NUM_THREADS=1");
+  #putenv("MAGICK_THREAD_LIMIT=1");
+	#putenv("OMP_NUM_THREADS=1");
   
-  ini_set('display_errors', 0);
-  error_reporting(0);
+  ini_set('display_errors', 1);
+  error_reporting(E_PARSE | E_ERROR);
 
 ?>

@@ -4,11 +4,11 @@
 
   <h3>Termin</h3>
   <div>
-    <p><strong>Datum von:</strong> {echo utf8_encode(strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum));}</p>
+    <p><strong>Datum von:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsstartdatum) != "00:00"):}
     <p><strong>Beginn:</strong> Ankommen: {echo utf8_encode(strftime('%H:%M Uhr', $eventData->Veranstaltungsbeginn));} // Beginn: {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsstartdatum);}</p>
     {endif;}
-    <p><strong>Datum bis:</strong> {echo utf8_encode(strftime('%A, %d. %B %Y', $eventData->Veranstaltungsenddatum));}</p>
+    <p><strong>Datum bis:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsenddatum);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsenddatum) != "00:00"):}
     <p><strong>Ende:</strong> {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsenddatum);}</p>
     {endif;}

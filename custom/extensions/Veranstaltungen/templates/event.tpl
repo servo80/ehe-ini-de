@@ -31,7 +31,11 @@
 
   <h3>Anmeldung bis</h3>
   <div>
+    {if(!empty($eventData->Veranstaltungsanmeldefrist)):}
     <p>{echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsanmeldefrist);}</p>
+    {else:}
+    <p>steht noch nicht fest</p>
+    {endif;}
   </div>
 
   <h3>Beschreibung</h3>

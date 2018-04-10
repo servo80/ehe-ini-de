@@ -18,7 +18,7 @@
   <a href="{list}?offset={$offset-$limit}" class="previous"><img src="custom/extensions/News/images/previous.png" align="absmiddle" alt="vorherige Seite" /></a>
   {endif;}
 
-  <span>Seite <strong>{$offset/$limit+1}</strong> von <strong>{$count/$limit}</strong></span>
+  <span>Seite <strong>{$offset/$limit+1}</strong> von <strong>{ceil($count/$limit)}</strong></span>
 
   {if($offset < $count-$limit):}
   <a href="{list}?offset={$offset+$limit}" class="next"><img src="custom/extensions/News/images/next.png" align="absmiddle" alt="n&auml;chste Seite" /></a>

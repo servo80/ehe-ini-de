@@ -59,7 +59,7 @@
   {endif;}
 </div>
 
-{if(time() < $eventData->Veranstaltungsanmeldefrist):}
+{if(time() < $eventData->Veranstaltungsanmeldefrist && $eventData->Veranstaltungsanmeldelink == ""):}
 <a href="{pageRegister}?month={month}&year={year}&eventID={eventID}" class="register">Jetzt anmelden!</a>
 {endif;}
 {if($eventData->Veranstaltungsanmeldelink != ""):}

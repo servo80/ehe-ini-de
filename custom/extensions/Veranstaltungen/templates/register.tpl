@@ -122,6 +122,15 @@
       <textarea name="remarks">{$remarks}</textarea>
     </fieldset>
 
+    <p>
+      Pflichtfelder sind mit * markiert.<br /><br />
+
+      Wenn Sie die im Anmeldeformular eingegebenen Daten durch Klick auf den nachfolgenden Button übersenden, erklären Sie sich damit einverstanden,
+      dass wir Ihre Angaben für die Beantwortung Ihrer Anfrage bzw. der Planung unserer Veranstaltung verwenden.<br />
+      Eine Weitergabe an Dritte findet grundsätzlich nicht statt.<br />
+      Ihre Daten werden nicht auf dem Server gespeichert, die aus Ihrer Anfrage resultierende E-Mail wird umgehend nach Beantwortung gelöscht. Weitere Informationen zum Datenschutz finden Sie auch in der Datenschutzerklärung dieser Webseite.
+    </p>
+
     <fieldset class="clear">
       <input type="submit" class="register" value="Jetzt verbindlich anmelden">
     </fieldset>

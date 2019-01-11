@@ -1,5 +1,8 @@
 ---------------------------------------------------------------
 Anmeldung zu {echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltungstitel;} am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}
+{if(!empty($eventData->Veranstaltungsstartdatum2)):}
+ und am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum2);}
+{endif;}
 ---------------------------------------------------------------
 
 
@@ -7,7 +10,7 @@ Anmeldung zu {echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltu
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Anmeldung zu {echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltungstitel;} am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}</title>
+    <title>Anmeldung zu {echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltungstitel;} am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}{if(!empty($eventData->Veranstaltungsstartdatum2)):} und am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum2);}{endif;}</title>
     <style type="text/css">
       body {
         padding-top: 0 !important;
@@ -110,7 +113,7 @@ Anmeldung zu {echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltu
                             <td valign='top' align='center'>
                               <div class="contentEditableContainer contentTextEditable">
                                 <div class="contentEditable">
-                                  <p style='text-align:center;margin:0;font-family:Georgia,Time,sans-serif;font-size:26px;line-height:34px;color:#222222;'>Anmeldung zu {echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltungstitel;} am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}</p>
+                                  <p style='text-align:center;margin:0;font-family:Georgia,Time,sans-serif;font-size:26px;line-height:34px;color:#222222;'>Anmeldung zu {echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltungstitel;} am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}{if(!empty($eventData->Veranstaltungsstartdatum2)):} und am {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum2);}{endif;}</p>
                                 </div>
                               </div>
                             </td>

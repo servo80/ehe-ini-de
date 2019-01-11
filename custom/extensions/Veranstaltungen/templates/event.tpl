@@ -1,9 +1,17 @@
-<h2 class="event">{echo $eventData->Veranstaltungsart;} {echo $eventData->Veranstaltungstitel;}</h2>
+<h2 class="event">{echo $eventData->Veranstaltungsart;}<br />{echo $eventData->Veranstaltungstitel;}</h2>
 
 <div class="event">
 
+  {if(!empty($eventData->Veranstaltungsstartdatum2)):}
+  <h3>Termine</h3>
+  {else:}
   <h3>Termin</h3>
+  {endif;}
   <div>
+    {if(!empty($eventData->Veranstaltungsstartdatum2)):}
+    <p><strong><i><u>1. Termin</u></i></strong></p>
+    {endif;}
+
     <p><strong>Datum von:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsstartdatum) != "00:00"):}
     <p><strong>Beginn:</strong> Ankommen: {echo utf8_encode(strftime('%H:%M Uhr', $eventData->Veranstaltungsbeginn));} // Beginn: {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsstartdatum);}</p>
@@ -11,6 +19,21 @@
     <p><strong>Datum bis:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsenddatum);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsenddatum) != "00:00"):}
     <p><strong>Ende:</strong> {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsenddatum);}</p>
+    {endif;}
+
+    {if(!empty($eventData->Veranstaltungsstartdatum2)):}
+    <br />
+    <p><strong><i><u>2. Termin</u></i></strong></p>
+
+    <p><strong>Datum von:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum2);}</p>
+    {if(strftime('%H:%M', $eventData->Veranstaltungsstartdatum2) != "00:00"):}
+    <p><strong>Beginn:</strong> Ankommen: {echo utf8_encode(strftime('%H:%M Uhr', $eventData->Veranstaltungsbeginn2));} // Beginn: {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsstartdatum2);}</p>
+    {endif;}
+    <p><strong>Datum bis:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsenddatum2);}</p>
+    {if(strftime('%H:%M', $eventData->Veranstaltungsenddatum2) != "00:00"):}
+    <p><strong>Ende:</strong> {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsenddatum2);}</p>
+    {endif;}
+
     {endif;}
   </div>
 

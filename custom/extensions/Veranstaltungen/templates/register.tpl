@@ -15,12 +15,37 @@
 
   {else:}
 
-  <h1>Anmeldeformular</h1>
-  <h2>{echo $eventData->Veranstaltungsart;}</h2>
-  <h3>Thema: <span>{echo $eventData->Veranstaltungstitel;}</span></h3>
-  <h3>Datum von: <span>{echo utf8_encode(strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum));}</span></h3>
-  <h3>Datum bis: <span>{echo utf8_encode(strftime('%A, %d. %B %Y', $eventData->Veranstaltungsenddatum));}</span></h3>
+  <h1>Anmeldeformular {echo $eventData->Veranstaltungsart;}</h1>
 
+  <h3>Thema<br /><br /><span>{echo $eventData->Veranstaltungstitel;}</span></h3>
+  <br />
+  <h3>Ort<br /><span>{echo $eventData->Veranstaltungsort;}</span></h3>
+
+  <h3 style="clear:both;float:left;margin-top:20px;">Termine<br /></h3>
+  <div>
+    {if(!empty($eventData->Veranstaltungsstartdatum2)):}
+    <p><strong><i><u>1. Termin</u></i></strong></p>
+    {endif;}
+
+    <p>
+      <strong>Datum von:</strong> {echo strftime('%A, %d. %B %Y, %H:%M Uhr', $eventData->Veranstaltungsstartdatum);}<br />
+      <strong>Datum bis:</strong> {echo strftime('%A, %d. %B %Y, %H:%M Uhr', $eventData->Veranstaltungsenddatum);}
+    </p>
+
+    {if(!empty($eventData->Veranstaltungsstartdatum2)):}
+    <br />
+    <p><strong><i><u>2. Termin</u></i></strong></p>
+
+    <p>
+      <strong>Datum von:</strong> {echo strftime('%A, %d. %B %Y, %H:%M Uhr', $eventData->Veranstaltungsstartdatum2);}<br />
+      <strong>Datum bis:</strong> {echo strftime('%A, %d. %B %Y, %H:%M Uhr', $eventData->Veranstaltungsenddatum2);}
+    </p>
+
+    {endif;}
+  </div>
+
+
+  <h3 style="clear:both;float:left;margin-top:20px;">Anmeldedaten</h3>
   <form method="post">
     <input type="hidden" name="eventID" value="{eventID}" />
     <input type="hidden" name="month" value="{month}" />

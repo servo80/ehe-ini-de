@@ -240,7 +240,9 @@
       $mailer = new \BB\mail\PHPMailer();
       $mailer->From = 'info@ehe-initiative.de';
       $mailer->FromName = 'Ehe-Initiative e.V.';
-      $mailer->Subject = 'Anmeldung zu '.$eventData->Veranstaltungsart.' '.$eventData->Veranstaltungstitel.' am '.strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);
+      $mailer->Subject =
+        'Anmeldung zu '.$eventData->Veranstaltungsart.' '.$eventData->Veranstaltungstitel.' am '.strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum).
+        (!empty($eventData->Veranstaltungsstartdatum2) ? ' und am '.strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum2) : '');
       $mailer->AddAddress($values['email']);
       $mailer->IsHTML(true);
       $mailer->CharSet = 'UTF-8';

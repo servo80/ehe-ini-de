@@ -58,7 +58,12 @@
         if(count($events) > 0):
           $menuString = '<ol class="subsub">';
           foreach($events as $eventID => $eventData):
-            $menuString .= '<li><a href="de/'.$eventPage['page_filename'].'.html?eventID='.$eventID.'">'.strftime('%d.%m.%Y', $eventData->Veranstaltungsstartdatum).'</a></li>';
+            if(!empty($eventData->Veranstaltungsstartdatum2)):
+              $eventTitle = strftime('%d.%m.', $eventData->Veranstaltungsstartdatum).'/'.strftime('%d.%m.%Y', $eventData->Veranstaltungsstartdatum2);
+            else:
+              $eventTitle = strftime('%d.%m.%Y', $eventData->Veranstaltungsstartdatum);
+            endif;
+            $menuString .= '<li><a href="de/'.$eventPage['page_filename'].'.html?eventID='.$eventID.'">'.$eventTitle.'</a></li>';
           endforeach;
           $menuString .= '</ol>';
         endif;

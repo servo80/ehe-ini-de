@@ -249,9 +249,13 @@
       $mailer->AddEmbeddedImage('custom/themes/ehe-ini.de/images/logo.png', 'logo.png');
       $mailer->AddEmbeddedImage('custom/extensions/Veranstaltungen/images/facebook.png', 'facebook.png');
       $mailer->AddEmbeddedImage('custom/extensions/Veranstaltungen/images/twitter.png', 'twitter.png');
-      //$mailer->AddBcc('info@ehe-initiative.de');
+      $mailer->AddBcc('info@ehe-initiative.de');
+      $mailer->AddBcc('lea.frick@live.de');
       $mailer->Body = $mailTpl->get();
       $mailer->Send();
+
+      $logPath = APP_ROOT.'../anmeldungen/'.time().'_'.session_id().'.txt';
+      file_put_contents($logPath, strip_tags($mailTpl->get()));
 
     }
 

@@ -67,4 +67,14 @@
 
   })(jQuery);
 
+  $('a.toggleMenu').click(function() {
+    $('ol.main').toggle();
+    var display = $('ol.main').css('display');
+    if('block' === display) {
+      $('a.toggleMenu img').attr('src', '../custom/themes/ehe-ini.de/images/close.png');
+    } else {
+      $('a.toggleMenu img').attr('src', '../custom/themes/ehe-ini.de/images/menu.png');
+    }
+  });
+
 });

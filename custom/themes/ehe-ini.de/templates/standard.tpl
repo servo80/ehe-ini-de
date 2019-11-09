@@ -9,6 +9,9 @@
   <body class="standard">
     <div class="wrapAll">
       <div class="branding">
+        <a href="#" class="toggleMenu">
+          <img src="custom/themes/ehe-ini.de/images/menu.png" alt="Menü anzeigen" title="Menü anzeigen" />
+        </a>
         <a href="index.html">
           <img src="custom/themes/ehe-ini.de/images/logo.png" alt="Ehe Initiative" title="Ehe Initiative" />
         </a>

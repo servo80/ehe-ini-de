@@ -258,8 +258,45 @@ ol.sitemap li {
 
 @media only screen
 and (min-device-width: 320px)
-and (max-device-width: 640px)
-and (orientation: portrait) {
+and (max-device-width: 640px),
+screen
+and (min-device-width: 320px)
+and (max-device-width: 568px),
+screen
+and (min-device-width: 375px)
+and (max-device-width: 667px),
+screen
+and (min-device-width: 414px)
+and (max-device-width: 736px),
+screen
+and (min-device-width: 375px)
+and (max-device-width: 812px),
+screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px),
+screen
+and (min-device-width: 834px)
+and (max-device-width: 1112px),
+screen
+and (min-device-width: 834px)
+and (max-device-width: 834px)
+and (orientation: portrait),
+screen
+and (min-device-width: 1112px)
+and (max-device-width: 1112px)
+and (orientation: landscape),
+screen
+and (min-device-width: 1024px)
+and (max-device-width: 1366px),
+screen
+and (min-device-width: 1024px)
+and (max-device-width: 1024px)
+and (orientation: portrait),
+screen
+and (min-device-width: 1366px)
+and (max-device-width: 1366px)
+and (orientation: landscape)
+{
 
   html, body {
     font-size:16px !important;
@@ -359,18 +396,37 @@ and (orientation: portrait) {
   }
   div.main h1 {
     font-size:3em;
+    margin-top:20px;
   }
-  div.main h1, div.main > a, div.main > div {
+  div.main h1,
+  div.main h2,
+  div.main > a,
+  div.main > div,
+  div.main > ol,
+  div.main input.register,
+  div.main > form {
     padding-left:10px;
     padding-right:10px;
   }
-  div.main a, div.main p, div.main li {
+  div.main a,
+  div.main p,
+  div.main li,
+  div.main input.register,
+  div.main p.mail a,
+  div.main input[type="submit"]{
     font-size:2em !important;
     line-height:1.5em !important;
   }
-  div.main p > a, div.main li > p {
+  div.main p span,
+  div.main a span {
+    font-size:0.85em !important;
+  }
+  div.main a span {
+    line-height:1.5em;
+  }
+  div.main p > a, div.main li > p, div.main > div.p > p > a {
     font-size:1em !important;
-    line-height:1.5em !important;
+    line-height:1.5em;
   }
   div.main ul {
     margin-left:10px;
@@ -378,8 +434,88 @@ and (orientation: portrait) {
   div.main a.link {
     background-image:none !important;
   }
+  div.main a.linkButton span {
+    padding-top:0;
+  }
+  div.main .newsTeaser h2 {
+    font-size:1.5em !important;
+  }
+  div.main ol.news {
+    padding-left:20px !important;
+  }
+  div.main ol.news li div {
+    width:70% !important;
+  }
+  div.main ol.news li div h2,
+  div.main ol.news li div span.date {
+    font-size:1em !important;
+  }
+  div.main ol.news p {
+    font-size:1em !important;
+  }
+  div.main .newsNavigation span {
+    font-size:2em !important;
+  }
+  div.main .newsNavigation a img,
+  div.main a.linkButton img {
+    width:40px !important;
+  }
+  div.main table.calendar {
+    margin-left:20px;
+    margin-right:20px;
+  }
+  div.main table.calendar td {
+    width:8%;
+    height:150px;
+  }
+  div.main h2,
+  div.main h3,
+  div.main div.register fieldset label {
+    font-size:2em !important;
+    line-height:1.5em;
+  }
+  div.main .h2_Welcome h2,
+  div.main .h2_Headline_Start h2 {
+    padding-left:0;
+  }
+  div.main div.contact h2 {
+    padding-left:0;
+  }
+  div.main h2.event {
+    line-height:1.5em;
+  }
+  div.main div.event h3 {
+    margin-right:20px;
+  }
+  div.main a.calendar.left {
+    padding-left:30px;
+    margin-left:20px;
+  }
+  div.main a.calendar.right {
+    padding-right:30px;
+    margin-right:20px;
+  }
+  div.main ol.eventsList li h3,
+  div.main ol.eventsList li p,
+  div.main ol.eventsList li a,
+  div.main div.contact p.mail {
+    font-size:1em !important;
+    height:auto;
+  }
+  div.main ol.eventsList li:last-child {
+    border-bottom:none;
+  }
+  div.main a.register,
+  div.main input.register {
+    background-image:none;
+    background-color:#4d4d4d;
+    width:auto;
+    height:auto;
+    margin-left:10px;
+  }
   div.testimonial {
     width:100% !important;
+    margin-top:20px;
   }
   div.contact p {
     height:auto !important;
@@ -397,18 +533,45 @@ and (orientation: portrait) {
     text-align:left !important;
     padding-right:10px;
   }
-  ul.reports li span {
+  ul.reports li span ,
+  div.register h3 span,
+  div.register h3 span p {
     font-size:1em !important;
-    line-height:1em !important;
+    line-height:1.5em !important;
     padding-right:10px;
     padding-top:10px;
+  }
+  div.register fieldset p {
+    width:100% !important;
+    font-weight:normal !important;
+  }
+  form fieldset {
+    width:30% !important;
+  }
+  form fieldset.captcha,
+  form fieldset.captcha img {
+    width:100% !important;
+  }
+  form fieldset input[type="text"],
+  form fieldset input[name="captcha"],
+  textarea {
+    width:95% !important;
+    height:60px !important;
+    border:1px solid #4d4d4d;
+  }
+  form fieldset:nth-child(10) label,
+  form fieldset:nth-child(16) label {
+    height:96px;
+  }
+  form fieldset input[type="submit"] {
+    width:auto;
+    padding:5px;
   }
   div.event {
     width:100% !important;
     float:none !important;
   }
   div.event h3 {
-    font-size:1.5em;
     line-height:50px !important;
     background-position: 95% baseline !important;
   }
@@ -416,10 +579,11 @@ and (orientation: portrait) {
     background-image:none !important;
     background-color:#ffc66c;
     height:auto !important;
+    margin-top:20px;
   }
   div.footer p {
     font-size:2em !important;
-    line-height:1.5em !important;
+    line-height:2em !important;
     height:auto !important;
     line-height:80px;
   }
@@ -445,11 +609,72 @@ and (orientation: portrait) {
     vertical-align:middle;
     display:block;
     padding-top:15px;
-    padding-bottom:15px;
+    padding-bottom:25px;
   }
   ol.socialMedia {
     top:10px !important;
     left:100px !important;
   }
+  ol.socialMedia li a img {
+    width:40px;
+  }
 
+}
+
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1366px),
+screen
+and (min-device-width: 1024px)
+and (max-device-width: 1024px)
+and (orientation: portrait),
+screen
+and (min-device-width: 1366px)
+and (max-device-width: 1366px)
+and (orientation: landscape)
+{
+  .jcarousel-wrapper {
+    width:auto !important;
+  }
+  .jcarousel-wrapper img {
+    width: 100%;
+    height: auto;
+  }
+  .jcarousel-wrapper img.decker {
+    display:none;
+  }
+}
+
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1024px)
+and (orientation: landscape) {
+  .jcarousel-wrapper {
+    height:300px !important;
+  }
+  div.jcarousel ul li img {
+    width:1024px !important;
+  }
+  a.jcarousel-control-next,
+  a.jcarousel-control-prev,
+  p.jcarousel-pagination {
+    display:none;
+  }
+}
+
+@media only screen
+and (min-device-width: 1366px)
+and (max-device-width: 1366px)
+and (orientation: landscape) {
+  .jcarousel-wrapper {
+    height:350px !important;
+  }
+  div.jcarousel ul li img {
+    width:1366px !important;
+  }
+  a.jcarousel-control-next,
+  a.jcarousel-control-prev,
+  p.jcarousel-pagination {
+    display:none;
+  }
 }

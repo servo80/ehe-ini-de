@@ -290,9 +290,6 @@ screen
 and (min-device-width: 834px)
 and (max-device-width: 1112px),
 screen
-and (min-device-width: 1536px)
-and (max-device-width: 2048px),
-screen
 and (min-device-width: 834px)
 and (max-device-width: 834px)
 and (orientation: portrait),

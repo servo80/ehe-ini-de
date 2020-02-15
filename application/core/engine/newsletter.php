@@ -75,6 +75,7 @@ class newsletter extends \BB\engine\common {
 
         $userTableID = (int)$this->values['u_tbl_id']['cnv_value'];
         $userID = $this->getIDOfUserByEmail($cryptBlowfish->decrypt());
+        $email = $cryptBlowfish->decrypt();
 
         if($coreHttp->issetGet('s')):
           $cryptBlowfish = new \BB\crypt\brandbox($coreHttp->getGet('s'));
@@ -114,6 +115,36 @@ class newsletter extends \BB\engine\common {
             )
           );
         endif;
+
+        $contentID = $modelContent->execCreate(array('tableID' => 'newsletterLog'));
+        $modelContent->execUpdate(
+          array(
+            'tableID'    => 'newsletterLog',
+            'fieldID'    => 'E-Mail',
+            'contentID'  => $contentID,
+            'value'      => $email,
+            'languageID' => 1
+          )
+        );
+        $modelContent->execUpdate(
+          array(
+            'tableID'    => 'newsletterLog',
+            'fieldID'    => 'newsletterLogType',
+            'contentID'  => $contentID,
+            'value'      => 'Anmeldung',
+            'languageID' => 1
+          )
+        );
+
+        $modelContent->execUpdate(
+          array(
+            'tableID'    => 'newsletterLog',
+            'fieldID'    => 'newsletterLogDate',
+            'contentID'  => $contentID,
+            'value'      => time(),
+            'languageID' => 1
+          )
+        );
 
         $objectTmpl = new \BB\template\classic('application/modules/website/objects/object_'.$this->obj_id.'_subscribe_send_return.tpl', true);
         $this->assignKeys($objectTmpl);
@@ -166,6 +197,37 @@ class newsletter extends \BB\engine\common {
 
         $modelContent->execDelete($userTableID, $contentID, $userID);
         $modelBlacklist->execAddMail($email);
+
+        $contentID = $modelContent->execCreate(array('tableID' => 'newsletterLog'));
+        $modelContent->execUpdate(
+          array(
+            'tableID'    => 'newsletterLog',
+            'fieldID'    => 'E-Mail',
+            'contentID'  => $contentID,
+            'value'      => $email,
+            'languageID' => 1
+          )
+        );
+        $modelContent->execUpdate(
+          array(
+            'tableID'    => 'newsletterLog',
+            'fieldID'    => 'newsletterLogType',
+            'contentID'  => $contentID,
+            'value'      => 'Abmeldung',
+            'languageID' => 1
+          )
+        );
+
+        $modelContent->execUpdate(
+          array(
+            'tableID'    => 'newsletterLog',
+            'fieldID'    => 'newsletterLogDate',
+            'contentID'  => $contentID,
+            'value'      => time(),
+            'languageID' => 1
+          )
+        );
+
 
         $objectTmpl = new \BB\template\classic('application/modules/website/objects/object_'.$this->obj_id.'_subscribe_send_return.tpl', true);
         $this->assignKeys($objectTmpl);
@@ -224,6 +286,16 @@ class newsletter extends \BB\engine\common {
     $mail->Subject = $subject;
     $mail->AddAddress($recipient);
     $mail->Body = str_replace('{link}', implode('', $link), $this->values['body']['cnv_value']);
+
+    if(\BB\config::get('mail:smtp:host') != ''):
+      $mail->IsSMTP(true);
+      $mail->Host = \BB\config::get('mail:smtp:host');
+      //$coreMail->SMTPDebug  = 2;
+      $mail->SMTPAuth = \BB\config::get('mail:smtp:smtpauth');;
+      $mail->Port = \BB\config::get('mail:smtp:port');
+      $mail->Username = \BB\config::get('mail:smtp:username');
+      $mail->Password = \BB\config::get('mail:smtp:password');
+    endif;
 
     $modelSpooler = \BB\model\spooler::get();
     $mailID = $modelSpooler->execCreate();

@@ -14,6 +14,7 @@
         </a>
         <a href="index.html">
           <img src="custom/themes/ehe-ini.de/images/logo.png" alt="Ehe Initiative" title="Ehe Initiative" />
+          <h1>Ehe-Initiative e.V.</h1>
         </a>
       </div>
       <bb:menu key="main" class="main" page_id="null">

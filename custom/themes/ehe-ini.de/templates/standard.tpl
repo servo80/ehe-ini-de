@@ -16,21 +16,6 @@
           <img src="custom/themes/ehe-ini.de/images/logo.png" alt="Ehe Initiative" title="Ehe Initiative" />
         </a>
       </div>
-      <div class="search">
-        <script>
-          (function() {
-            var cx = '006082560213216679981:i2ctczw_1s8';
-            var gcse = document.createElement('script');
-            gcse.type = 'text/javascript';
-            gcse.async = true;
-            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-              '//cse.google.com/cse.js?cx=' + cx;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gcse, s);
-          })();
-        </script>
-        <gcse:search></gcse:search>
-      </div>
       <bb:menu key="main" class="main" page_id="null">
         <bb:link>
           <bb:menu key="sub" class="sub" page_id="parent">

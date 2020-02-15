@@ -34,30 +34,6 @@ img.right {
   top:97px;
   right:20px;
 }
-
-/* Suche */
-div.search {
-  width:300px;
-  position:absolute;
-  right:110px;
-}
-td.gsc-input {
-  padding-right:0 !important;
-}
-div.gsc-input-box {
-  border-left:1px solid #000;
-  border-top:1px solid #000;
-  border-bottom:1px solid #000;
-  border-right:0;
-}
-input.gsc-search-button {
-  background-color:#ffc66c !important;
-  border-radius:0 !important;
-  border-left:0 !important;
-  border-color:#000;
-  margin-left:0 !important;
-  margin-top:3px !important;
-}
 /* Inhalt */
 div.main {
   margin-left:109px;
@@ -345,15 +321,6 @@ and (orientation: landscape)
     position:absolute;
     left:15px;
     top:30px;
-  }
-  div.search {
-    float:none !important;
-    position:relative !important;
-    padding-top:20px !important;
-    right:auto !important;
-  }
-  div.gsc-control-cse {
-    width:100% !important;
   }
   ol.main {
     margin:0 !important;

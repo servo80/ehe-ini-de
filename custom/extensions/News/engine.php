@@ -55,21 +55,54 @@
     public function viewTeaser(){
 
       $coreHttp = \BB\http\request::get();
+
+      $eventsDao = \BB\custom\model\element\dao\Veranstaltungen::instance();
+      $eventsSearch = new \BB\custom\model\eventsSearch($eventsDao);
+      $eventsSearch->setFromTimestamp(time());
+      $events = $eventsSearch->getResults(1);
+
+      $teaser = array();
+      $eventsCounter = 1;
+      foreach($events as $eventEntry):
+        $eventEntryData = $eventEntry->getData(1);
+        if(!empty($eventEntryData->Veranstaltungsnewsbild)):
+
+          $teaserText = substr(strip_tags($eventEntryData->Veranstaltungsbeschreibung), 0, '150');
+          $teaserText = substr($teaserText, 0, strrpos($teaserText, ' ')).'...';
+
+          $teaser[] = array(
+            'image' => $eventEntryData->Veranstaltungsnewsbild,
+            'headline' => str_replace('"', '', $eventEntryData->Veranstaltungstitel),
+            'text' => $teaserText,
+            'link' => $eventEntryData->Veranstaltungsart.'-'.$eventEntryData->VeranstaltungsSeoTitel.'.html'
+          );
+          $eventsCounter++;
+        endif;
+        if(3 == $eventsCounter) break;
+      endforeach;
+
+
       $orderField = new \BB\model\element\optSearchField();
       $newsDao = \BB\custom\model\element\dao\News::instance();
 
       $offset = $coreHttp->getInteger('offset');
       $field = $orderField->id('Newsdatum')->sortDesc();
-      //$results = $newsDao->getRows(1, array($field), $offset, self::limit);
+      $news = $newsDao->getRows(1, array($field), $offset, 1);
 
-      $news = array();
-      foreach($results as $newsElement):
-        $newsData = $newsElement->getData(1);
-        $newsData->id = $newsElement->getContentID();
-        $news[] = $newsData;
+      foreach($news as $newsEntry):
+        if(count($teaser) < 3):
+          $newsEntryData = $newsEntry->getData(1);
+          $teaser[] = array(
+            'image' => $newsEntryData->Newsbild,
+            'headline' => $newsEntryData->Newsheadline,
+            'text' => nl2br(strip_tags($newsEntryData->Newsteaser)),
+            'link' => $this->getLink($this->getValue('detail')).'?newsID='.$newsEntry->getContentID()
+          );
+        endif;
       endforeach;
 
-      $this->view->add('news', $news);
+
+      $this->view->add('news', $teaser);
       $this->view->assign('detail', $this->getLink($this->getValue('detail')));
 
     }

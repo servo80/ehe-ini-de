@@ -3,10 +3,10 @@
 
   {foreach($news as $newsElement):}
   <div class="column width33"><div class="newsTeaser">
-      <img src="image/0/{$newsElement->Newsbild}&amp;w=215&amp;h=171" alt="" />
-      <h2>{$newsElement->Newsheadline}</h2>
-      <p>{echo nl2br($newsElement->Newsteaser);}</p>
-      <a href="{detail}?newsID={$newsElement->id}">» weiterlesen</a>
+      <img src="image/0/{$newsElement['image']}&amp;w=215&amp;h=171" alt="" />
+      <h2>{$newsElement['headline']}</h2>
+      <p>{echo $newsElement['text'];}</p>
+      <a href="{$newsElement['link']}">» weiterlesen</a>
     </div>
   </div>
   {endforeach;}

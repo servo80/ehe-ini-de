@@ -392,6 +392,31 @@ Ehe-Intensiv]]></attr>
       <attr name="icon"><![CDATA[fa-file-o]]></attr>
       <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsflyerbild]]></attr>
     </field>
+    <field key="Veranstaltungsnewsbild" label="Veranstaltungsnewsbild" type="string">
+      <attr name="type"><![CDATA[varchar]]></attr>
+      <attr name="length">256</attr>
+      <attr name="name"><![CDATA[News (Bild)]]></attr>
+      <attr name="identifier"><![CDATA[Veranstaltungsnewsbild]]></attr>
+      <attr name="form"><![CDATA[file]]></attr>
+      <attr name="valuesEval">0</attr>
+      <attr name="width">300</attr>
+      <attr name="height">1</attr>
+      <attr name="search">0</attr>
+      <attr name="find">0</attr>
+      <attr name="identify">0</attr>
+      <attr name="identifyPerson">0</attr>
+      <attr name="identifyFile">0</attr>
+      <attr name="monolingual">0</attr>
+      <attr name="system">0</attr>
+      <attr name="group"><![CDATA[null]]></attr>
+      <attr name="readonlyOrder">0</attr>
+      <attr name="required">0</attr>
+      <attr name="appendtomail">0</attr>
+      <attr name="download">0</attr>
+      <attr name="dataType"><![CDATA[string]]></attr>
+      <attr name="icon"><![CDATA[fa-file-o]]></attr>
+      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsnewsbild]]></attr>
+    </field>
     <field key="Veranstaltungsanmeldelink" label="Veranstaltungsanmeldelink" type="string">
       <attr name="type"><![CDATA[varchar]]></attr>
       <attr name="length">100</attr>

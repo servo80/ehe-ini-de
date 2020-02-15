@@ -14,7 +14,7 @@
 
     <p><strong>Datum von:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsstartdatum) != "00:00"):}
-    <p><strong>Beginn:</strong> Ankommen: {echo utf8_encode(strftime('%H:%M Uhr', $eventData->Veranstaltungsbeginn));} // Beginn: {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsstartdatum);}</p>
+    <p><strong>Beginn:</strong> {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsstartdatum);}</p>
     {endif;}
     <p><strong>Datum bis:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsenddatum);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsenddatum) != "00:00"):}
@@ -27,7 +27,7 @@
 
     <p><strong>Datum von:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsstartdatum2);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsstartdatum2) != "00:00"):}
-    <p><strong>Beginn:</strong> Ankommen: {echo utf8_encode(strftime('%H:%M Uhr', $eventData->Veranstaltungsbeginn2));} // Beginn: {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsstartdatum2);}</p>
+    <p><strong>Beginn:</strong> {echo strftime('%H:%M Uhr', $eventData->Veranstaltungsstartdatum2);}</p>
     {endif;}
     <p><strong>Datum bis:</strong> {echo strftime('%A, %d. %B %Y', $eventData->Veranstaltungsenddatum2);}</p>
     {if(strftime('%H:%M', $eventData->Veranstaltungsenddatum2) != "00:00"):}

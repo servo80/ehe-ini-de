@@ -167,31 +167,6 @@ Ehe-Intensiv]]></attr>
       <attr name="icon"><![CDATA[fa-font]]></attr>
       <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsenddatum]]></attr>
     </field>
-    <field key="Veranstaltungsbeginn" label="Veranstaltungsbeginn" type="integer">
-      <attr name="type"><![CDATA[int]]></attr>
-      <attr name="length">20</attr>
-      <attr name="name"><![CDATA[Ankommen/Beginn]]></attr>
-      <attr name="identifier"><![CDATA[Veranstaltungsbeginn]]></attr>
-      <attr name="form"><![CDATA[datetime]]></attr>
-      <attr name="valuesEval">0</attr>
-      <attr name="width">0</attr>
-      <attr name="height">0</attr>
-      <attr name="search">0</attr>
-      <attr name="find">0</attr>
-      <attr name="identify">0</attr>
-      <attr name="identifyPerson">0</attr>
-      <attr name="identifyFile">0</attr>
-      <attr name="monolingual">0</attr>
-      <attr name="system">0</attr>
-      <attr name="group"><![CDATA[null]]></attr>
-      <attr name="readonlyOrder">0</attr>
-      <attr name="required">0</attr>
-      <attr name="appendtomail">0</attr>
-      <attr name="download">0</attr>
-      <attr name="dataType"><![CDATA[integer]]></attr>
-      <attr name="icon"><![CDATA[fa-font]]></attr>
-      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsbeginn]]></attr>
-    </field>
     <field key="Veranstaltungsanmeldefrist" label="Veranstaltungsanmeldefrist" type="integer">
       <attr name="type"><![CDATA[int]]></attr>
       <attr name="length">20</attr>
@@ -266,31 +241,6 @@ Ehe-Intensiv]]></attr>
       <attr name="dataType"><![CDATA[integer]]></attr>
       <attr name="icon"><![CDATA[fa-font]]></attr>
       <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsenddatum2]]></attr>
-    </field>
-    <field key="Veranstaltungsbeginn2" label="Veranstaltungsbeginn2" type="integer">
-      <attr name="type"><![CDATA[int]]></attr>
-      <attr name="length">20</attr>
-      <attr name="name"><![CDATA[Ankommen/Beginn 2]]></attr>
-      <attr name="identifier"><![CDATA[Veranstaltungsbeginn2]]></attr>
-      <attr name="form"><![CDATA[datetime]]></attr>
-      <attr name="valuesEval">0</attr>
-      <attr name="width">0</attr>
-      <attr name="height">0</attr>
-      <attr name="search">0</attr>
-      <attr name="find">0</attr>
-      <attr name="identify">0</attr>
-      <attr name="identifyPerson">0</attr>
-      <attr name="identifyFile">0</attr>
-      <attr name="monolingual">0</attr>
-      <attr name="system">0</attr>
-      <attr name="group"><![CDATA[null]]></attr>
-      <attr name="readonlyOrder">0</attr>
-      <attr name="required">0</attr>
-      <attr name="appendtomail">0</attr>
-      <attr name="download">0</attr>
-      <attr name="dataType"><![CDATA[integer]]></attr>
-      <attr name="icon"><![CDATA[fa-font]]></attr>
-      <attr name="sanitizedIdentifier"><![CDATA[Veranstaltungsbeginn2]]></attr>
     </field>
     <field key="Veranstaltungsbeschreibung" label="Veranstaltungsbeschreibung" type="string">
       <attr name="type"><![CDATA[blob]]></attr>

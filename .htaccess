@@ -1,3 +1,43 @@
+ExpiresActive On
+ExpiresDefault "access plus 1 days"
+ExpiresByType image/gif "access plus 7 days"
+ExpiresByType image/jpeg "access plus 7 days"
+ExpiresByType image/png "access plus 7 days"
+ExpiresByType text/javascript "access plus 2 hours"
+ExpiresByType application/pdf "access plus 1 seconds"
+
+<FilesMatch "\.(ico|flv|eot|woff|svg|ttf|htc)$">
+	Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+<FilesMatch "\.(jpg|jpeg|png|gif|swf|css|js)$">
+	Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+<FilesMatch "\.(xml|txt)$">
+	Header set Cache-Control "max-age=172800, proxy-revalidate"
+</FilesMatch>
+<FilesMatch "\.(html|htm|pdf)$">
+	Header set Cache-Control "max-age=60, private, proxy-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.(.*)$">
+#	Deny from all
+Require all denied
+</FilesMatch>
+<FilesMatch "\.(?i:php|html|xml|css|js|swf|gif|png)$">
+#	Allow from all
+Require all granted
+</FilesMatch>
+<FilesMatch "robots.txt|favicon.ico$">
+#	Allow from all
+require all granted
+</FilesMatch>
+<Files "admin.php">
+#  Satisfy Any
+<RequireAny>
+Require all granted
+</RequireAny>
+</Files>
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/plain text/html text/xml
   AddOutputFilterByType DEFLATE text/css text/javascript
@@ -8,10 +48,7 @@
 </IfModule>
 
 RewriteEngine on
-#Options +FollowSymLinks
-#Options +SymlinksIfOwnerMatch
-
-RewriteBase /ehe-ini-de/
+RewriteBase /
 
 RewriteCond %{HTTP_HOST}   !^www\..* [NC]
 RewriteCond %{HTTP_HOST}   !^webdev3* [NC]
@@ -20,8 +57,8 @@ RewriteCond %{HTTP_HOST}   !^.*\..*\..* [NC]
 RewriteRule ^(.*)          http://www.%{HTTP_HOST}/$1 [R=301,L]
 
 # Admin auf SSL
-#RewriteCond %{SERVER_PORT}  !^443$ [NC]
-#RewriteRule ^admin.php$ https://%{HTTP_HOST}/admin.php [R=301,L]
+RewriteCond %{SERVER_PORT}  !^443$ [NC]
+RewriteRule ^admin.php$ https://%{HTTP_HOST}/admin.php [R=301,L]
 
 # Erster Aufruf der Seite
 RewriteRule ^$ de/index.html
@@ -32,6 +69,7 @@ RewriteRule ^google.+\.html$ - [L]
 RewriteRule ^(.*?)wymiframe\.html$ - [L]
 RewriteRule ^(.*?)wymiframe_disabled\.html$ - [L]
 RewriteRule ^(.*?)\.htm$ - [L]
+RewriteRule ^phpMyAdmin(.*?)$ - [L]
 RewriteRule ^application/api/(.*?)$ - [L]
 RewriteRule ^application/app/(.*?)$ - [L]
 RewriteRule ^a\/$ de/index.html [R=301]
@@ -50,8 +88,12 @@ RewriteRule ^file/shop/(.*?)$ direct.php?route=direct,Index,ShowShop&src=$1 [L]
 RewriteRule ^video/(.*?)$ direct.php?route=direct,Index,Video&src=$1 [L]
 RewriteRule ^download/public/(.*?)$ direct.php?route=direct,Index,Download&src=$1 [L]
 RewriteRule ^image/([0-9]*)/(.*?)$ direct.php?route=direct,Index,Image&src=$2 [QSA,L]
+RewriteRule ^core/image/([0-9]*)/(.*?)$ direct.php?route=direct,Index,Image&src=$2 [QSA,L]
 
 # HTML-Seite
+RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Start-?(.*?)\.html(.*?)$ stage.php?file=Event&seotitle=$3&lang=$2&%{QUERY_STRING}
+RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Aktiv-?(.*?)\.html(.*?)$ stage.php?file=Event&seotitle=$3&lang=$2&%{QUERY_STRING}
+RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Intensiv-?(.*?)\.html(.*?)$ stage.php?file=Event&seotitle=$3&lang=$2&%{QUERY_STRING}
 RewriteRule ^(([a-zA-Z0-9_-]*)/)?(.*?)\.html(.*?)$ stage.php?file=$3&lang=$2&%{QUERY_STRING}
 
 # XML-Seite
@@ -63,3 +105,6 @@ RewriteRule ^([a-zA-Z0-9_-]*)/(.*?)\.html\?file=([a-zA-Z0-9_-]*)&id=([0-9]*)(.*?
 # Ordner
 RewriteRule ^(([a-zA-Z0-9_-]*)/)?([a-zA-Z0-9_-]*)/?$ stage.php?file=$2 [L]
 RewriteRule ^([a-zA-Z0-9_-]*)/?$ stage.php?file=$1 [L]
+
+#AddHandler php-fastcgi5.3 .php .phtml
+AddHandler php-fastcgi5.6 .php .phtml

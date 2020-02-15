@@ -19,6 +19,7 @@
     protected $fromTimestamp = 0;
     protected $toTimestamp = 0;
     protected $type = '';
+    protected $seoTitle = '';
 
     /**
      * @var \BB\model\dao $dao
@@ -55,12 +56,20 @@
     }
 
     /**
+     * @param string $seoTitle
+     */
+    public function setSeoTitle($seoTitle) {
+      $this->seoTitle = $seoTitle;
+    }
+
+    /**
      * @param int $languageID
      * @param bool $type
+     * @param bool $seoTitle
      * @return \BB\model\element\dao\caravan
      */
-    public function getResults($languageID, $type = false) {
-      $fields = $this->getSearchFields($type);
+    public function getResults($languageID, $type = false, $seoTitle = false) {
+      $fields = $this->getSearchFields($type, $seoTitle);
       $results = $this->dao->getRows((int)$languageID, $fields);
 
       return $results;
@@ -70,15 +79,20 @@
      * @param bool $type
      * @return array
      */
-    private function getSearchFields($type) {
+    private function getSearchFields($type, $seoTitle) {
 
       $fields = array();
+      if($this->fromTimestamp > 0):
       $fields[] = $this->getGreaterThanField('Veranstaltungsstartdatum', $this->fromTimestamp);
+      endif;
       if($this->toTimestamp > 0):
         $fields[] = $this->getLessThanField('Veranstaltungsstartdatum', $this->toTimestamp);
       endif;
       if($type):
         $fields[] = $this->getLikeField('Veranstaltungsart', $this->type);
+      endif;
+      if($seoTitle):
+        $fields[] = $this->getLikeField('VeranstaltungsSeoTitel', $this->seoTitle);
       endif;
       $fields[] = $this->getOrderByAscField('Veranstaltungsstartdatum');
       $fields[] = 'AND';

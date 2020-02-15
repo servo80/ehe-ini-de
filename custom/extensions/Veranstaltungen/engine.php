@@ -105,12 +105,17 @@
 
       $coreHttp = \BB\http\request::get();
       $eventID = $coreHttp->getInteger('eventID');
+      $eventSeoTitle = $coreHttp->getString('seotitle');
+
+      if(0 === $eventID && !empty($eventSeoTitle)):
+        $eventDaoElement = $this->getEventBySeoTitle($eventSeoTitle);
+      else:
+        $eventsDao = \BB\custom\model\element\dao\Veranstaltungen::instance();
+        $eventDaoElement = $eventsDao->getDaoElement($eventID);
+      endif;
 
       $month = $this->getMonth();
       $year = $this->getYear();
-
-      $eventsDao = \BB\custom\model\element\dao\Veranstaltungen::instance();
-      $eventDaoElement = $eventsDao->getDaoElement($eventID);
 
       $eventData = $eventDaoElement->getData(1);
 
@@ -218,6 +223,20 @@
         $this->sent = true;
       endif;
 
+    }
+
+    /**
+     * @param $seoTitle
+     * @return \BB\model\element\dao\Veranstaltungen
+     */
+    protected function getEventBySeoTitle($seoTitle) {
+
+      $eventsDao = \BB\custom\model\element\dao\Veranstaltungen::instance();
+      $eventsSearch = new \BB\custom\model\eventsSearch($eventsDao);
+      $eventsSearch->setSeoTitle($seoTitle);
+      $results = $eventsSearch->getResults(1, false, true);
+
+      return $results[0];
     }
 
     /**

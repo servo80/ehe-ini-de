@@ -63,7 +63,7 @@
             else:
               $eventTitle = strftime('%d.%m.%Y', $eventData->Veranstaltungsstartdatum);
             endif;
-            $menuString .= '<li><a href="de/'.$eventPage['page_filename'].'.html?eventID='.$eventID.'">'.$eventTitle.'</a></li>';
+            $menuString .= '<li><a href="de/'.$eventData->Veranstaltungsart.'-'.$eventData->VeranstaltungsSeoTitel.'.html">'.$eventTitle.'</a></li>';
           endforeach;
           $menuString .= '</ol>';
         endif;

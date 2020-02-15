@@ -14,6 +14,7 @@
    *
    * @method string getVeranstaltungsart(\int $languageID)
    * @method string getVeranstaltungstitel(\int $languageID)
+   * @method string getVeranstaltungsSeoTitel(\int $languageID)
    * @method string getVeranstaltungsreferenten(\int $languageID)
    * @method integer getVeranstaltungsstartdatum(\int $languageID)
    * @method integer getVeranstaltungsenddatum(\int $languageID)
@@ -29,6 +30,7 @@
    * @method string getNewsbild(\int $languageID)
    * @method void setVeranstaltungsart(\string $value, \int $languageID)
    * @method void setVeranstaltungstitel(\string $value, \int $languageID)
+   * @method void setVeranstaltungsSeoTitel(\string $value, \int $languageID)
    * @method void setVeranstaltungsreferenten(\string $value, \int $languageID)
    * @method void setVeranstaltungsstartdatum(\integer $value, \int $languageID)
    * @method void setVeranstaltungsenddatum(\integer $value, \int $languageID)

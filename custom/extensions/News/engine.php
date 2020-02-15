@@ -60,7 +60,7 @@
 
       $offset = $coreHttp->getInteger('offset');
       $field = $orderField->id('Newsdatum')->sortDesc();
-      $results = $newsDao->getRows(1, array($field), $offset, self::limit);
+      //$results = $newsDao->getRows(1, array($field), $offset, self::limit);
 
       $news = array();
       foreach($results as $newsElement):

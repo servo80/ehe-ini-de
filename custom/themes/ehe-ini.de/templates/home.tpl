@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <title>{app:page:title}</title>
+    <title>Ehe-Initiative e.V. - {app:page:title}</title>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="custom/themes/ehe-ini.de/css/print.css" type="text/css" media="print" />
   </head>

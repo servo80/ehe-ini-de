@@ -36,21 +36,35 @@
 
 		}
 
-		/*
+
 		public static function modePage(\BB\template\classic $pageTmpl, $tree_id, $lan_id, $page_id) {
-      $modelLanguage = \BB\model\language::get();
-			$tree_id = (int)$tree_id;
-			$lan_id = (int)$lan_id;
-			$page_id = (int)$page_id;
-      $pageTmpl->assign('lang', $modelLanguage->getLanguageAbbreviation($lan_id));
-		}
-		
-		public static function modeMail(\BB\template\classic $pageTmpl, $tree_id, $lan_id, $page_id) {
-			$tree_id = (int)$tree_id;
-			$lan_id = (int)$lan_id;
-			$page_id = (int)$page_id;
-		}
-		*/
+
+      $coreHttp = \BB\http\request::get();
+      $seoTitle = $coreHttp->getString('seotitle');
+
+      if(!empty($seoTitle)):
+        $eventsDao = \BB\custom\model\element\dao\Veranstaltungen::instance();
+        $eventsSearch = new \BB\custom\model\eventsSearch($eventsDao);
+        $eventsSearch->setSeoTitle($seoTitle);
+        $results = $eventsSearch->getResults(1, false, true);
+        $event = $results[0];
+        $eventData = $event->getData(1);
+        $eventTitle = $eventData->Veranstaltungstitel;
+
+        $pageTmpl->assign('seotitle', !empty($eventTitle) ? ' - '.$eventTitle : '');
+      endif;
+
+      $pageTmpl->assign('seotitle', '');
+
+    }
+
+    /*
+    public static function modeMail(\BB\template\classic $pageTmpl, $tree_id, $lan_id, $page_id) {
+      $tree_id = (int)$tree_id;
+      $lan_id = (int)$lan_id;
+      $page_id = (int)$page_id;
+    }
+    */
 
 	}
 	

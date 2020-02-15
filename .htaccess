@@ -91,9 +91,9 @@ RewriteRule ^image/([0-9]*)/(.*?)$ direct.php?route=direct,Index,Image&src=$2 [Q
 RewriteRule ^core/image/([0-9]*)/(.*?)$ direct.php?route=direct,Index,Image&src=$2 [QSA,L]
 
 # HTML-Seite
-RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Start-?(.*?)\.html(.*?)$ stage.php?file=Event&seotitle=$3&lang=$2&%{QUERY_STRING}
-RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Aktiv-?(.*?)\.html(.*?)$ stage.php?file=Event&seotitle=$3&lang=$2&%{QUERY_STRING}
-RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Intensiv-?(.*?)\.html(.*?)$ stage.php?file=Event&seotitle=$3&lang=$2&%{QUERY_STRING}
+RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Start-?(.*?)\.html(.*?)$ stage.php?file=Veranstaltung&seotitle=$3&lang=$2&%{QUERY_STRING}
+RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Aktiv-?(.*?)\.html(.*?)$ stage.php?file=Veranstaltung&seotitle=$3&lang=$2&%{QUERY_STRING}
+RewriteRule ^(([a-zA-Z0-9_-]*)/)Ehe-Intensiv-?(.*?)\.html(.*?)$ stage.php?file=Veranstaltung&seotitle=$3&lang=$2&%{QUERY_STRING}
 RewriteRule ^(([a-zA-Z0-9_-]*)/)?(.*?)\.html(.*?)$ stage.php?file=$3&lang=$2&%{QUERY_STRING}
 
 # XML-Seite

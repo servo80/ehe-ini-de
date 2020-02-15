@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>{app:page:title}</title>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="custom/themes/ehe-ini.de/css/print.css" type="text/css" media="print" />
   </head>
   <body>
@@ -61,7 +61,7 @@
       </div>
       <div class="footer">
         <ol class="socialMedia">
-          <li><a href="http://www.facebook.com/eheini"><img src="custom/themes/ehe-ini.de/images/facebook.png" /></a></li>
+          <li><a href="https://www.facebook.com/eheini"><img src="custom/themes/ehe-ini.de/images/facebook.png" /></a></li>
           <li><a href="de/Kontakt.html"><img src="custom/themes/ehe-ini.de/images/phone.png" /></a></li>
           <li><a href="mailto:info@ehe-initiative.de"><img src="custom/themes/ehe-ini.de/images/mail.png" /></a></li>
         </ol>

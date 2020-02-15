@@ -5,6 +5,8 @@
     <title>Ehe-Initiative e.V. - {app:page:title}</title>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="custom/themes/ehe-ini.de/css/print.css" type="text/css" media="print" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <div class="wrapAll">

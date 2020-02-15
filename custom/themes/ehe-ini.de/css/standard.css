@@ -509,10 +509,17 @@ and (orientation: landscape)
   }
   div.main ol.eventsList li h3,
   div.main ol.eventsList li p,
+  div.main ol.eventsList li ul li,
+  div.main ol.eventsList li ul li > strong,
+  div.main ol.eventsList li p > strong,
   div.main ol.eventsList li a,
   div.main div.contact p.mail {
     font-size:1em !important;
     height:auto;
+  }
+  div.main ol.eventsList li ul li > strong,
+  div.main ol.eventsList li p > strong {
+    font-weight:bold;
   }
   div.main ol.eventsList li:last-child {
     border-bottom:none;
